@@ -95,7 +95,7 @@
     background-size: cover;
 }
 
-#entrees {
+#entrées {
     background: url("https://apipics.s3.amazonaws.com/mexican_api/7.jpg") center no-repeat;
     width: 100%;
     height: 200px;
@@ -197,7 +197,7 @@ h2 {
     grid-area: 2 / 2 / 3 / 3;
 }
 
-#entrees-ancre {
+#entrées-ancre {
     grid-area: 1 / 3 / 2 / 4;
 }
 
