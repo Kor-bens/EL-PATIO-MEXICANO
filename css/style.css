@@ -13,11 +13,11 @@ body {
     background-attachment: fixed;
 }
 
-.mt-4{
+.mt-4 {
     margin-top: 40px;
 }
 
-.fsclamp3{
+.fsclamp3 {
     font-size: clamp(0.6rem, 0.65rem + 1vw, 1.5rem + 2vw);
 }
 
@@ -471,7 +471,7 @@ a {
 /* Personnaliser la scrollbar */
 
 body {
-    --scrollbar-width: 1.3vw;
+    --scrollbar-width: 2vw;
 }
 
 body::-webkit-scrollbar {
@@ -481,6 +481,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
     background-image: url('../Ressources/bg-image.jpg');
+    opacity: 0.8;
     /* color of the tracking area */
 }
 
@@ -554,7 +555,7 @@ body::-webkit-scrollbar-thumb {
         margin-bottom: 5px;
     }
 
-    .bloc-description-lien{
+    .bloc-description-lien {
         font-size: clamp(0.8rem, 0.45rem + 1vw, 1.5rem + 1vw);
     }
 
