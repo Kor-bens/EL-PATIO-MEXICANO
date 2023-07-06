@@ -1,0 +1,37 @@
+Sources image d'inspiration pour la hero image :
+https://ontheborder.com.au/wp-content/uploads/2022/03/Mexican-Cuisine-scaled.jpg
+
+Source d'inspiration pour le site :
+https://www.restaurant-indigo-cafe.com/
+
+Police :
+https://fonts.google.com/specimen/Rye
+
+Image d'inspiration pour le background :
+https://www.restaurant-indigo-cafe.com/websites/c488c089552cf2f4e5658fbac0c6a7aa/img/background.jpg
+
+----- Snacks
+	Jalapeños
+	Nachos
+
+----- Entrées
+	Soupes
+	Quesadillas
+
+----- Plats
+	Tacos
+	Burritos
+	Fajitas
+	Tortillas
+
+----- Dessert
+
+----- Boissons
+
+Reste à faire : 
+- Animation flèche menu -**-
+- Animation lors du survol des ancres menu -**-
+- MAJ Figma 
+- Supprimer le code inutile 
+- Commenter le code qui ne l'est pas
+-margin top 40px pour les div parents

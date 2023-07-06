@@ -1,0 +1,413 @@
+.texte-vert {
+    color: green;
+    text-decoration: underline orange solid 2px;
+    font-family: Rye;
+}
+
+@font-face {
+    font-family: Rye;
+    src: url(../Ressources/polices/Rye-Regular.ttf);
+}
+
+
+.bloc-plat {
+    width: 100%;
+    height: 75vh;
+    background: url(../Ressources/heroimage2.jpg) fixed center no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.logo-big {
+    width: 45vh;
+    height: 45vh;
+    border-radius: 50%;
+}
+
+.link-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.navbar {
+    z-index: 5;
+}
+
+:root {
+    --hauteur-fleche: 85vh;
+}
+
+#fleche {
+    transform: rotate(90deg);
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: var(--hauteur-fleche);
+    left: 50vw;
+    color: green;
+    font-weight: 900;
+    font-size: 3rem;
+    animation: bounce 0.35s ease infinite alternate;
+    /* ----- FAIRE UNE ANIMATION - SECOUÉE DE BAS EN HAUT ----- */
+}
+
+/*animation fleche*/
+@keyframes bounce {
+    from {
+        top: calc(var(--hauteur-fleche) * 0.98);
+    }
+
+    to {
+        top: calc(var(--hauteur-fleche) * 1.02);
+    }
+}
+
+#menu-titre-div {
+    position: relative;
+    top: 2vh;
+    height: fit-content;
+    width: 100%;
+}
+
+#description {
+    width: 100%;
+    margin-top: calc(4vh + 40px);
+    padding: 16px;
+    font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw);
+}
+
+#snacks-titre {
+    margin: 40px;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+#snacks {
+    background: url("https://apipics.s3.amazonaws.com/mexican_api/43.jpg") center no-repeat;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+#entrees {
+    background: url("https://apipics.s3.amazonaws.com/mexican_api/7.jpg") center no-repeat;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+#plats {
+    background: url("https://apipics.s3.amazonaws.com/mexican_api/19.jpg") center no-repeat;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+#desserts {
+    background: url("https://apipics.s3.amazonaws.com/mexican_api/17.jpg") center no-repeat;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+#boissons {
+    background: url("https://apipics.s3.amazonaws.com/mexican_api/23.jpg") center no-repeat;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+.filtre-opaque {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    margin: 40px 0 !important;
+}
+
+#liens-ancres {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    width: 80%;
+    height: max-content;
+    margin: 40px 10%;
+    justify-items: center;
+}
+
+.ancre {
+    position: relative;
+}
+
+.bloc-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+
+
+.bloc-img.show {
+    height: 100%;
+    /* Ajustez la hauteur selon vos besoins */
+}
+
+.img-plat {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tombe-image {
+    animation: tomber 0.3s ease forwards;
+}
+
+@keyframes tomber {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+#snacks-ancre {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#desserts-ancre {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#entrees-ancre {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+#boissons-ancre {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+#plats-ancre {
+    grid-area: 1 / 5 / 2 / 6;
+}
+
+.ancre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 10vw;
+    box-shadow: 0 0 0 2px;
+}
+
+.ancre:hover {
+    /* ----- FAIRE UNE ANIMATION : APPARITION PAR LE BAS D'UN EXEMPLE DE NOURRITURE SELON LA CATÉGORIE AVEC UN FILTRE OPAQUE ----- */
+}
+
+
+
+.ancre-link {
+    text-decoration: none;
+    font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ----- PENSER À DONNER LA FONT-SIZE AVEC UN CLAMP ----- */
+}
+
+.container-plats {
+    margin-top: 40px;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+}
+
+.categorie-image {
+    margin: 40px 0;
+}
+
+.logo-restriction {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.bloc-texte-plat {
+    box-sizing: border-box;
+    align-items: center;
+    margin: auto;
+    height: max-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.85fr 0.7fr 1fr 1fr 0.5fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "titre titre titre"
+        "titre titre titre"
+        "prix prix prix"
+        "desc desc desc"
+        "desc desc desc"
+        "btn btn btn";
+    box-shadow: 2px 1px 20px 4px black;
+}
+
+.bloc-texte-plat h1 {
+    grid-area: titre;
+    text-align: center;
+    white-space: wrap;
+    font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw);
+    padding: 10px;
+    margin: auto;
+    text-shadow: 3px 3px 3px black;
+}
+
+.prix-plat {
+    grid-area: prix;
+    font-size: clamp(1.2em, 0.8rem + 1vw, 1.8rem + 2vw);
+    text-align: center;
+    overflow: auto;
+    margin: 3%;
+    text-shadow: 3px 3px 3px black;
+    font-weight: bold;
+}
+
+.description-plat {
+    grid-area: desc;
+    font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw);
+    text-align: center;
+    overflow: auto;
+    margin: 3%;
+    text-shadow: 3px 3px 3px black;
+}
+
+.bloc-texte-plat button {
+    grid-area: btn;
+    margin: 5%;
+    border-radius: 20px;
+    box-shadow: 1px 3px 20px 2px #00000082;
+}
+
+.bloc-texte-plat button:hover {
+    border-radius: 70px;
+    opacity: 0.9;
+    box-shadow: inset 1px 3px 18px 2px #000000ad;
+}
+
+.infos-div {
+    grid-area: ingr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.infos-div ul {
+    display: block;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.bloc-image-plat {
+    /* Grâce au code JavaScript, sa hauteur va s'adapter à celle du bloc-texte-plat. */
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-plat {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    box-shadow: 3px 3px 20px 8px #6d6969cc;
+    /* object-fit: cover;
+    object-position: bottom;
+    width : 100%; */
+}
+
+
+@media screen and (max-width:426px) {
+    .container-plats {
+        display: block;
+    }
+
+    .bloc-image-plat {
+        display: none;
+        height: unset !important;
+        grid-area: unset !important;
+    }
+
+    .image-plat {
+        display: none;
+    }
+
+    #liens-ancres {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        grid-column-gap: 0;
+    }
+
+    .ancre-link {
+        font-size: clamp(0.5rem, 0.65rem + 0.5vw, 1.5rem + 2vw);
+    }
+
+    .afficher-Tous,
+    .afficher-Moins {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .image-spoilee {
+        /* Le display : none est défini par défaut dans le code JS.
+        Il faut un " !important" pour l'outrepasser. */
+        display: block !important;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        margin: 24px 0;
+        box-shadow: 0 0 12px 1 #000000;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #liens-ancres {
+        margin: 40px 2%;
+        width: 96%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ancre {
+        width: 15vw;
+        height: 15vw;
+    }
+}

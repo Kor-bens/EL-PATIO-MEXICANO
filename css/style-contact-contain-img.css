@@ -1,0 +1,424 @@
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../Ressources/bgimage.png');
+    background-attachment: fixed;
+}
+
+.orange {
+    background-image: url('/Ressources/tissu-orange-2.jpg');
+    text-shadow: 3px 3px 3px black;
+}
+
+.vert {
+    background-image: url('../Ressources/bg-image.jpg');
+}
+
+@font-face {
+    font-family: 'mexicain';
+    src: url('../Ressources/polices/Rye-Regular.ttf');
+}
+
+
+/*INDEX.PHP*/
+/*CONTAINER DE L'IMAGE*/
+.contain-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/Ressources/desert3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 20vh;
+    width: 100%;
+
+}
+
+/*CONTAINER AVEC 1 BLOC IMAGE ET 1 BLOC FORMULAIRE DE CONTACT*/
+#container-bloc {
+    /* background: red; */
+    margin-top: 40px;
+    display: grid;
+    /* gap: 0px 30px; */
+    grid-auto-rows: 1fr;
+    justify-items: center;
+    column-gap: 16px;
+    grid-template-columns: 10% 30% 30% 10%;
+    justify-content: center;
+    /* grid-template-areas:
+        ". img bloc-f ."; */
+}
+
+/* #container-bloc .bloc-image {
+    justify-self: end;
+} */
+
+
+
+/*PROPRIETE LE BLOC IMAGE*/
+.bloc-image {
+    box-shadow: 2px 1px 20px 4px black;
+    height: auto;
+    width: 100%;
+    background: url("/Ressources/perso-contact.png") center/cover no-repeat;
+    grid-area: img;
+    grid-column: 1/3;
+    grid-row: 1;
+}
+
+/*PROPRIETE POUR LE BLOC FORMULAIRE*/
+.bloc-formulaire {
+    box-sizing: border-box;
+    align-items: center;
+    margin: auto;
+    grid-area: bloc-f;
+    grid-column: 3/5;
+    grid-row: 1;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.85fr 0.7fr 1fr 1fr 1fr 0.5fr 1fr;
+    grid-template-areas:
+        "titre titre titre"
+        "form form form"
+        "form form form"
+        "form form form"
+        "form form form"
+        "form form form"
+        "form form form";
+    box-shadow: 2px 1px 20px 4px black;
+    width: 100%;
+    margin-top: 16px;
+}
+
+
+/*PROPRIETE TITRE DU FORMULAIRE */
+#titre-formulaire {
+    text-align: center;
+    grid-area: titre;
+    /* font-size: clamp(0.8rem + 1.5vw, 0.85rem + 2vw, 1.5rem + 5vw); */
+    font-size: clamp(40px, 1em, 1rem);
+    padding: 10px;
+    text-shadow: 3px 3px 3px black;
+    color: white;
+    align-self: start;
+    margin-top: 10px;
+}
+
+/*PROPRIETE LE FORMULAIRE*/
+#formulaire {
+    font-size: clamp(1rem, 0.65rem + 1.5vw, 1.5rem + 2vw);
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: auto;
+    margin: 3%;
+    text-shadow: 3px 3px 3px black;
+    color: white;
+    border-radius: 20px;
+    margin-top: -20px;
+}
+
+/*COULEUR DE FOND SELECT*/
+select {
+    background-color: #df8d08;
+    font-size: clamp(1.3rem, 0.6rem + 0.8vw, 1.5rem + 2vw) !important;
+    height: 5vh;
+    width: 50%;
+    align-self: center;
+}
+
+/*TAILLE DE POLICE POUR LES OPTIONS*/
+.option {
+    font-size: clamp(0.5rem, 0.6rem + 0.8vw, 1.5rem + 2vw) !important;
+    text-align: center;
+}
+
+/*TITRE DES LABELS*/
+#demande,
+#nom,
+#prenom,
+#email,
+#telephone,
+#message {
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+/*TAILLE DE POLICE DES LABELS*/
+label {
+    font-size: clamp(1.7rem, 0.6rem + 1.5vw, 1.5rem + 2vw)
+}
+
+/*TAILLE DE POLICE DES INPUTS*/
+input {
+    height: 5vh;
+    font-size: clamp(1.5rem, 0.6rem + 0.8vw, 1.5rem + 2vw) !important;
+}
+
+/*TAILLE DE POLICE DU TEXTAREA*/
+textarea {
+    font-size: clamp(1.5rem, 0.6rem + 0.8vw, 1.5rem + 2vw) !important;
+    height: 7vh;
+}
+
+/*POSITION DU BOUTON LIEN DANS LES BLOCS DESCRIPTIONS*/
+#btn {
+    grid-area: btn;
+    margin: 5%;
+    border-radius: 20px;
+    box-shadow: 1px 3px 20px 2px #00000082;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+
+/*EFFET SUR LES BOUTON*/
+#btn:hover {
+    border-radius: 70px;
+    opacity: 0.9;
+    box-shadow: inset 1px 3px 18px 2px #000000ad;
+}
+
+/*IMAGE AU DESSUS DU FOOTER*/
+.contain-img.deux {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/Ressources/desert3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 20vh;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/*FOOTER AVEC PROPRIETE DE POSITIONNEMENT POUR LES BLOC ENFANTS*/
+#footer {
+    display: grid;
+    grid-template-columns: 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3%;
+    justify-content: center;
+    margin-top: 0;
+}
+
+/*POSITION DU BLOC QUI CONTIENT LE LOGO DANS LE PARENT FOOTER*/
+.bloc-footer.logo-patron {
+    grid-column: 1/4;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+/*DIMENSION POUR LE LOGO*/
+#logo-patroñ-footer {
+    width: 50%;
+    border-radius: 150px;
+}
+
+/*POSITION DU 2EME BLOC QUI CONTIENT TITRE PARAGRAPHE ET CARTE DANS LE PARENT FOOTER */
+.bloc-footer.carte {
+    grid-column: 4/6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+/*TITRE DU BLOC FOOTER CARTE*/
+#titre-restaurant-footer {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 65px;
+}
+
+/*PARAGRAPHE DU BLOC FOOTER CARTE*/
+#p-adresse-restaurant-footer {
+    color: white;
+    font-size: 1.2rem;
+    width: 80%;
+}
+
+/*DIMENSIONS DE LA CARTE DU BLOC FOOTER CARTE*/
+#carte-adresse {
+    width: 140%;
+    height: 30vh;
+}
+
+/*POSITIONNEMENT DU DES LOGOS DU BLOC FOOTER LOGO*/
+.bloc-footer.logo-sociaux {
+    display: flex;
+    flex-direction: column;
+    grid-column: 7/9;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*TAILLE DES LOGO*/
+.logo-img {
+    width: 64px;
+}
+
+/*POSITION DU BLOC FOOTER HORAIRE DANS LE PARENT FOOTER*/
+.bloc-footer.horaire {
+    grid-column: 9/13;
+    display: flex;
+}
+
+/*POSTIONNEMENT DU BLOC LISTE HORAIRE DANS LE PARENT FOOTER HORAIRE*/
+#liste-horaire {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/*TITRE DU BLOC LISTE HORAIRE*/
+#p-horaire {
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+/*PROPRIETE POUR LA LISTE HORAIRE*/
+#liste-horaire li {
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 2.3;
+}
+
+
+
+
+/*BLOCS DE PLATS (TITRE, IMAGE, DESCRIPTION) */
+/* .bloc-plat{
+    width: 50%;
+} */
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 650px) {
+
+    #footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bloc-footer.logo-patron {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    #logo-patroñ-footer {
+        width: 80%;
+        border-radius: 300px;
+    }
+
+    .bloc-footer.carte {
+        align-items: center;
+        margin-top: -30px;
+    }
+
+    #titre-restaurant-footer {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    #p-adresse-restaurant-footer {
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        width: 70%;
+        margin-top: 0;
+        align-self: center;
+        text-align: center;
+    }
+
+    #carte-adresse {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .bloc-footer.logo-sociaux {
+        flex-direction: row;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .bloc-footer.horaire {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #liste-horaire {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: flex-start;
+    }
+
+    #p-horaire {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    #liste-horaire li {
+        padding: 0;
+        font-size: 1.2rem;
+        line-height: 1.1;
+    }
+}
+
+
+
+@media screen and (max-width: 426px) {
+    #container-bloc {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .container-bloc div {
+        margin: 6%;
+    }
+
+    #titre-formulaire {
+        font-size: clamp(26px + 1vw, 1em, 1rem);
+    }
+
+    #formulaire {
+        margin-top: 5px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    .bloc-image {
+        box-shadow: 2px 1px 20px 4px black;
+        height: auto;
+        max-width: 100%;
+        background: url("/Ressources/perso-contact.png") center/cover no-repeat;
+        grid-area: img;
+        grid-column: 1/5;
+        grid-row: 1;
+
+    }
+
+    .bloc-formulaire {
+        grid-column: 1/5;
+        grid-row: 2;
+    }
+
+}

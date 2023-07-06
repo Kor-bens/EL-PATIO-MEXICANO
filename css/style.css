@@ -1,0 +1,680 @@
+/* * {
+    border: 1px solid red;
+} */
+
+.navbar-toggler-icon {
+    background-image: url(../Ressources/icone-burger.png) !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../Ressources/bgimage.png');
+    background-attachment: fixed;
+}
+
+.mt-4{
+    margin-top: 40px;
+}
+
+.fsclamp3{
+    font-size: clamp(0.6rem, 0.65rem + 1vw, 1.5rem + 2vw);
+}
+
+.orange {
+    background-image: url('/Ressources/tissu-orange-2.jpg');
+    text-shadow: 3px 3px 3px black;
+}
+
+.vert {
+    background-image: url('../Ressources/bg-image.jpg');
+}
+
+@font-face {
+    font-family: 'mexicain';
+    src: url('../Ressources/polices/Rye-Regular.ttf');
+}
+
+/*NAVBAR HAUT DE PAGE COMMUNE A TOUTE PAGE */
+#navbar {
+    display: flex;
+    background-image: url('../Ressources/bg-image.jpg');
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 5;
+}
+
+.navbar-hidden {
+    top: -100px;
+    /* Déplace la barre de navigation hors de la vue */
+}
+
+#logo-patroñ {
+    width: 100px;
+    border-radius: 100px;
+    margin-right: 30px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+li {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+
+/*INDEX.PHP*/
+/*CONTAINER DE L'IMAGE avec  AVEC LE LIEN "CONSULTER LE MENU"*/
+.contain-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/Ressources/heroimage2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50vh;
+    width: 100%;
+}
+
+/* #plats-table{
+    width: 100%;
+    height: 50vh;
+} */
+#consulter-le-menu {
+    padding: 1%;
+    border-radius: 20px;
+    box-shadow: 1px 3px 20px 2px #00000082;
+    font-size: 15px;
+}
+
+#consulter-le-menu:hover {
+    border-radius: 70px;
+    opacity: 0.9;
+    box-shadow: inset 1px 3px 18px 2px #000000ad;
+}
+
+
+
+/*PARAGRAPHE DU BLOC DESCRIPTION SOUS LA DIV IMG*/
+#p-description {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 22px;
+    width: 50%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+    font-size: clamp(0.6rem, 0.65rem + 1vw, 1.5rem + 2vw);
+    overflow: auto;
+
+
+}
+
+/*CONTAINER AVEC 2 BLOC PAR LIGNE IMAGE ET TEXT AVEC LIEN*/
+.container-bloc {
+    /* margin-top: 40px; */
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 10% 30% 30% 10%;
+    grid-template-rows: 1fr;
+    column-gap: 16px;
+}
+
+/*PROPRIETE POUR TOUS LES BLOCS IMAGES*/
+.bloc-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    margin-top: 16px;
+    box-shadow: inset 3px 3px 20px 8px #6d6969cc;
+}
+
+/*PROPRIETE POUR TOUS LES BLOCS DESCRIPTIONS*/
+.bloc-description {
+    box-sizing: border-box;
+    align-items: center;
+    margin: auto;
+    margin-top: 16px;
+    height: 50vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.85fr 0.7fr 1fr 1fr 1fr 0.5fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "titre titre titre"
+        "titre titre titre"
+        "desc desc desc"
+        "desc desc desc"
+        "desc desc desc"
+        "desc desc desc"
+        "btn btn btn";
+    box-shadow: 2px 1px 20px 4px black;
+}
+
+/*PROPRIETE TITRE POUR TOUS LES TITRES DES BLOCS DESCRIPTION */
+.titre-description {
+    grid-area: titre;
+    white-space: nowrap;
+    font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw);
+    padding: 10px;
+    margin: auto;
+    text-shadow: 3px 3px 3px black;
+}
+
+/*PROPRIETE POUR TOUS LES TEXTES DES BLOCS DESCRIPTIONS*/
+.p-description {
+    font-size: clamp(1rem, 0.75rem + 1vw, 1.5rem + 1vw);
+    grid-area: desc;
+    text-align: center;
+    overflow: auto;
+    margin: 3%;
+    text-shadow: 3px 3px 3px black;
+}
+
+/*POSITION DU BOUTON LIEN DANS LES BLOCS DESCRIPTIONS*/
+.btn {
+    grid-area: btn;
+    margin: 5%;
+    border-radius: 20px;
+    box-shadow: 1px 3px 20px 2px #00000082;
+}
+
+/*EFFET SUR LES BOUTON*/
+.btn:hover {
+    border-radius: 70px;
+    opacity: 0.9;
+    box-shadow: inset 1px 3px 18px 2px #000000ad;
+}
+
+/*BLOC IMAGE 2*/
+.bloc-image.un {
+    background-image: url("../Ressources/restaurant-exterieur-2.jpg");
+    grid-column: 1/3;
+}
+
+/*BLOC DESCRIPTION 2*/
+.bloc-description.un {
+    grid-row: 1;
+    grid-column: 3/5;
+}
+
+/*BLOC IMAGE 2*/
+.bloc-image.deux {
+    background-image: url("../Ressources/image-plat.jpg");
+    grid-column: 3/5;
+}
+
+/*BLOC DESCRIPTION 2*/
+.bloc-description.deux {
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+/*BLOC IMAGE 2*/
+.bloc-image.trois {
+    background-image: url("../Ressources/restaurant-interieur-2.jpg");
+    grid-column: 1/3;
+}
+
+/*BLOC DESCRIPTION 3*/
+.bloc-description.trois {
+    grid-row: 3;
+    grid-column: 3/5;
+}
+
+/*BLOC IMAGE 4*/
+.bloc-image.quatre {
+    background-image: url("../Ressources/plat\ à\ emporter.jpg");
+    grid-column: 3/5;
+}
+
+/*BLOC DESCRIPTION 4*/
+.bloc-description.quatre {
+    grid-row: 4;
+    grid-column: 1/3;
+}
+
+/*LIEN EN VERT */
+.bloc-description-lien {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+    padding: 1%;
+    grid-row: 9;
+    font-size: clamp(0.1rem, 0.6rem + 1vw, 1.5rem + 1vw);
+}
+
+/*BLOC SAVOIR FAIRE ORGANISATION DEVENEMENT (SITUER SOUS LES BLOCS DESCRIPTION /IMAGE) QUI ENGLOBE BLOC SAVOIR FAIRE ET BLOC ORGANISATION DEVENEMENT*/
+#bloc-savoir-faire-organisation-devenement {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+/*POSITION DU BLOC SAVOIR-FAIRE*/
+#bloc-savoir-faire {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*PROPRIETE POUR LE TITRE DU BLOC SAVOIR FAIRE*/
+#titre-bloc-savoir-faire {
+    color: green;
+    font-family: 'mexicain';
+}
+
+/*TRAIT SOUS LE TITRE DU BLOC SAVOIR-FAIRE*/
+#trait-1 {
+    height: 2px;
+    width: 100% !important;
+    background-color: orange;
+    position: relative;
+    bottom: 12px;
+    opacity: 1;
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+/*PROPRIETE TAILLE DE POLICE ET LARGEUR POUR LE TEXTE DU BLOC SAVOIR-FAIRE*/
+#description-savoir-faire {
+    font-size: 24px;
+    width: 80%;
+}
+
+/*LARGEUR DU BLOC ORGANISATION-DEVENEMENT*/
+#bloc-organisation-devenement {
+    width: 100%;
+    padding: 32px;
+}
+
+/*TITRE DU BLOC ORGANISATION-DEVENEMENT*/
+#titre-bloc-organisation-devenement {
+    color: white;
+    font-family: 'mexicain';
+    width: fit-content;
+    margin: auto;
+}
+
+/*TRAIT SOUS LE TITRE DU BLOC ORGANISATION DEVENEMENT*/
+#trait-2 {
+    height: 2px;
+    width: 100% !important;
+    background-color: green;
+    position: relative;
+    bottom: 12px;
+    opacity: 1;
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+/*PROPRIETE DU 1ER PARAGRAPHE DU BLOC ORGANISATION DEVENEMENT*/
+#p-1-description-oraganisation-devenement {
+    color: white;
+    display: flex;
+    font-size: 24px;
+    width: 50vw;
+    margin: 24px auto;
+}
+
+/*PROPRIETE DU 2EME PARAGRAPHE DU BLOC ORGANISATION DEVENEMENT*/
+#p-2-description-oraganisation-devenement {
+    color: white;
+    font-size: 24px;
+}
+
+/*PROPRIETE DU LIEN DU BLOC ORGANISATION DEVENEMENT*/
+#bloc-contact {
+    width: 10%;
+    padding: 1%;
+    border-radius: 20px;
+    box-shadow: 1px 3px 20px 2px #00000082;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+#bloc-contact:hover {
+    border-radius: 70px;
+    opacity: 0.9;
+    box-shadow: inset 1px 3px 18px 2px #000000ad;
+}
+
+/*BLOC QUI CONTIENT LA MEME BACKGROUND-IMAGE QUE LA 1ERE CONTAIN-IMAGE*/
+.contain-img.deux {
+    height: 45vh;
+}
+
+/*FOOTER AVEC PROPRIETE DE POSITIONNEMENT POUR LES BLOC ENFANTS*/
+#footer {
+    display: grid;
+    grid-template-columns: 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3%;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/*POSITION DU BLOC QUI CONTIENT LE LOGO DANS LE PARENT FOOTER*/
+.bloc-footer.logo-patron {
+    grid-column: 1/4;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+/*DIMENSION POUR LE LOGO*/
+#logo-patroñ-footer {
+    width: 50%;
+    border-radius: 150px;
+}
+
+/*POSITION DU 2EME BLOC QUI CONTIENT TITRE PARAGRAPHE ET CARTE DANS LE PARENT FOOTER */
+.bloc-footer.carte {
+    grid-column: 4/6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+/*TITRE DU BLOC FOOTER CARTE*/
+#titre-restaurant-footer {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 65px;
+}
+
+/*PARAGRAPHE DU BLOC FOOTER CARTE*/
+#p-adresse-restaurant-footer {
+    color: white;
+    font-size: 1.2rem;
+    width: 80%;
+}
+
+/*DIMENSIONS DE LA CARTE DU BLOC FOOTER CARTE*/
+#carte-adresse {
+    width: 140%;
+    height: 30vh;
+}
+
+/*POSITIONNEMENT DU DES LOGOS DU BLOC FOOTER LOGO*/
+.bloc-footer.logo-sociaux {
+    display: flex;
+    flex-direction: column;
+    grid-column: 7/9;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*TAILLE DES LOGO*/
+.logo-img {
+    width: 64px;
+}
+
+/*POSITION DU BLOC FOOTER HORAIRE DANS LE PARENT FOOTER*/
+.bloc-footer.horaire {
+    grid-column: 9/13;
+    display: flex;
+}
+
+/*POSTIONNEMENT DU BLOC LISTE HORAIRE DANS LE PARENT FOOTER HORAIRE*/
+#liste-horaire {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/*TITRE DU BLOC LISTE HORAIRE*/
+#p-horaire {
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+/*PROPRIETE POUR LA LISTE HORAIRE*/
+#liste-horaire li {
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 2.3;
+}
+
+/* Personnaliser la scrollbar */
+
+body {
+    --scrollbar-width: 1.3vw;
+}
+
+body::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background-image: url('../Ressources/bg-image.jpg');
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-image: url('../Ressources/tissu-orange-2.jpg');
+    /* color of the scroll thumb */
+    border-radius: calc(var(--scrollbar-width)/2);
+    /* roundness of the scroll thumb */
+    border: calc(var(--scrollbar-width)/8) solid rgb(6, 77, 6);
+    /* creates padding around scroll thumb */
+}
+
+
+/*BLOCS DE PLATS (TITRE, IMAGE, DESCRIPTION) */
+/* .bloc-plat{
+    width: 50%;
+} */
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 650px) {
+    #description {
+        margin-top: 0;
+    }
+
+    .container-bloc {
+        margin-top: 0;
+    }
+
+    .container-img-description {
+        margin-top: 0;
+    }
+
+    .bloc-image.un {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-image.deux {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-image.trois {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-image.quatre {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-description.un {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-description.deux {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-description.trois {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-description.quatre {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bloc-description-lien{
+        font-size: clamp(0.8rem, 0.45rem + 1vw, 1.5rem + 1vw);
+    }
+
+    #p-description {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .p-description {
+        font-size: 1.2rem;
+    }
+
+    #p-1-description-oraganisation-devenement {
+        width: 100%;
+    }
+
+    #p-2-description-oraganisation-devenement {
+        width: 100%;
+    }
+
+    #bloc-contact {
+        width: 100%;
+
+    }
+
+
+    #footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bloc-footer.logo-patron {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    #logo-patroñ-footer {
+        width: 80%;
+        border-radius: 300px;
+    }
+
+    .bloc-footer.carte {
+        align-items: center;
+        margin-top: -30px;
+    }
+
+    #titre-restaurant-footer {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    #p-adresse-restaurant-footer {
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        width: 70%;
+        margin-top: 0;
+        align-self: center;
+        text-align: center;
+    }
+
+    #carte-adresse {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .bloc-footer.logo-sociaux {
+        flex-direction: row;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .bloc-footer.horaire {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #liste-horaire {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: flex-start;
+    }
+
+    #p-horaire {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    #liste-horaire li {
+        padding: 0;
+        font-size: 1.2rem;
+        line-height: 1.1;
+    }
+}
+
+
+
+@media screen and (max-width: 426px) {
+
+    .container-bloc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-bloc div {
+        margin: 6%;
+    }
+
+    #titre-bloc-organisation-devenement {
+        width: min-content;
+    }
+
+    /* .titre-test {
+        font-size: clamp(1rem + 3vw, 0.85rem + 5vw, 1.5rem + 8vw);
+    }
+
+    .desc-test {
+        font-size: clamp(0.8rem + 1vw, 0.85rem + 1vw, 1.5rem + 3vw);
+        margin: auto 5%;
+    } */
+}

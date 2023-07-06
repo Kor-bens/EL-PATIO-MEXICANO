@@ -1,0 +1,621 @@
+{
+    "foodList": [
+        {
+            "id": 0,
+            "title": "Fishcake tacos",
+            "categorie": "tacos",
+            "type": "plats",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/3.jpg",
+            "ingredients": [
+                "200g de barramundi",
+                " oeufs",
+                " piment rouge",
+                " échalottes",
+                " coriandre",
+                " mangue",
+                " tomates cerises",
+                " citrons verts",
+                " sel de mer",
+                " huile d'olive extra vierge"
+            ],
+            "description": "Découvrez nos tacos inédits : Un voyage culinaire au Mexique !",
+            "prix": 7,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Tacos de porc au maïs doux et à la feta",
+            "type": "plats",
+            "categorie": "tacos",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/5.jpg",
+            "ingredients": [
+                "cotelettes de porc fermier",
+                " huile d'olive",
+                " épis de mais",
+                " piments jalapenos frais",
+                " citrons vert",
+                " coriandre",
+                " graines de cumain",
+                " gousses d'ail vinaigre de cidre",
+                " tortillas de blé",
+                " féta"
+            ],
+            "description": "Le mariage parfait entre saveurs audacieuses et textures délicates. Un régal à ne pas manquer !",
+            "prix": 8,
+            "restrictions": [
+                "omnivore"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Salade de tacos aux oignons marinés roses",
+            "type": "plats",
+            "categorie": "tacos",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/6.jpg",
+            "ingredients": [
+                "oignon rouge",
+                " jus de citrons verts",
+                " gousse d'ail",
+                " graine de cumin",
+                " copeaux de chipotle",
+                " sucre",
+                " chou blanc",
+                " carottes",
+                " piment jalapeno",
+                " coriandre",
+                " huile de colza"
+            ],
+            "description": "Fraîcheur croquante, notes acidulées et saveurs équilibrées. Un délice à ne pas manquer !",
+            "prix": 7,
+            "restrictions": [
+                "vegan",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 27,
+            "title": "Tacos croustillants avec légumes grillés et haricots frits",
+            "type": "plats",
+            "categorie": "tacos",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/27.jpg",
+            "ingredients": [
+                "Huile d'olive",
+                " épis de mais",
+                " champignons de Paris",
+                " haricots verts",
+                " haricots noirs",
+                " pâte de chipotle",
+                " feta"
+            ],
+            "description": "Une explosion de saveurs avec des champignons, haricots verts et noirs et une touche de pâte de chipotle.",
+            "prix": 8,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Tofu fumé au chipotle avec tomates et avocat",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/7.jpg",
+            "ingredients": [
+                "Huile d'olive",
+                " bloc de tofu fumé",
+                " soupe de chipotles en adobo",
+                " sel de mer",
+                " oignons nouveaux",
+                " tomates cerises",
+                " tacos"
+            ],
+            "description": "Laissez-vous séduire par cette explosion de saveurs végétariennes qui vous transporte au Mexique.",
+            "prix": 8,
+            "restrictions": [
+                "vegan",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Chilaquiles avec salsa de tomatilles fraîches",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/8.jpg",
+            "ingredients": [
+                "Croustilles de tortilla",
+                " huile d'olive",
+                " tomatilles",
+                " oignon",
+                " gousses d'ail",
+                " piment jalapeno",
+                " coriandre (feuilles et tiges)",
+                " sucre semoule",
+                " sel",
+                " bouillon de légumes",
+                " jus de citron vert."
+            ],
+            "description": "Ces chilaquiles végétariens sont l'une des recettes les plus appréciées du Mexique.",
+            "prix": 7,
+            "restrictions": [
+                "vegan",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 30,
+            "title": "Pain de maïs avec salade à la mexicaine",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/30.jpg",
+            "ingredients": [
+                "Beurre fondu",
+                " semoule de mais fine",
+                " sucre",
+                " sel",
+                " oeuf",
+                " fromage lancashire",
+                " épis de mais",
+                " huile d'olive",
+                " cresson",
+                " tomates cerises."
+            ],
+            "description": "La texture moelleuse du pain de maïs, la fraîcheur du cresson et la douceur des tomates cerises.",
+            "prix": 6,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 37,
+            "title": "Riz aux crevettes à la mexicaine avec salsa d'avocat",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/37.jpg",
+            "ingredients": [
+                "Huile d'olive",
+                " oignons rouges",
+                " piments rouges",
+                " riz basmati",
+                " tomates concassées",
+                " coriandre fraiche",
+                " poulet",
+                " jus de citron",
+                " crevettes crues",
+                " haricots verts",
+                " avocat mur."
+            ],
+            "description": "Ces crevettes à la mexicaine sont riches en vitamines E, K et B12.",
+            "prix": 8,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 52,
+            "title": "Salade mexicaine de tacos au poulet",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/52.jpg",
+            "ingredients": [
+                "poulet",
+                " laitue",
+                " tomates",
+                " avocats",
+                " croustilles de maïs",
+                " crème sure",
+                " coriandre",
+                " oignon",
+                " piment jalapeéno"
+            ],
+            "description": "Notre plat principal : poulet aux épices mexicaines, de nombreux légumes et une vinaigrette crémeuse.",
+            "prix": 9,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Burritos aux haricots noirs et au poulet",
+            "type": "plats",
+            "categorie": "burritos",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/4.jpg",
+            "ingredients": [
+                "oignons",
+                " ail",
+                " cumin",
+                " haricots noirs",
+                " paprika fumé",
+                " riz cuit",
+                " avocat",
+                " jus de citron vert",
+                " piment rouge",
+                " tomates cerises mures",
+                " coriandre fraiche",
+                " tortillas",
+                " poulet cuit",
+                " cheddar doux",
+                " tabasco."
+            ],
+            "description": "Une combinaison savoureuse accompagnée de riz, avocat, tomates cerises et coriandre fraîche.",
+            "prix": 9,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 19,
+            "title": "Burritos à la saucisse avec guacamole aux petits pois et à l'avocat",
+            "type": "plats",
+            "categorie": "burritos",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/19.jpg",
+            "ingredients": [
+                "Huile d'olive",
+                " saucisses",
+                " mélange d'épices méxicaines",
+                " oignon rouge",
+                " poivrons",
+                " mais doux",
+                " avocats",
+                " petits pois",
+                " jus de citron vert",
+                " tortillas",
+                " riz basmati",
+                " cheddar",
+                " coriandre fraiche."
+            ],
+            "description": "Des saveurs mexicaines inédites : Un voyage culinaire en un burrito ! ",
+            "prix": 12,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 22,
+            "title": "Bols de burrito au boeuf",
+            "type": "plats",
+            "categorie": "burritos",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/22.jpg",
+            "ingredients": [
+                "Huile de tournesol",
+                " oignons rouges",
+                " boeuf haché britannique",
+                " piment chipotle",
+                " tortilla",
+                " laitue",
+                " tomates cerises",
+                " concombre",
+                " yaourt grec",
+                " citron vert",
+                " paprika."
+            ],
+            "description": "Une symphonie funky de goûts qui éveillera vos papilles.",
+            "prix": 12,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Soupe aux haricots noirs et aux boulettes de maïs",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/2.jpg",
+            "ingredients": [
+                "Haricots secs noirs(pinto ou rouge)",
+                " piment passila",
+                " origan séché",
+                " sel de mer",
+                " gousses d'ail",
+                " piment vert",
+                " crème sure",
+                " jus de citrons verts."
+            ],
+            "description": "Succombez à notre soupe réconfortante ! Un délice qui réchauffe l'âme.",
+            "prix": 7,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 64,
+            "title": "Soupe mexicaine aux légumes et tortillas",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/64.jpg",
+            "ingredients": [
+                "Oignon rouge",
+                " poivron rouge",
+                " tomates concassées",
+                " sauce piquante chipotle",
+                " légumes Knorr",
+                " mais doux surgelé",
+                " tortillas chips légèrement salées",
+                " haricots rouges."
+            ],
+            "description": "Une délicieuse harmonie de saveurs traditionnelles.",
+            "prix": 7,
+            "restrictions": [
+                "vegan",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 34,
+            "title": "Fajitas au steak et au poivre",
+            "type": "plats",
+            "categorie": "fajitas",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/34.jpg",
+            "ingredients": [
+                "Boeuf britannique",
+                " poivrons mélangés",
+                " oignon rouge",
+                " huile végétale",
+                " tortillas",
+                " cheddar",
+                " coriandre fraiche",
+                " salsa",
+                " guacamole",
+                " crème sure."
+            ],
+            "description": "Fajitas audacieuses. Une expérience gustative qui réveille les papilles.",
+            "prix": 8,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 39,
+            "title": "Quesadillas aux patates douces, petits pois et fromage",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/39.jpg",
+            "ingredients": [
+                "Patates douces",
+                " mais égoutté",
+                " petits pois",
+                " cheddar",
+                " mozzarella",
+                " coriandre fraiche",
+                " tortillas",
+                " avocats",
+                " jus de citron vert",
+                " oignons nouveaux."
+            ],
+            "description": "Délice végétarien : Fondant, croquant, croustillant en chaque bouchée.",
+            "prix": 7,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 50,
+            "title": "Quesadillas au fromage avec salsa de tomates, poivrons rouges et avocat",
+            "type": "entrées",
+            "categorie": "entrées",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/50.jpg",
+            "ingredients": [
+                "Avocats murs",
+                " tomates cerises",
+                " coriandre fraiche",
+                " échalote",
+                " jus de citron vert",
+                " huile d'olive",
+                " cheddar",
+                " poivrons rouges",
+                " piment chipotle",
+                " tortillas de mais",
+                " crème sure."
+            ],
+            "description": "Découvrez nos quesadillas au fromage. Un festival de saveurs rafraîchissantes et épicées.",
+            "prix": 7,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 43,
+            "title": "Nachos au piment de patate douce",
+            "type": "snacks",
+            "categorie": "snacks",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/43.jpg",
+            "ingredients": [
+                "Huile d'olive",
+                " oignon",
+                " gousses d'ail",
+                " cumin",
+                " paprika fumé",
+                " flocons de piment",
+                " purée de tomates",
+                " patates douces",
+                " haricots noirs",
+                " tomates concassées",
+                " bouillon de légumes",
+                " coriandre fraiche",
+                " croustilles de tortilla",
+                " cheddar",
+                " crème sure."
+            ],
+            "description": "Un mélange audacieux d'épices, de saveurs fumées et de textures croustillantes.",
+            "prix": 8,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 53,
+            "title": "Nachos au porc effiloché et salsa de maïs doux",
+            "type": "snacks",
+            "categorie": "snacks",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/53.jpg",
+            "ingredients": [
+                "Huile d'olive",
+                " échalotes bananes",
+                " épaule de porc fermier britannique",
+                " gousses d'ail",
+                " cumin",
+                " coriandre",
+                " canelle",
+                " piment doux",
+                " piment Jamaique",
+                " thym séché",
+                " purée de tomates",
+                " vinaigre de vin rouge",
+                " bouillon de poulet",
+                " sucre semoule",
+                " lait entier."
+            ],
+            "description": "Une explosion de saveurs épicées et sucrées. Le mariage parfait du croustillant et de la tendresse.",
+            "prix": 10,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 54,
+            "title": "Bol de riz tortilla mexicain croustillant",
+            "type": "Tortilla",
+            "categorie": "tortilla",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/54.jpg",
+            "ingredients": [
+                "Huile de colza",
+                " tortilla de mais",
+                " poivrons rouges rotis",
+                " mais doux",
+                " oignon rouge",
+                " coriandre fraiche",
+                " citron vert",
+                " paprika fumé",
+                " soupe de crème sure",
+                " riz."
+            ],
+            "description": "Des saveurs audacieuses, une expérience culinaire irrésistible.",
+            "prix": 9,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 35,
+            "title": "Jalapeño, bacon et frittata de pommes de terre croustillantes",
+            "type": "snacks",
+            "categorie": "snacks",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/35.jpg",
+            "ingredients": [
+                "Pommes de terre",
+                " huile d'olive",
+                " piments jalapeño frais",
+                " citron vert",
+                " oeufs",
+                " oignons nouveaux",
+                " coriandre fraiche",
+                " bacon émincé",
+                " choux pointu",
+                " cheedar."
+            ],
+            "description": "Savourez notre frittata croustillante : Une explosion de saveurs épicées et réconfortantes. ",
+            "prix": 9,
+            "restrictions": [
+                "omnivore",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 14,
+            "title": "Margarita à la mangue surgelée",
+            "type": "boissons",
+            "categorie": "boissons",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/14.jpg",
+            "ingredients": [
+                "Tequila infusée au jalapano",
+                " mangue",
+                " orange",
+                " liqueur d'orange",
+                " citron vert."
+            ],
+            "description": "Dégustez notre Margarita glacée à la mangue. Une explosion de saveurs tropicales rafraîchissantes.",
+            "prix": 5,
+            "restrictions": [
+                "vegan",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 23,
+            "title": "Margarita classique",
+            "type": "boissons",
+            "categorie": "boissons",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/23.jpg",
+            "ingredients": [
+                "Tequila",
+                " jus de citron vert",
+                " triple sec."
+            ],
+            "description": "L'alliance parfaite de la tequila, du jus de citron vert et du triple sec.",
+            "prix": 5,
+            "restrictions": [
+                "vegan",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 36,
+            "title": "Paloma cocktail",
+            "type": "boissons",
+            "categorie": "boissons",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/36.jpg",
+            "ingredients": [
+                "Tequila",
+                " jus de pamplemousse",
+                " jus de citron vert",
+                " sirop d'agave",
+                " eau gazeuse."
+            ],
+            "description": "L'acidité des agrumes, la douceur du sirop et l'eau gazeuse se marient pour une explosion de saveurs.",
+            "prix": 5,
+            "restrictions": [
+                "vegan",
+                "sans-gluten"
+            ]
+        },
+        {
+            "id": 17,
+            "title": "CheeseCake Margarita fraise",
+            "type": "desserts",
+            "categorie": "desserts",
+            "image": "https://apipics.s3.amazonaws.com/mexican_api/17.jpg",
+            "ingredients": [
+                "Bretzels",
+                " sucre",
+                " beurre salé",
+                " fromage a la crème",
+                " sucre glace",
+                " citron vert",
+                " orange",
+                " fraise tequila."
+            ],
+            "description": "Une combinaison gourmande de bretzels, fromage onctueux, fraise et tequila. Un délice sucré à déguster.",
+            "prix": 6,
+            "restrictions": [
+                "vegetarien",
+                "sans-gluten"
+            ]
+        }
+    ]
+}
