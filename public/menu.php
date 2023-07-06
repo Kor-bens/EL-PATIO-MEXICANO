@@ -30,9 +30,9 @@
                 </a>
             </div>
 
-            <div class="ancre vert" id="entrees-ancre">
+            <div class="ancre vert" id="entrées-ancre">
                 <a href="#entrées" id="entrées-link" class="text-white text-decoration-none ancre-link">Entrées
-                <!-- <div class="bloc-img entree"> -->
+                <!-- <div class="bloc-img entrée"> -->
                         <img class="img-plat entrées d-none" src="" alt="">
                     <!-- </div> -->
                 </a>
