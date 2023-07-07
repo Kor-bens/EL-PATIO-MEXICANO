@@ -362,6 +362,7 @@ h2 {
         display: none;
         height: unset !important;
         grid-area: unset !important;
+        margin-top: 16px;
     }
 
     .image-plat {
