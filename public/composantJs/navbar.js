@@ -47,6 +47,7 @@ let dropdown = document.querySelector('.dropdown-menu');
 var body = document.body;
 
 // On change le comportement lors du clic directement sur "menu"
+
 menu.addEventListener('click', (e) => {
   if (screenWidth > 1000) {
     window.location.href = 'menu.php';
