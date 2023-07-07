@@ -51,9 +51,10 @@ var body = document.body;
 menu.addEventListener('click', (e) => {
   if (screenWidth > 1000) {
     window.location.href = 'menu.php';
+  } else {
+    return;
   }
 });
-
 
 // -- Action réalisée lorsque les conditions du dropdown sont valides
 const action = () => {
