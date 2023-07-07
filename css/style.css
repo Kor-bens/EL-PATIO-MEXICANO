@@ -13,12 +13,39 @@ body {
     background-attachment: fixed;
 }
 
-.mt-4 {
-    margin-top: 40px;
+.mtb-4{
+    margin-top: 46px;
+}
+.mtb-16{
+    margin-top: 16px;
+}
+.mtb-24{
+    margin-top: 27px;
 }
 
-.fsclamp3 {
-    font-size: clamp(0.6rem, 0.65rem + 1vw, 1.5rem + 2vw);
+/* .mt-p{
+margin-top: clamp(8px, 1.5vw,16px);
+}
+.mt-m{
+    margin-top: clamp(13px, 2.55vw, 27px);
+}
+.mt-l{
+    margin-top: clamp(23px,4.34vw,46px);
+} */
+.fs-clamp-b{
+    font-size: 1rem;
+}
+.fs-clamp-h{
+   font-size:  2.5rem;
+}
+.fs-clamp-p{
+   font-size: 1.8rem;
+}
+.fs-f-h{
+    font-size: 1.6rem;
+}
+.fs-f-p{
+    font-size: 1.3rem;
 }
 
 .orange {
@@ -97,7 +124,7 @@ a {
     padding: 1%;
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
-    font-size: 15px;
+    /* font-size: clamp(1rem, 0.1rem + 1vw, 1.5rem + 1vw); */
 }
 
 #consulter-le-menu:hover {
@@ -112,13 +139,12 @@ a {
 #p-description {
     padding-top: 2%;
     padding-bottom: 2%;
-    font-size: 22px;
-    width: 50%;
+    width: 85%;
     margin: 0 auto;
     color: white;
     text-align: center;
     text-shadow: 3px 3px 3px black;
-    font-size: clamp(0.6rem, 0.65rem + 1vw, 1.5rem + 2vw);
+    /* font-size: clamp(0.6rem, 0.65rem + 1vw, 1.5rem + 2vw); */
     overflow: auto;
 
 
@@ -141,7 +167,7 @@ a {
     background-size: cover;
     width: 100%;
     height: 50vh;
-    margin-top: 16px;
+    
     box-shadow: inset 3px 3px 20px 8px #6d6969cc;
 }
 
@@ -150,7 +176,7 @@ a {
     box-sizing: border-box;
     align-items: center;
     margin: auto;
-    margin-top: 16px;
+    margin-bottom: 16px;
     height: 50vh;
     width: 100%;
     display: grid;
@@ -172,7 +198,7 @@ a {
 .titre-description {
     grid-area: titre;
     white-space: nowrap;
-    font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw);
+    /* font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw); */
     padding: 10px;
     margin: auto;
     text-shadow: 3px 3px 3px black;
@@ -180,7 +206,7 @@ a {
 
 /*PROPRIETE POUR TOUS LES TEXTES DES BLOCS DESCRIPTIONS*/
 .p-description {
-    font-size: clamp(1rem, 0.75rem + 1vw, 1.5rem + 1vw);
+    /* font-size: clamp(1rem, 0.75rem + 1vw, 1.5rem + 1vw); */
     grid-area: desc;
     text-align: center;
     overflow: auto;
@@ -260,12 +286,10 @@ a {
     margin: 0 auto;
     padding: 1%;
     grid-row: 9;
-    font-size: clamp(0.1rem, 0.6rem + 1vw, 1.5rem + 1vw);
 }
 
 /*BLOC SAVOIR FAIRE ORGANISATION DEVENEMENT (SITUER SOUS LES BLOCS DESCRIPTION /IMAGE) QUI ENGLOBE BLOC SAVOIR FAIRE ET BLOC ORGANISATION DEVENEMENT*/
 #bloc-savoir-faire-organisation-devenement {
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,7 +300,6 @@ a {
 
 /*POSITION DU BLOC SAVOIR-FAIRE*/
 #bloc-savoir-faire {
-    padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -286,6 +309,7 @@ a {
 #titre-bloc-savoir-faire {
     color: green;
     font-family: 'mexicain';
+    margin-bottom: 0;
 }
 
 /*TRAIT SOUS LE TITRE DU BLOC SAVOIR-FAIRE*/
@@ -298,18 +322,19 @@ a {
     opacity: 1;
     transform: rotateX(180deg);
     z-index: 1;
+    margin-bottom: 0;
 }
 
 /*PROPRIETE TAILLE DE POLICE ET LARGEUR POUR LE TEXTE DU BLOC SAVOIR-FAIRE*/
 #description-savoir-faire {
-    font-size: 24px;
-    width: 80%;
+ 
+    width: 80% ;
 }
 
 /*LARGEUR DU BLOC ORGANISATION-DEVENEMENT*/
 #bloc-organisation-devenement {
     width: 100%;
-    padding: 32px;
+   
 }
 
 /*TITRE DU BLOC ORGANISATION-DEVENEMENT*/
@@ -318,6 +343,7 @@ a {
     font-family: 'mexicain';
     width: fit-content;
     margin: auto;
+    margin-top: 24px;
 }
 
 /*TRAIT SOUS LE TITRE DU BLOC ORGANISATION DEVENEMENT*/
@@ -336,7 +362,6 @@ a {
 #p-1-description-oraganisation-devenement {
     color: white;
     display: flex;
-    font-size: 24px;
     width: 50vw;
     margin: 24px auto;
 }
@@ -344,7 +369,7 @@ a {
 /*PROPRIETE DU 2EME PARAGRAPHE DU BLOC ORGANISATION DEVENEMENT*/
 #p-2-description-oraganisation-devenement {
     color: white;
-    font-size: 24px;
+    
 }
 
 /*PROPRIETE DU LIEN DU BLOC ORGANISATION DEVENEMENT*/
@@ -353,11 +378,10 @@ a {
     padding: 1%;
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
-    font-size: 15px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 24px;
 }
 
 #bloc-contact:hover {
@@ -376,7 +400,7 @@ a {
     display: grid;
     grid-template-columns: 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3%;
     justify-content: center;
-    margin-top: 40px;
+   
 }
 
 /*POSITION DU BLOC QUI CONTIENT LE LOGO DANS LE PARENT FOOTER*/
@@ -406,15 +430,16 @@ a {
 /*TITRE DU BLOC FOOTER CARTE*/
 #titre-restaurant-footer {
     color: white;
-    font-size: 1.4rem;
-    margin-top: 65px;
+    width: 101%;
+    margin-bottom: 0;
 }
 
 /*PARAGRAPHE DU BLOC FOOTER CARTE*/
 #p-adresse-restaurant-footer {
     color: white;
-    font-size: 1.2rem;
-    width: 80%;
+    width: 130%;
+    margin-bottom: 0;
+
 }
 
 /*DIMENSIONS DE LA CARTE DU BLOC FOOTER CARTE*/
@@ -435,7 +460,7 @@ a {
 
 /*TAILLE DES LOGO*/
 .logo-img {
-    width: 64px;
+    width: 70px;
 }
 
 /*POSITION DU BLOC FOOTER HORAIRE DANS LE PARENT FOOTER*/
@@ -457,21 +482,19 @@ a {
 
 /*TITRE DU BLOC LISTE HORAIRE*/
 #p-horaire {
-    font-size: 1.4rem;
     width: 100%;
 }
 
 /*PROPRIETE POUR LA LISTE HORAIRE*/
 #liste-horaire li {
     padding: 0;
-    font-size: 1.2rem;
-    line-height: 2.3;
+    line-height: 2.5;
 }
 
 /* Personnaliser la scrollbar */
 
 body {
-    --scrollbar-width: 2vw;
+    --scrollbar-width: 1.3vw;
 }
 
 body::-webkit-scrollbar {
@@ -481,7 +504,6 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
     background-image: url('../Ressources/bg-image.jpg');
-    opacity: 0.8;
     /* color of the tracking area */
 }
 
@@ -494,21 +516,33 @@ body::-webkit-scrollbar-thumb {
     /* creates padding around scroll thumb */
 }
 
-
-/*BLOCS DE PLATS (TITRE, IMAGE, DESCRIPTION) */
-/* .bloc-plat{
-    width: 50%;
-} */
-
-
-
-@media only screen and (min-width: 320px) and (max-width: 650px) {
+@media screen and (max-width: 426px) {
+    .mtb-4{
+        margin-top: 46px;
+    }
+    .mtb-16{
+        margin-top: 16px;
+    }
+    .mtb-24{
+        margin-top: 27px;
+    }
+   
+   
     #description {
         margin-top: 0;
     }
 
     .container-bloc {
         margin-top: 0;
+    }
+    .container-bloc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-bloc div {
+        margin: 6%;
     }
 
     .container-img-description {
@@ -555,17 +589,10 @@ body::-webkit-scrollbar-thumb {
         margin-bottom: 5px;
     }
 
-    .bloc-description-lien {
-        font-size: clamp(0.8rem, 0.45rem + 1vw, 1.5rem + 1vw);
-    }
+
 
     #p-description {
         width: 100%;
-        font-size: 1.2rem;
-    }
-
-    .p-description {
-        font-size: 1.2rem;
     }
 
     #p-1-description-oraganisation-devenement {
@@ -577,8 +604,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     #bloc-contact {
-        width: 100%;
-
+        width: 35%;
     }
 
 
@@ -599,18 +625,18 @@ body::-webkit-scrollbar-thumb {
 
     .bloc-footer.carte {
         align-items: center;
-        margin-top: -30px;
+        margin-top: 30px;
     }
 
     #titre-restaurant-footer {
         color: white;
-        font-size: 1.2rem;
+        text-align: center;
+
     }
 
     #p-adresse-restaurant-footer {
         color: rgb(255, 255, 255);
-        font-size: 1.2rem;
-        width: 70%;
+        width: 65%;
         margin-top: 0;
         align-self: center;
         text-align: center;
@@ -619,6 +645,7 @@ body::-webkit-scrollbar-thumb {
     #carte-adresse {
         width: 100%;
         height: 20vh;
+        margin-top: 10px;
     }
 
     .bloc-footer.logo-sociaux {
@@ -653,29 +680,48 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-
-@media screen and (max-width: 426px) {
-
-    .container-bloc {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .container-bloc div {
-        margin: 6%;
-    }
-
-    #titre-bloc-organisation-devenement {
-        width: min-content;
-    }
-
-    /* .titre-test {
-        font-size: clamp(1rem + 3vw, 0.85rem + 5vw, 1.5rem + 8vw);
-    }
-
-    .desc-test {
-        font-size: clamp(0.8rem + 1vw, 0.85rem + 1vw, 1.5rem + 3vw);
-        margin: auto 5%;
-    } */
+@media screen and (max-width: 768px) {
+#p-description{
+    width: 90%;
+    text-align: center;
+    
+}
+#bloc-contact {
+    width: auto;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.contain-img.deux {
+    height: 100px;
+}
+#titre-restaurant-footer {
+    width: 100%;
+    margin-bottom: 0;
+}
+#p-adresse-restaurant-footer {
+    margin-bottom: 0;
+}
+#logo-patroñ-footer {
+    width: 70%;
+    border-radius: 150px;
+}
+.logo-img {
+    width: 60px;
+}
+.fs-clamp-b{
+    font-size: 1.1rem;
+}
+.fs-clamp-h{
+   font-size:  1.5rem;
+}
+.fs-clamp-p{
+   font-size: 1.15rem;
+}
+.fs-f-h{
+    font-size: 1.1rem;
+}
+.fs-f-p{
+    font-size: 1rem;
+}
+   
 }
