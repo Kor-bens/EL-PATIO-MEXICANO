@@ -5,6 +5,7 @@
 
     <div class="contain-img">
         <!-- <img id="plats-table" src="../Ressources/plats-table.jpg" alt="plats-table"> -->
+
         <a id="consulter-le-menu" class="vert text-white text-decoration-none fs-s" href="menu.php">CONSULTER LE MENU</a>
     </div>
 
@@ -26,6 +27,7 @@
 
             <div class="bloc-image deux"></div>
             <div class="bloc-description deux orange">
+
                 <p class="p-description text-white fs-m">EN PLUS NOS PLATS SONT TROP BONS !!!</p>
                 <div class="vert btn">
                     <a class="bloc-description-lien  text-white text-decoration-none fs-s" href="menu.php">CONSULTEZ LE MENU</a>
@@ -49,7 +51,6 @@
             </div>
         </div>
     </div>
-
     <div id="bloc-savoir-faire-organisation-devenement" class="mt-l">
         <div id="bloc-savoir-faire">
             <h2 id="titre-bloc-savoir-faire" class="fs-l">SAVOIR-FAIRE<hr id="trait-1"></h2>            
