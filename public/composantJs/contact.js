@@ -1,5 +1,6 @@
 // ************* VÉRIFICATION DE FORMULAIRE *************
-
+let boutonValider = document.querySelector('input[value="Envoyer"]');
+let formulaire = document.querySelector('form');
 
 // ----- Échapper le code HTML
 
@@ -8,9 +9,10 @@ let allInput = document.querySelectorAll('input');
 
 allInput.forEach(element => {
     // Pour chacune, on vérifie si on a rentré du code HTML sur clic sur un autre champ
-    element.addEventListener('change', () => {
+    formulaire.addEventListener('submit', (e) => {
         if (element.value !== escapeHtml(element.value)) {
             // Si c'est le cas, on alerte et on vide le champ
+            e.preventDefault();
             alert("Ne tentez pas d'insérer du code dans ce formulaire.");
             element.value = "";
         }
@@ -38,18 +40,25 @@ function escapeHtml(text) {
 let nomEtPrenom = document.querySelectorAll('input[name*="nom"]');
 
 nomEtPrenom.forEach(element => {
-    element.addEventListener('change', () => {
+    formulaire.addEventListener('submit', (e) => {
         // Dès qu'on clique sur un autre champ, on vérifie :
 
         // On convertit le texte en array
         let array = element.value.split("");
 
+        let chiffreDansChamp = false;
         // On vérifie que chaque caractère n'est pas un chiffre
         array.forEach(letter => {
             if (parseInt(letter) == letter) {
-                alert('Vous ne pouvez pas taper de chiffre dans ce champ.');
+                chiffreDansChamp = true;
             }
         });
+        if (chiffreDansChamp === true) {
+            e.preventDefault();
+            alert('Vous ne pouvez pas taper de chiffre dans ce champ.');
+            element.value = "";
+            element.style.border = "5px solid red";
+        }
     });
 });
 
@@ -60,9 +69,10 @@ const regex = /^(\+\d{1,3}\s?)?(\(\d{1,3}\)\s?)?\d{1,4}(\s?-?\d{1,4}){1,3}$/;
 const telephone = document.querySelector('input[name="telephone"]');
 
 // Dès qu'on clique sur un autre champ, on vérifie le téléphone par rapport au regex :
-telephone.addEventListener('change', () => {
+formulaire.addEventListener('submit', () => {
     const isValid = regex.test(telephone.value);
     if (!isValid) {
+        e.preventDefault();
         alert('Veuillez taper une numéro de téléphone valide, sans espaces.');
         telephone.value = "";
     }
