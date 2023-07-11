@@ -1,4 +1,5 @@
 // ************* VÉRIFICATION DE FORMULAIRE *************
+
 let boutonValider = document.querySelector('input[value="Envoyer"]');
 let formulaire = document.querySelector('form');
 
@@ -9,6 +10,7 @@ let allInput = document.querySelectorAll('input');
 
 allInput.forEach(element => {
     // Pour chacune, on vérifie si on a rentré du code HTML sur clic sur un autre champ
+
     formulaire.addEventListener('submit', (e) => {
         if (element.value !== escapeHtml(element.value)) {
             // Si c'est le cas, on alerte et on vide le champ
@@ -41,6 +43,7 @@ let nomEtPrenom = document.querySelectorAll('input[name*="nom"]');
 
 nomEtPrenom.forEach(element => {
     formulaire.addEventListener('submit', (e) => {
+
         // Dès qu'on clique sur un autre champ, on vérifie :
 
         // On convertit le texte en array
