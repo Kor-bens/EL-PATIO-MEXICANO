@@ -13,37 +13,6 @@ body {
     background-attachment: fixed;
 }
 
-.mt-l {
-    margin-top: 46px;
-}
-
-.mt-s {
-    margin-top: 16px;
-}
-
-.mt-m {
-    margin-top: 27px;
-}
-
-.fs-s {
-    font-size: 1rem;
-}
-
-.fs-l {
-    font-size: 2rem;
-}
-
-.fs-m {
-    font-size: 1.3rem;
-}
-
-.fs-footer-l {
-    font-size: 1.7rem;
-}
-
-.fs-footer-s {
-    font-size: 1rem;
-}
 
 .orange {
     background-image: url('/Ressources/tissu-orange-2.jpg');
@@ -77,7 +46,7 @@ body {
 
 #logo-patroñ {
     width: 100px;
-    border-radius: 50%;
+    border-radius: 100px;
     margin-right: 30px;
 }
 
@@ -118,7 +87,7 @@ a {
     height: 50vh;
 } */
 #consulter-le-menu {
-    padding: 1%;
+    padding: 0.5%;
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
     /* font-size: clamp(1rem, 0.1rem + 1vw, 1.5rem + 1vw); */
@@ -164,7 +133,7 @@ a {
     background-size: cover;
     width: 100%;
     height: 50vh;
-
+    
     box-shadow: inset 3px 3px 20px 8px #6d6969cc;
 }
 
@@ -181,24 +150,25 @@ a {
     grid-template-rows: 0.85fr 0.7fr 1fr 1fr 1fr 0.5fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-        "titre titre titre"
-        "titre titre titre"
+        ". . ."
         "desc desc desc"
         "desc desc desc"
         "desc desc desc"
         "desc desc desc"
+        ". . ."
         "btn btn btn";
     box-shadow: 2px 1px 20px 4px black;
 }
 
 /*PROPRIETE TITRE POUR TOUS LES TITRES DES BLOCS DESCRIPTION */
 .titre-description {
-    grid-area: titre;
-    white-space: nowrap;
-    word-wrap: normal;
+    /* grid-area: titre; */
+    /* white-space: nowrap; */
     /* font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw); */
     padding: 10px;
-    margin: auto;
+    font-family: "mexicain";
+    color: green;
+text-align: center;
     text-shadow: 3px 3px 3px black;
 }
 
@@ -311,7 +281,7 @@ a {
 }
 
 /*TRAIT SOUS LE TITRE DU BLOC SAVOIR-FAIRE*/
-#trait-1 {
+.trait-1 {
     height: 2px;
     width: 100% !important;
     background-color: orange;
@@ -325,21 +295,21 @@ a {
 
 /*PROPRIETE TAILLE DE POLICE ET LARGEUR POUR LE TEXTE DU BLOC SAVOIR-FAIRE*/
 #description-savoir-faire {
-
-    width: 80%;
+ 
+    width: 80% ;
 }
 
 /*LARGEUR DU BLOC ORGANISATION-DEVENEMENT*/
 #bloc-organisation-devenement {
     width: 100%;
-
+   
 }
 
 /*TITRE DU BLOC ORGANISATION-DEVENEMENT*/
 #titre-bloc-organisation-devenement {
     color: white;
     font-family: 'mexicain';
-    width: fit-content;
+    /* width: fit-content; */
     margin: auto;
     margin-top: 24px;
 }
@@ -367,7 +337,7 @@ a {
 /*PROPRIETE DU 2EME PARAGRAPHE DU BLOC ORGANISATION DEVENEMENT*/
 #p-2-description-oraganisation-devenement {
     color: white;
-
+    
 }
 
 /*PROPRIETE DU LIEN DU BLOC ORGANISATION DEVENEMENT*/
@@ -398,7 +368,7 @@ a {
     display: grid;
     grid-template-columns: 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3%;
     justify-content: center;
-
+   
 }
 
 /*POSITION DU BLOC QUI CONTIENT LE LOGO DANS LE PARENT FOOTER*/
@@ -428,7 +398,7 @@ a {
 /*TITRE DU BLOC FOOTER CARTE*/
 #titre-restaurant-footer {
     color: white;
-    width: 101%;
+    width: 100%;
     margin-bottom: 0;
 }
 
@@ -486,7 +456,7 @@ a {
 /*PROPRIETE POUR LA LISTE HORAIRE*/
 #liste-horaire li {
     padding: 0;
-    line-height: 2.5;
+    /* line-height: 2.5; */
 }
 
 /* Personnaliser la scrollbar */
@@ -514,32 +484,135 @@ body::-webkit-scrollbar-thumb {
     /* creates padding around scroll thumb */
 }
 
-@media screen and (max-width: 426px) {
-    .mt-l {
+
+
+
+
+
+/* @media screen and (min-width:769px) and (max-width: 1439px) {
+    .fst-2{
+        font-size:  1.5rem;
+     }
+     .fsp-3{
+        font-size: 1.3rem;
+     }
+} */
+
+
+
+@media screen and (max-width: 768px) {
+#p-description{
+    width: 90%;
+    text-align: center;
+    
+}
+#bloc-contact {
+    width: auto;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+
+.contain-img.deux {
+    height: 100px;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc-footer.logo-patron {
+    display: flex;
+    margin-top: 30px;
+}
+
+#logo-patroñ-footer {
+    width: 30%;
+    border-radius: 300px;
+}
+
+.bloc-footer.carte {
+    align-items: center;
+    margin-top: 30px;
+}
+
+#titre-restaurant-footer {
+    color: white;
+    text-align: center;
+
+}
+
+#p-adresse-restaurant-footer {
+    color: rgb(255, 255, 255);
+    width: 65%;
+    margin-top: 0;
+    align-self: center;
+    text-align: center;
+}
+
+#carte-adresse {
+    width: 100%;
+    height: 20vh;
+    margin-top: 10px;
+}
+
+.bloc-footer.logo-sociaux {
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.bloc-footer.horaire {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#liste-horaire {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: flex-start;
+}
+
+#p-horaire {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+#liste-horaire li {
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1.1;
+}
+.logo-img {
+    width: 60px;
+}
+/* .fs-clamp-b{ de 12px a 14px min vw 426px max vw 768px */
+    /* font-size: clamp(0.75rem, 0.6607rem + 0.4464vw, 0.875rem)!important;
+} */
+/* .fst-1{24px a 48px */
+    /* font-size: clamp(1.5rem, 0.4286rem + 5.3571vw, 3rem)!important;
+}
+.fst-2{
+    font-size: clamp(1rem, -0.0714rem + 5.3571vw, 2.5rem)!important;
+} */
+
+   
+}@media screen and (max-width: 426px) {
+    .mtb-4{
         margin-top: 46px;
     }
-
-    .ms-s {
+    .mtb-16{
         margin-top: 16px;
     }
-
-    .mt-m {
+    .mtb-24{
         margin-top: 27px;
     }
-
-    .fs-s {
-        font-size: 1rem !important;
-    }
-
-    .fs-l {
-        font-size: 2rem !important;
-    }
-
-    .fs-m {
-        font-size: 1.3rem !important;
-    }
-
-
+   
+   
     #description {
         margin-top: 0;
     }
@@ -547,7 +620,6 @@ body::-webkit-scrollbar-thumb {
     .container-bloc {
         margin-top: 0;
     }
-
     .container-bloc {
         display: flex;
         flex-direction: column;
@@ -619,11 +691,6 @@ body::-webkit-scrollbar-thumb {
     }
 
 
-}
-
-
-@media screen and (max-width: 768px) {
-
     #footer {
         display: flex;
         flex-direction: column;
@@ -635,8 +702,8 @@ body::-webkit-scrollbar-thumb {
     }
 
     #logo-patroñ-footer {
-        width: 40%;
-        border-radius: 50%;
+        width: 50%;
+        border-radius: 300px;
     }
 
     .bloc-footer.carte {
@@ -647,6 +714,7 @@ body::-webkit-scrollbar-thumb {
     #titre-restaurant-footer {
         color: white;
         text-align: center;
+
     }
 
     #p-adresse-restaurant-footer {
@@ -655,8 +723,6 @@ body::-webkit-scrollbar-thumb {
         margin-top: 0;
         align-self: center;
         text-align: center;
-        width: 100%;
-        margin-bottom: 0;
     }
 
     #carte-adresse {
@@ -694,45 +760,4 @@ body::-webkit-scrollbar-thumb {
         font-size: 1.2rem;
         line-height: 1.1;
     }
-
-    #p-description {
-        width: 90%;
-        text-align: center;
-
-    }
-
-    #bloc-contact {
-        width: auto;
-        margin-left: 40%;
-        margin-right: 40%;
-    }
-
-    .contain-img.deux {
-        height: 100px;
-    }
-
-    .logo-img {
-        width: 60px;
-    }
-
-    .fs-s {
-        font-size: 0.7rem;
-    }
-
-    .fs-l {
-        font-size: 1.3rem;
-    }
-
-    .fs-m {
-        font-size: 1.05rem;
-    }
-
-    .fs-footer-l {
-        font-size: 1.1rem;
-    }
-
-    .fs-footer-s {
-        font-size: 1rem;
-    }
-
 }

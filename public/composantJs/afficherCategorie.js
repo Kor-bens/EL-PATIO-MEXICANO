@@ -54,26 +54,26 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // Un titre
 
         const nomPlat = document.createElement("h1");
-        nomPlat.classList.add("nom-plat");
+        nomPlat.classList.add("nom-plat", "fst-3");
         nomPlat.textContent = element.title;
         divARemplir.appendChild(nomPlat);
 
         // Un prix
 
         const prixPlat = document.createElement("p");
-        prixPlat.classList.add("prix-plat");
+        prixPlat.classList.add("prix-plat", "fsp-3");
         prixPlat.textContent = `${element.prix} €`;
         divARemplir.appendChild(prixPlat);
 
         // Une description
         const dsption = document.createElement("p");
-        dsption.classList.add("description-plat");
+        dsption.classList.add("description-plat", "fsp-3");
         dsption.textContent = element.description;
         divARemplir.appendChild(dsption);
 
         // Les éléments spoilés...
         const div = document.createElement("div");
-        div.classList.add("d-none", "infos-div");
+        div.classList.add("d-none", "infos-div", "fsp-4");
         div.setAttribute("id", `spoiler-content-${categorie}${index}`);
 
         // ...À savoir les ingrédients...
@@ -107,7 +107,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
 
         // Un bouton "plus d'infos" pour les afficher
         const bouton = document.createElement("button");
-        bouton.classList.add("btn", "vert", "text-white", "spoiler-btn");
+        bouton.classList.add("btn", "vert", "text-white", "spoiler-btn", "fsb-3");
         bouton.setAttribute("target", `#spoiler-content-${categorie}${index}`);
         bouton.textContent = "Plus d'infos";
         divARemplir.appendChild(bouton);
@@ -185,7 +185,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // On crée un bouton dans le DOM, on lui met les attributs pour qu'il ait un style
         // Attention à ne pas lui mettre "spoiler-btn", ou il aura le même comportement que les autres.
         let nouveauBouton = document.createElement('button');
-        nouveauBouton.classList.add("vert", "text-white", `afficher-${moinsOuTous}`, "btn");
+        nouveauBouton.classList.add("vert", "text-white", `afficher-${moinsOuTous}`, "btn-menu", "mtb-24", "fsb-3");
         nouveauBouton.setAttribute('id', `afficher${moinsOuTous}${categorie}`);
         nouveauBouton.innerText = `Afficher ${moinsOuTous}`;
 

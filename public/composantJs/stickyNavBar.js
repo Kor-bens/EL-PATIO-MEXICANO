@@ -47,14 +47,11 @@ let dropdown = document.querySelector('.dropdown-menu');
 var body = document.body;
 
 // On change le comportement lors du clic directement sur "menu"
-
-menu.addEventListener('click', (e) => {
-  if (screenWidth > 1000) {
+if (screenWidth > 1000) {
+  menu.addEventListener('click', (e) => {
     window.location.href = 'menu.php';
-  } else {
-    return;
-  }
-});
+  });
+}
 
 // -- Action réalisée lorsque les conditions du dropdown sont valides
 const action = () => {
@@ -102,7 +99,7 @@ window.addEventListener('resize', () => {
 });
 
 
-if (screenWidth > 1000) {
+if (screenWidth > 769) {
   gererMenu();
 }
 
