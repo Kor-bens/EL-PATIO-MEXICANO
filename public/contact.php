@@ -1,6 +1,6 @@
 
 <?php require("common/header.php") ?>    
-    <link rel="stylesheet" href="/css/style-contact-contain-img.css">
+    <link rel="stylesheet" href="/css/contact.css">
 </head>
 
 <body>

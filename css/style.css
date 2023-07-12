@@ -133,7 +133,7 @@ a {
     background-size: cover;
     width: 100%;
     height: 50vh;
-    
+
     box-shadow: inset 3px 3px 20px 8px #6d6969cc;
 }
 
@@ -162,13 +162,12 @@ a {
 
 /*PROPRIETE TITRE POUR TOUS LES TITRES DES BLOCS DESCRIPTION */
 .titre-description {
-    /* grid-area: titre; */
-    /* white-space: nowrap; */
-    /* font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw); */
+    width: max-content;
+    margin: auto;
     padding: 10px;
     font-family: "mexicain";
     color: green;
-text-align: center;
+    text-align: center;
     text-shadow: 3px 3px 3px black;
 }
 
@@ -295,29 +294,64 @@ text-align: center;
 
 /*PROPRIETE TAILLE DE POLICE ET LARGEUR POUR LE TEXTE DU BLOC SAVOIR-FAIRE*/
 #description-savoir-faire {
- 
-    width: 80% ;
+
+    width: 80%;
 }
 
 /*LARGEUR DU BLOC ORGANISATION-DEVENEMENT*/
 #bloc-organisation-devenement {
     width: 100%;
-   
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 /*TITRE DU BLOC ORGANISATION-DEVENEMENT*/
-#titre-bloc-organisation-devenement {
+#bloc-organisation-devenement #titre-bloc-organisation-devenement {
     color: white;
     font-family: 'mexicain';
-    /* width: fit-content; */
-    margin: auto;
     margin-top: 24px;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+}
+
+#titre-bloc-organisation-devenement {
+    width: min-content;
+}
+
+/* Pseudo-élément pour le trait vert */
+#bloc-organisation-devenement #titre-bloc-organisation-devenement::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: green;
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 768px) {
+    #bloc-organisation-devenement #titre-bloc-organisation-devenement {
+        white-space: normal;
+        /* Permet au texte de se wrap sur plusieurs lignes */
+    }
+}
+
+#bloc-organisation-devenement * {
+    white-space: normal;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 /*TRAIT SOUS LE TITRE DU BLOC ORGANISATION DEVENEMENT*/
 #trait-2 {
     height: 2px;
-    width: 100% !important;
+    width: 100%;
     background-color: green;
     position: relative;
     bottom: 12px;
@@ -337,7 +371,7 @@ text-align: center;
 /*PROPRIETE DU 2EME PARAGRAPHE DU BLOC ORGANISATION DEVENEMENT*/
 #p-2-description-oraganisation-devenement {
     color: white;
-    
+
 }
 
 /*PROPRIETE DU LIEN DU BLOC ORGANISATION DEVENEMENT*/
@@ -368,7 +402,7 @@ text-align: center;
     display: grid;
     grid-template-columns: 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3% 8.3%;
     justify-content: center;
-   
+
 }
 
 /*POSITION DU BLOC QUI CONTIENT LE LOGO DANS LE PARENT FOOTER*/
@@ -501,118 +535,125 @@ body::-webkit-scrollbar-thumb {
 
 
 @media screen and (max-width: 768px) {
-#p-description{
-    width: 90%;
-    text-align: center;
-    
-}
-#bloc-contact {
-    width: auto;
-    margin-left: 40%;
-    margin-right: 40%;
-}
+    #p-description {
+        width: 90%;
+        text-align: center;
+
+    }
+
+    #bloc-contact {
+        width: auto;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
 
 
-.contain-img.deux {
-    height: 100px;
-}
+    .contain-img.deux {
+        height: 100px;
+    }
 
-#footer {
-    display: flex;
-    flex-direction: column;
-}
+    #footer {
+        display: flex;
+        flex-direction: column;
+    }
 
-.bloc-footer.logo-patron {
-    display: flex;
-    margin-top: 30px;
-}
+    .bloc-footer.logo-patron {
+        display: flex;
+        margin-top: 30px;
+    }
 
-#logo-patroñ-footer {
-    width: 30%;
-    border-radius: 300px;
-}
+    #logo-patroñ-footer {
+        width: 30%;
+        border-radius: 300px;
+    }
 
-.bloc-footer.carte {
-    align-items: center;
-    margin-top: 30px;
-}
+    .bloc-footer.carte {
+        align-items: center;
+        margin-top: 30px;
+    }
 
-#titre-restaurant-footer {
-    color: white;
-    text-align: center;
+    #titre-restaurant-footer {
+        color: white;
+        text-align: center;
 
-}
+    }
 
-#p-adresse-restaurant-footer {
-    color: rgb(255, 255, 255);
-    width: 65%;
-    margin-top: 0;
-    align-self: center;
-    text-align: center;
-}
+    #p-adresse-restaurant-footer {
+        color: rgb(255, 255, 255);
+        width: 65%;
+        margin-top: 0;
+        align-self: center;
+        text-align: center;
+    }
 
-#carte-adresse {
-    width: 100%;
-    height: 20vh;
-    margin-top: 10px;
-}
+    #carte-adresse {
+        width: 100%;
+        height: 20vh;
+        margin-top: 10px;
+    }
 
-.bloc-footer.logo-sociaux {
-    flex-direction: row;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
+    .bloc-footer.logo-sociaux {
+        flex-direction: row;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
 
-.bloc-footer.horaire {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
+    .bloc-footer.horaire {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
 
-#liste-horaire {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: flex-start;
-}
+    #liste-horaire {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: flex-start;
+    }
 
-#p-horaire {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-top: 5px;
-}
+    #p-horaire {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 5px;
+    }
 
-#liste-horaire li {
-    padding: 0;
-    font-size: 1.2rem;
-    line-height: 1.1;
-}
-.logo-img {
-    width: 60px;
-}
-/* .fs-clamp-b{ de 12px a 14px min vw 426px max vw 768px */
+    #liste-horaire li {
+        padding: 0;
+        font-size: 1.2rem;
+        line-height: 1.1;
+    }
+
+    .logo-img {
+        width: 60px;
+    }
+
+    /* .fs-clamp-b{ de 12px a 14px min vw 426px max vw 768px */
     /* font-size: clamp(0.75rem, 0.6607rem + 0.4464vw, 0.875rem)!important;
 } */
-/* .fst-1{24px a 48px */
+    /* .fst-1{24px a 48px */
     /* font-size: clamp(1.5rem, 0.4286rem + 5.3571vw, 3rem)!important;
 }
 .fst-2{
     font-size: clamp(1rem, -0.0714rem + 5.3571vw, 2.5rem)!important;
 } */
 
-   
-}@media screen and (max-width: 426px) {
-    .mtb-4{
+
+}
+
+@media screen and (max-width: 426px) {
+    .mtb-4 {
         margin-top: 46px;
     }
-    .mtb-16{
+
+    .mtb-16 {
         margin-top: 16px;
     }
-    .mtb-24{
+
+    .mtb-24 {
         margin-top: 27px;
     }
-   
-   
+
+
     #description {
         margin-top: 0;
     }
@@ -620,6 +661,7 @@ body::-webkit-scrollbar-thumb {
     .container-bloc {
         margin-top: 0;
     }
+
     .container-bloc {
         display: flex;
         flex-direction: column;

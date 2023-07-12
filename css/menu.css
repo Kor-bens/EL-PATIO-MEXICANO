@@ -128,7 +128,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.7);
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,14 +238,15 @@ h2 {
     /* ----- PENSER À DONNER LA FONT-SIZE AVEC UN CLAMP ----- */
 }
 
-#tacos-titre{
+#tacos-titre {
     margin-bottom: 0;
 }
 
-#burritos-titre{
+#burritos-titre {
     margin-bottom: 0;
 }
-#fajitas-titre{
+
+#fajitas-titre {
     margin-bottom: 0;
 }
 
@@ -260,7 +261,7 @@ h2 {
 }
 
 .categorie-image {
-    margin-top:  46px;
+    margin-top: 46px;
 }
 
 .logo-restriction {
@@ -269,7 +270,7 @@ h2 {
     border-radius: 50%;
     /* margin-left: 50%;
     transform: translateX(-50%); */
-    
+
 }
 
 .bloc-texte-plat {
@@ -279,6 +280,7 @@ h2 {
     height: max-content;
     width: 100%;
     display: grid;
+    text-align: center;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.85fr 0.7fr 1fr 1fr 0.5fr 1fr;
     gap: 0px 0px;
@@ -369,36 +371,41 @@ h2 {
     width : 100%; */
 }
 
-.btn-menu{
+.btn-menu {
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
 }
-.btn-menu:hover{
+
+.btn-menu:hover {
     border-radius: 70px;
     opacity: 0.9;
     box-shadow: inset 1px 3px 18px 2px #000000ad;
 }
 
-#affichage-boissons{
- margin-bottom: 46px;
+#affichage-boissons {
+    margin-bottom: 46px;
 }
 
 
 @media screen and (max-width:426px) {
     .container-plats {
         display: block;
+        text-align: center;
     }
-    .bloc-texte-plat{
+
+    .bloc-texte-plat {
         margin-bottom: 10px;
     }
+
     .col-10 {
-        
+
         width: 100%;
     }
 
     .offset-1 {
         margin-left: 0;
     }
+
     .bloc-image-plat {
         display: none;
         height: unset !important;
@@ -424,7 +431,7 @@ h2 {
     .afficher-Moins {
         margin-top: 24px;
         /* transform: translateX(-50%); */
-        margin:5px auto;
+        margin: 5px auto;
     }
 
     .image-spoilee {
@@ -438,10 +445,12 @@ h2 {
         margin: 24px 0;
         box-shadow: 0 0 12px 1 #000000;
     }
-    .filtre-opaque{
+
+    .filtre-opaque {
         margin-top: 0;
     }
-    #affichage-entrées{
+
+    /* #affichage-entrées{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -453,7 +462,7 @@ h2 {
     }
     #affichage-boissons {
         margin-bottom: 0px;
-    }
+    } */
 }
 
 @media screen and (max-width:768px) {
