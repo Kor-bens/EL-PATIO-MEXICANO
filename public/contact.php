@@ -53,6 +53,7 @@
         <!-- <img id="plats-table" src="../Ressources/plats-table.jpg" alt="plats-table"> -->
     </div>
         <?php require("common/footer.php") ?>
+        <script src = "composantJs/contact.js"></script>
 
 </body>
 
