@@ -58,7 +58,7 @@
         </div>
 
         <div id="bloc-organisation-devenement" class="orange mtb-4">
-            <h2 id="titre-bloc-organisation-devenement" class="fst-2">ORGANISATION D'EVENEMENTS<hr id="trait-2"></h2>
+            <h2 id="titre-bloc-organisation-devenement" class="fst-2">ORGANISATION D'EVENEMENTS</h2>
             <p id="p-1-description-oraganisation-devenement" class="mtb-4 fsp-3">La salle de notre restaurant peut être privatisée pour l’organisation d’évènements (mariages, anniversaires, ...)</p>
             <p id="p-2-description-oraganisation-devenement" class="fsp-3">Contactez-nous pour de plus amples informations !</p>
             <a id="bloc-contact" class="vert text-white text-decoration-none fsb-3" href="contact.php">CONTACT</a>

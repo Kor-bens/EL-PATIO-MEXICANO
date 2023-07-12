@@ -1,3 +1,21 @@
+// ----- SOULIGNER UN ITEM DU MENU LORS DU SURVOL
+
+let navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(navLink => {
+  if (navLink.id != "menu") {
+    console.log(navLink);
+    navLink.addEventListener('mouseover', () => {
+      navLink.classList.add('underline');
+
+      navLink.addEventListener('mouseout', () => {
+        navLink.classList.remove('underline');
+      });
+    });
+  } else {
+  }
+});
+
 // ----- GÉRER L'ANIMATION DE LA NAVBAR SUIVANT LA MONTÉE OU LA DESCENTE DU SCROLL -----
 
 // -- On récupère les variables
