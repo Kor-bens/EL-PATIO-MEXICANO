@@ -1,6 +1,6 @@
-<div id="desserts" class="categorie-image">
+<div id="desserts" class="categorie-image mtb-4">
     <div class="filtre-opaque">
-        <h2 class="texte-vert text-center" id="desserts-titre">DESSERTS</h2>
+        <h2 class="texte-vert text-center fst-2" id="desserts-titre">DESSERTS</h2>
     </div>
 </div>
 

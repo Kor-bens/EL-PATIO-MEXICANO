@@ -1,12 +1,21 @@
 /* * {
     border: 1px solid red;
 } */
+:root{
+    margin: 0;
+    padding: 0;
+}
+html {
+    
+    margin: 0 !important;
+}
 
 body {
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
     background-image: url('../Ressources/bgimage.png');
     background-attachment: fixed;
+    
 }
 
 .orange {
@@ -35,14 +44,13 @@ body {
     background-size: cover;
     background-attachment: fixed;
     height: 20vh;
-    width: 100%;
+
 
 }
 
 /*CONTAINER AVEC 1 BLOC IMAGE ET 1 BLOC FORMULAIRE DE CONTACT*/
 #container-bloc {
     /* background: red; */
-    margin-top: 40px;
     display: grid;
     /* gap: 0px 30px; */
     grid-auto-rows: 1fr;
@@ -69,6 +77,7 @@ body {
     grid-area: img;
     grid-column: 1/3;
     grid-row: 1;
+
 }
 
 /*PROPRIETE POUR LE BLOC FORMULAIRE*/
@@ -93,7 +102,6 @@ body {
         "form form form";
     box-shadow: 2px 1px 20px 4px black;
     width: 100%;
-    margin-top: 16px;
 }
 
 
@@ -102,7 +110,7 @@ body {
     text-align: center;
     grid-area: titre;
     /* font-size: clamp(0.8rem + 1.5vw, 0.85rem + 2vw, 1.5rem + 5vw); */
-    font-size: clamp(40px, 1em, 1rem);
+    /* font-size: clamp(40px, 1em, 1rem); */
     padding: 10px;
     text-shadow: 3px 3px 3px black;
     color: white;
@@ -112,7 +120,7 @@ body {
 
 /*PROPRIETE LE FORMULAIRE*/
 #formulaire {
-    font-size: clamp(1rem, 0.65rem + 1.5vw, 1.5rem + 2vw);
+    /* font-size: clamp(1rem, 0.65rem + 1.5vw, 1.5rem + 2vw); */
     grid-area: form;
     display: flex;
     flex-direction: column;
@@ -149,19 +157,21 @@ select {
 #message {
     border-radius: 20px;
     color: rgb(255, 255, 255);
-    text-align: center;
+
 }
 
 /*TAILLE DE POLICE DES LABELS*/
 label {
-    font-size: clamp(1.7rem, 0.6rem + 1.5vw, 1.5rem + 2vw)
+    /* font-size: clamp(1.7rem, 0.6rem + 1.5vw, 1.5rem + 2vw) */
 }
 
 /*TAILLE DE POLICE DES INPUTS*/
 input {
     height: 5vh;
-    font-size: clamp(1.5rem, 0.6rem + 0.8vw, 1.5rem + 2vw) !important;
+    /* font-size: clamp(1.5rem, 0.6rem + 0.8vw, 1.5rem + 2vw) !important; */
+    /* font-size: 1.5rem; */
 }
+
 
 /*TAILLE DE POLICE DU TEXTAREA*/
 textarea {
@@ -176,7 +186,7 @@ textarea {
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
     color: white;
-    font-size: 1.3rem;
+    padding: 1%;
 }
 
 
@@ -199,7 +209,7 @@ textarea {
     background-attachment: fixed;
     height: 20vh;
     width: 100%;
-    margin-top: 40px;
+
 }
 
 /*FOOTER AVEC PROPRIETE DE POSITIONNEMENT POUR LES BLOC ENFANTS*/
@@ -309,7 +319,11 @@ textarea {
 
 
 
-@media only screen and (min-width: 320px) and (max-width: 650px) {
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
 
     #footer {
         display: flex;
@@ -322,7 +336,7 @@ textarea {
     }
 
     #logo-patroñ-footer {
-        width: 80%;
+        width: 50%;
         border-radius: 300px;
     }
 
@@ -384,14 +398,15 @@ textarea {
 
 
 @media screen and (max-width: 426px) {
+
     #container-bloc {
-        display: grid;
+        grid-template-columns: 1fr;
+
         grid-template-rows: 1fr 1fr;
+
     }
 
-    .container-bloc div {
-        margin: 6%;
-    }
+    .container-bloc div {}
 
     #titre-formulaire {
         font-size: clamp(26px + 1vw, 1em, 1rem);
@@ -405,6 +420,16 @@ textarea {
         margin-bottom: 5px;
     }
 
+    input {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    textarea {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
     .bloc-image {
         box-shadow: 2px 1px 20px 4px black;
         height: auto;
@@ -413,7 +438,7 @@ textarea {
         grid-area: img;
         grid-column: 1/5;
         grid-row: 1;
-
+        margin-bottom: 10px;
     }
 
     .bloc-formulaire {

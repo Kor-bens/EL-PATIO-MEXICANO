@@ -1,6 +1,6 @@
 <div id="boissons" class="categorie-image">
     <div class="filtre-opaque">
-        <h2 class="texte-vert text-center" id="boissons-titre">BOISSONS</h2>
+        <h2 class="texte-vert text-center fst-2" id="boissons-titre">BOISSONS</h2>
     </div>
 </div>
 

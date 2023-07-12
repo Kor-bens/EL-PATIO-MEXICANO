@@ -27,4 +27,4 @@
     </div>
 </nav>
 
-<script src="../public/composantJs/navbar.js"></script>
+<script src="../public/composantJs/stickyNavBar.js"></script>

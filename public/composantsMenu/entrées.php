@@ -1,6 +1,6 @@
-<div id="entrées" class="categorie-image">
+<div id="entrées" class="categorie-image mtb-4">
     <div class="filtre-opaque">
-        <h2 class="texte-vert text-center" id="entrées-titre">ENTRÉES</h2>
+        <h2 class="texte-vert text-center fst-2" id="entrées-titre">ENTRÉES</h2>
     </div>
 </div>
 

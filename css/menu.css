@@ -1,3 +1,6 @@
+/* *{
+    border: 1px solid red;
+} */
 .texte-vert {
     color: green;
     text-decoration: underline orange solid 2px;
@@ -40,7 +43,7 @@
 }
 
 :root {
-    --hauteur-fleche: 85vh;
+    --hauteur-fleche: 87.5vh;
 }
 
 #fleche {
@@ -53,7 +56,7 @@
     color: green;
     font-weight: 900;
     font-size: 3rem;
-    animation: bounce 0.35s ease infinite alternate;
+    animation: bounce 0.315s ease infinite alternate;
     /* ----- FAIRE UNE ANIMATION - SECOUÉE DE BAS EN HAUT ----- */
 }
 
@@ -70,22 +73,20 @@
 
 #menu-titre-div {
     position: relative;
-    top: 2vh;
     height: fit-content;
     width: 100%;
 }
 
 #description {
     width: 100%;
-    margin-top: calc(4vh + 40px);
     padding: 16px;
-    font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw);
+    /* font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw); */
 }
 
 #snacks-titre {
-    margin: 40px;
+    /* margin: 40px; */
     font-weight: 400;
-    font-size: 2rem;
+    /* font-size: 2rem; */
 }
 
 #snacks {
@@ -127,13 +128,14 @@
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.7);
+    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 h2 {
-    margin: 40px 0 !important;
+    /* margin: 40px 0 !important; */
 }
 
 #liens-ancres {
@@ -144,7 +146,7 @@ h2 {
     grid-row-gap: 24px;
     width: 80%;
     height: max-content;
-    margin: 40px 10%;
+    margin: 46px auto;
     justify-items: center;
 }
 
@@ -226,7 +228,8 @@ h2 {
 
 .ancre-link {
     text-decoration: none;
-    font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw);
+    /* font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw); */
+    /* font-size: 1.8rem; */
     width: 100%;
     height: 100%;
     display: flex;
@@ -235,8 +238,19 @@ h2 {
     /* ----- PENSER À DONNER LA FONT-SIZE AVEC UN CLAMP ----- */
 }
 
+#tacos-titre{
+    margin-bottom: 0;
+}
+
+#burritos-titre{
+    margin-bottom: 0;
+}
+#fajitas-titre{
+    margin-bottom: 0;
+}
+
 .container-plats {
-    margin-top: 40px;
+    margin-top: 24px;
     display: grid;
     justify-items: center;
     justify-content: center;
@@ -246,15 +260,16 @@ h2 {
 }
 
 .categorie-image {
-    margin: 40px 0;
+    margin-top:  46px;
 }
 
 .logo-restriction {
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    /* margin-left: 50%;
+    transform: translateX(-50%); */
+    
 }
 
 .bloc-texte-plat {
@@ -281,7 +296,7 @@ h2 {
     grid-area: titre;
     text-align: center;
     white-space: wrap;
-    font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw);
+    /* font-size: clamp(1rem + 1vw, 0.85rem + 2vw, 1.5rem + 5vw); */
     padding: 10px;
     margin: auto;
     text-shadow: 3px 3px 3px black;
@@ -289,7 +304,7 @@ h2 {
 
 .prix-plat {
     grid-area: prix;
-    font-size: clamp(1.2em, 0.8rem + 1vw, 1.8rem + 2vw);
+    /* font-size: clamp(1.2em, 0.8rem + 1vw, 1.8rem + 2vw); */
     text-align: center;
     overflow: auto;
     margin: 3%;
@@ -299,7 +314,7 @@ h2 {
 
 .description-plat {
     grid-area: desc;
-    font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw);
+    /* font-size: clamp(1rem, 0.65rem + 1vw, 1.5rem + 2vw); */
     text-align: center;
     overflow: auto;
     margin: 3%;
@@ -308,7 +323,7 @@ h2 {
 
 .bloc-texte-plat button {
     grid-area: btn;
-    margin: 5%;
+    margin-top: 5%;
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
 }
@@ -322,9 +337,11 @@ h2 {
 .infos-div {
     grid-area: ingr;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     padding: 0 10%;
+    /* text-align: center; */
+    /* font-size: 1.4rem; */
 }
 
 .infos-div ul {
@@ -352,17 +369,40 @@ h2 {
     width : 100%; */
 }
 
+.btn-menu{
+    border-radius: 20px;
+    box-shadow: 1px 3px 20px 2px #00000082;
+}
+.btn-menu:hover{
+    border-radius: 70px;
+    opacity: 0.9;
+    box-shadow: inset 1px 3px 18px 2px #000000ad;
+}
+
+#affichage-boissons{
+ margin-bottom: 46px;
+}
+
 
 @media screen and (max-width:426px) {
     .container-plats {
         display: block;
     }
+    .bloc-texte-plat{
+        margin-bottom: 10px;
+    }
+    .col-10 {
+        
+        width: 100%;
+    }
 
+    .offset-1 {
+        margin-left: 0;
+    }
     .bloc-image-plat {
         display: none;
         height: unset !important;
         grid-area: unset !important;
-        margin-top: 16px;
     }
 
     .image-plat {
@@ -373,7 +413,7 @@ h2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        grid-column-gap: 0;
+        grid-column-gap: 24px;
     }
 
     .ancre-link {
@@ -382,8 +422,9 @@ h2 {
 
     .afficher-Tous,
     .afficher-Moins {
-        margin-left: 50%;
-        transform: translateX(-50%);
+        margin-top: 24px;
+        /* transform: translateX(-50%); */
+        margin:5px auto;
     }
 
     .image-spoilee {
@@ -396,6 +437,22 @@ h2 {
         max-height: 100%;
         margin: 24px 0;
         box-shadow: 0 0 12px 1 #000000;
+    }
+    .filtre-opaque{
+        margin-top: 0;
+    }
+    #affichage-entrées{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #affichage-tacos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #affichage-boissons {
+        margin-bottom: 0px;
     }
 }
 
