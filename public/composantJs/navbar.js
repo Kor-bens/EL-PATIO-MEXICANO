@@ -58,6 +58,7 @@ window.onscroll = function () {
 
 
 // ----- GÉRER L'ANIMATION D'APPARITION DU MENU DÉROULANT LORS DU SURVOL
+
 function gererAnimation() {
 
   let menu = document.querySelector('#menu');
@@ -107,7 +108,7 @@ function gererAnimation() {
     if (dropdown.classList.contains('shown')) {
       dropdown.classList.remove('shown');
     }
-  }
 }
 window.addEventListener('load', gererAnimation);
 // window.addEventListener('resize', gererAnimation); -- N'est pas utilisé car lorsqu'on ajoute les eventListeners sur un resize supérieur à 991px, ça en ajoute beaucoup d'un coup, alors que lorsque le resize est inférieur ) 991px, ça n'en enlève qu'un seul à la fois, c'est donc inefficace.
+
