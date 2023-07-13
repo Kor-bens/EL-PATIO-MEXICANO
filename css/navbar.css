@@ -1,5 +1,5 @@
 /* Animation de navbar */
-@media screen and (min-width : 769px) {
+@media screen and (min-width : 991px) {
     @keyframes hideNavbar {
         0% {
             transform: translateY(0);
