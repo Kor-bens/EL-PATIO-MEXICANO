@@ -1,12 +1,13 @@
 /* * {
     border: 1px solid red;
 } */
-:root{
+:root {
     margin: 0;
     padding: 0;
 }
+
 html {
-    
+
     margin: 0 !important;
 }
 
@@ -15,7 +16,7 @@ body {
     padding: 0;
     background-image: url('../Ressources/bgimage.png');
     background-attachment: fixed;
-    
+
 }
 
 .orange {
@@ -62,10 +63,21 @@ body {
         ". img bloc-f ."; */
 }
 
-/* #container-bloc .bloc-image {
-    justify-self: end;
-} */
-
+/* Sur Chrome, éviter que le background d'un input
+    en auto-completion ne devienne blanc : */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid green;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #196434 inset;
+}
 
 
 /*PROPRIETE LE BLOC IMAGE*/
