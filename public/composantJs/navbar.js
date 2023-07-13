@@ -61,6 +61,7 @@ window.onscroll = function () {
 // ----- GÉRER L'ANIMATION D'APPARITION DU MENU DÉROULANT LORS DU SURVOL
 
 let isDone = false;
+let isDone = false;
 function gererAnimation() {
 
   let menu = document.querySelector('#menu');
@@ -106,7 +107,35 @@ function gererAnimation() {
     }
 
 
+    if (!isDone) {
+
+      menu.addEventListener('mouseover', action);
+      body.addEventListener("mousemove", getPosition);
+      menu.addEventListener('click', (e) => {
+        window.location.href = 'menu.php';
+      });
+      isDone = true;
+    }
+
+
   } else {
+    if (isDone) {
+      console.log(`screenWidth : ${screenWidth}`);
+      menu.removeEventListener('mouseover', action);
+      menu.removeEventListener('click', (e) => {
+        window.location.href = 'menu.php';
+      });
+      body.removeEventListener("mousemove", getPosition);
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+      }
+      if (dropdown.classList.contains('shown')) {
+        dropdown.classList.remove('shown');
+      }
+    }
+  }
+}
+
     if (isDone) {
       console.log(`screenWidth : ${screenWidth}`);
       menu.removeEventListener('mouseover', action);
