@@ -2,6 +2,7 @@
 
 let navLinks = document.querySelectorAll('.nav-link');
 
+
 navLinks.forEach(navLink => {
   if (navLink.id != "menu") {
     navLink.addEventListener('mouseover', () => {
