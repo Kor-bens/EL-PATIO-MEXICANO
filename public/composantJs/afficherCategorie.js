@@ -93,6 +93,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         imageSpoilee.title = element.title;
         imageSpoilee.style.display = "none";
         div.appendChild(imageSpoilee);
+        console.log(imageSpoilee);
 
         // ... Et les logos sur les restrictions :
         let typeRestriction = element.restrictions[0];
@@ -152,7 +153,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
 
         // On remplit la divImage avec l'image, dont on règle les attributs au préalable :
         const imageAremplir = document.createElement('img');
-        imageAremplir.setAttribute('id', `#image-${categorie}${index} img`);
+        imageAremplir.setAttribute('id', `#image-${categorie}${index}`);
         imageAremplir.src = element.image;
         imageAremplir.alt = element.title;
         imageAremplir.title = element.title;
