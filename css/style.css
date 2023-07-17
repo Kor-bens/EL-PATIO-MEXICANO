@@ -95,7 +95,6 @@ a {
 
 #consulter-le-menu:hover {
     border-radius: 70px;
-    opacity: 0.9;
     box-shadow: inset 1px 3px 18px 2px #000000ad;
 }
 
@@ -195,7 +194,7 @@ a {
 /*EFFET SUR LES BOUTON*/
 .btn:hover {
     border-radius: 70px;
-    opacity: 0.9;
+    opacity: 1;
     box-shadow: inset 1px 3px 18px 2px #000000ad;
 }
 
@@ -282,19 +281,6 @@ a {
     margin-bottom: 0;
 }
 
-/*TRAIT SOUS LE TITRE DU BLOC SAVOIR-FAIRE*/
-.trait-1 {
-    height: 2px;
-    width: 100% !important;
-    background-color: orange;
-    position: relative;
-    bottom: 12px;
-    opacity: 1;
-    transform: rotateX(180deg);
-    z-index: 1;
-    margin-bottom: 0;
-}
-
 /*PROPRIETE TAILLE DE POLICE ET LARGEUR POUR LE TEXTE DU BLOC SAVOIR-FAIRE*/
 #description-savoir-faire {
 
@@ -325,14 +311,37 @@ a {
     width: min-content;
 }
 
-/* Pseudo-élément pour le trait vert */
-#bloc-organisation-devenement #titre-bloc-organisation-devenement::after {
+.trait-1,
+.trait-2 {
+    width: min-content;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+}
+
+@media screen and (max-width:320px) {
+    .trait-1 {
+        white-space: normal;
+    }
+
+}
+
+/* Pseudo-élément pour les traits */
+.trait-2::after,
+.trait-1::after {
     content: "";
     position: absolute;
     bottom: -4px;
     left: 0;
     width: 100%;
     height: 2px;
+}
+
+.trait-1::after {
+    background-color: orange;
+}
+
+.trait-2::after {
     background-color: green;
 }
 
@@ -349,18 +358,6 @@ a {
     max-width: 100%;
     margin-left: 0 !important;
     margin-right: 0 !important;
-}
-
-/*TRAIT SOUS LE TITRE DU BLOC ORGANISATION DEVENEMENT*/
-#trait-2 {
-    height: 2px;
-    width: 100%;
-    background-color: green;
-    position: relative;
-    bottom: 12px;
-    opacity: 1;
-    transform: rotateX(180deg);
-    z-index: 1;
 }
 
 /*PROPRIETE DU 1ER PARAGRAPHE DU BLOC ORGANISATION DEVENEMENT*/
@@ -380,7 +377,7 @@ a {
 /*PROPRIETE DU LIEN DU BLOC ORGANISATION DEVENEMENT*/
 #bloc-contact {
     width: 10%;
-    padding: 1%;
+    padding: 0.5%;
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
     display: flex;
@@ -391,7 +388,7 @@ a {
 
 #bloc-contact:hover {
     border-radius: 70px;
-    opacity: 0.9;
+    opacity: 1;
     box-shadow: inset 1px 3px 18px 2px #000000ad;
 }
 
@@ -521,22 +518,6 @@ body::-webkit-scrollbar-thumb {
     /* creates padding around scroll thumb */
 }
 
-
-
-
-
-
-/* @media screen and (min-width:769px) and (max-width: 1439px) {
-    .fst-2{
-        font-size:  1.5rem;
-     }
-     .fsp-3{
-        font-size: 1.3rem;
-     }
-} */
-
-
-
 @media screen and (max-width: 768px) {
     #p-description {
         width: 90%;
@@ -629,17 +610,6 @@ body::-webkit-scrollbar-thumb {
     .logo-img {
         width: 60px;
     }
-
-    /* .fs-clamp-b{ de 12px a 14px min vw 426px max vw 768px */
-    /* font-size: clamp(0.75rem, 0.6607rem + 0.4464vw, 0.875rem)!important;
-} */
-    /* .fst-1{24px a 48px */
-    /* font-size: clamp(1.5rem, 0.4286rem + 5.3571vw, 3rem)!important;
-}
-.fst-2{
-    font-size: clamp(1rem, -0.0714rem + 5.3571vw, 2.5rem)!important;
-} */
-
 
 }
 
