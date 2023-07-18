@@ -26,5 +26,6 @@
         </div>
     </div>
 </nav>
+<div class="disclaimer text-center text-secondary fs-4 bg-secondary-subtle w-s100">Ce site n'a pas une vocation commerciale, il s'agit uniquement du site vitrine d'un restaurant fictif. Aucune commande ne pourra y être effectuée.</div>
 
 <script src="../public/composantJs/navbar.js"></script>
