@@ -3,6 +3,12 @@
 let boutonValider = document.querySelector('input[value="Envoyer"]');
 let formulaire = document.querySelector('form');
 
+// Variables pour vérifier les champs - elles auront la valeur "true" ou "false" selon
+// l'état des champs
+let htmlInFields;
+let numbersInFields;
+let invalidPhoneNumber;
+
 // ----- Échapper le code HTML
 
 // On sélectionne toutes les input
@@ -17,6 +23,15 @@ allInput.forEach(element => {
             e.preventDefault();
             alert("Ne tentez pas d'insérer du code dans ce formulaire.");
             element.value = "";
+            // Si le champ est invalide, la variable concernée prend "true"
+            htmlInFields = true;
+        } else {
+            // Si la variable concernée a été mise sur "true" pour un autre champ, elle le reste
+            if (htmlInFields === true) {
+            } else {
+                // Sinon, elle prend la valeur "false" (les champs "nom" et "prenom" sont valides)
+                htmlInFields = false;
+            }
         }
     });
 });
@@ -61,6 +76,15 @@ nomEtPrenom.forEach(element => {
             alert('Vous ne pouvez pas taper de chiffre dans ce champ.');
             element.value = "";
             element.style.border = "5px solid red";
+            // Si le champ est invalide, la variable concernée prend "true"
+            numbersInFields = true;
+        } else {
+            // Si la variable concernée a été mise sur "true" pour un autre champ, elle le reste
+            if (numbersInFields === true) {
+            } else {
+                // Sinon, elle prend la valeur "false" (les champs "nom" et "prenom" ne contiennt pas de nombres)
+                numbersInFields = false;
+            }
         }
     });
 });
@@ -78,5 +102,21 @@ formulaire.addEventListener('submit', () => {
         e.preventDefault();
         alert('Veuillez taper une numéro de téléphone valide, sans espaces.');
         telephone.value = "";
+        // Si le champ est invalide, la variable concernée prend "true"
+        invalidPhoneNumber = true;
+    } else {
+        // Sinon, elle prend la valeur "false" (le numéro de téléphone est valide)
+        invalidPhoneNumber = false;
+    }
+});
+
+
+// Si le formulaire est valide, on affiche un message de succès :
+formulaire.addEventListener('submit', () => {
+    console.log(`htmlInFields : ${htmlInFields}`);
+    console.log(`numberInFields : ${numbersInFields}`);
+    console.log(`invalidPhoneNumber : ${invalidPhoneNumber}`);
+    if (htmlInFields === false && numbersInFields === false && invalidPhoneNumber === false) {
+        alert('Votre message a bien été envoyé');
     }
 });

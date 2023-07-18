@@ -7,80 +7,104 @@ async function chargerMenu() {
   afficher("tacos", 1, 3);
   afficher("burritos", 1, 3);
   afficher("fajitas", 1, 3);
-  afficher("boissons", 1, 3);
   afficher("desserts", 1, 3);
+  afficher("boissons", 1, 3);
 
   // Pour éviter les erreurs, on appelle le reste des fonctions qu'une fois que les plats sont affichés
   await chargerFonctions();
+
+
 }
 
 // ----- Fonction pour charger toutes les fonctionnalités de la page
-async function chargerFonctions() {
+function chargerElements() {
 
-  // On n'effectue ces fonctions qu'une fois que la page est chargée
-  // afin que le code puisse attraper tous les boutons spoiler
-  window.addEventListener('load', () => {
+  console.log('fonction chargée');
 
-    // ***********************************************************************
-    // GERER LE TOGGLE DES BOUTONS SPOILER (plus d'infos)
-    // ***********************************************************************
+  // ***********************************************************************
+  // GERER LE TOGGLE DES BOUTONS SPOILER (plus d'infos)
+  // ***********************************************************************
 
-    let spoilers = document.querySelectorAll('.spoiler-btn');
+  let spoilers = document.querySelectorAll('.spoiler-btn');
 
-    spoilers.forEach(bouton => {
+  spoilers.forEach(bouton => {
 
-      // Récupération de l'élément à afficher sur clic
-      let idAAfficher = bouton.attributes.target.textContent;
-      let elementAAfficher = document.querySelector(`${idAAfficher}`);
+    // Récupération de l'élément à afficher sur clic
+    let idAAfficher = bouton.attributes.target.textContent;
+    let elementAAfficher = document.querySelector(`${idAAfficher}`);
 
-      bouton.addEventListener('click', () => {
+    bouton.addEventListener('click', () => {
 
-        // En cas de clic, on va changer les propriétés de l'élément parent
-        let blocPlat = bouton.parentNode;
+      // En cas de clic, on va changer les propriétés de l'élément parent
+      let blocPlat = bouton.parentNode;
 
-        // Selon la taille de l'écran (qui définit la configuration du bloc),
-        // on ne répartira pas le tableau de la même manière :
-        let tailleDivInfos;
-        if (window.outerWidth < 426) {
-          tailleDivInfos = 7;
-        } else {
-          tailleDivInfos = 3;
-        }
+      // Selon la taille de l'écran (qui définit la configuration du bloc),
+      // on ne répartira pas le tableau de la même manière :
+      let tailleDivInfos;
+      if (window.outerWidth < 426) {
+        tailleDivInfos = 7;
+      } else {
+        tailleDivInfos = 3;
+      }
 
 
-        // Si c'est pour afficher les infos, on va répartir les éléments comme suit :
-        if (elementAAfficher.classList.contains("d-none")) {
-          elementAAfficher.classList.remove('d-none');
-          elementAAfficher.classList.add('d-block');
-          bouton.innerHTML = "Moins d'infos";
+      // Si c'est pour afficher les infos, on va répartir les éléments comme suit :
+      if (elementAAfficher.classList.contains("d-none")) {
+        elementAAfficher.classList.remove('d-none');
+        elementAAfficher.classList.add('d-block');
+        bouton.innerHTML = "Moins d'infos";
 
-          blocPlat.style.setProperty('grid-template-rows', `1fr 0.35fr 1fr ${tailleDivInfos}fr 0.7fr`);
-          blocPlat.style.setProperty('grid-template-areas',
-            `"titre titre titre"
+        blocPlat.style.setProperty('grid-template-rows', `1fr 0.35fr 1fr ${tailleDivInfos}fr 0.7fr`);
+        blocPlat.style.setProperty('grid-template-areas',
+          `"titre titre titre"
                     "prix prix prix"
                     "desc desc desc"
                     "ingr ingr ingr"
                     "btn btn btn"`);
-        }
+      }
 
-        // Si c'est pour cacher les infos, on va répartir les éléments comme ceci :
-        else {
-          elementAAfficher.classList.add('d-none');
-          elementAAfficher.classList.remove('d-block');
-          bouton.innerHTML = "Plus d'infos";
+      // Si c'est pour cacher les infos, on va répartir les éléments comme ceci :
+      else {
+        elementAAfficher.classList.add('d-none');
+        elementAAfficher.classList.remove('d-block');
+        bouton.innerHTML = "Plus d'infos";
 
-          blocPlat.style.setProperty('grid-template-rows', '0.85fr 0.7fr 1fr 1fr 0.5fr 1fr');
-          blocPlat.style.setProperty('grid-template-areas',
-            `"titre titre titre"
-                    "titre titre titre"
-                    "prix prix prix"
-                    "desc desc desc"
-                    "desc desc desc"
-                    "btn btn btn"`);
-        }
-      });
+        blocPlat.style.setProperty('grid-template-rows', '0.85fr 0.7fr 1fr 1fr 0.5fr 1fr');
+        blocPlat.style.setProperty('grid-template-areas',
+          `"titre titre titre"
+            "titre titre titre"
+            "prix prix prix"
+            "desc desc desc"
+            "desc desc desc"
+            "btn btn btn"`);
+      }
     });
   });
+}
+
+async function chargerFonctions() {
+  // On n'effectue ces fonctions qu'une fois que la page est chargée
+  // afin que le code puisse attraper tous les boutons spoiler
+  window.addEventListener('load', () => {
+    chargerElements();
+    chargerBoutons();
+  });
+}
+
+function chargerBoutons() {
+  let boutonsAfficherTous = document.querySelectorAll('.btn-menu');
+  // Comment boucler sur boutonsAfficherTous (type: HTML Collection) ?
+  boutonsAfficherTous.forEach(bouton => {
+    bouton.addEventListener('click', () => {
+      setTimeout(() => {
+        chargerElements();
+        setTimeout(() => {
+          chargerBoutons();
+        }, 1000);
+      }, 1000);
+    });
+  });
+
 }
 
 chargerMenu();
@@ -106,7 +130,7 @@ if (window.outerWidth > 1023) {
       // On va boucler sur le contenu du fichier JSON :
       $.ajax({
         type: "GET",
-        url: "../../back/listofFood.json",
+        url: "../../back/listOfFood.json",
         dataType: "json",
         success: function (response) {
 
@@ -135,6 +159,9 @@ if (window.outerWidth > 1023) {
           element.addEventListener('mouseleave', () => {
             image.classList.add('d-none');
           });
+        },
+        error : () => {
+          alert('Il y a eu une erreur lors du chargement de la liste des plats.');
         }
       });
     });
