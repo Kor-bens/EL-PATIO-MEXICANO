@@ -24,38 +24,28 @@
         <div id="liens-ancres">
             <div class="ancre vert" id="snacks-ancre">
                 <a href="#snacks" id="snacks-link" class="text-white text-decoration-none ancre-link fsp-3">Snacks
-                    <!-- <div class="bloc-img"> -->
-                        <img class="img-plat snacks d-none" src="" alt="">
-                    <!-- </div> -->
+                    <img class="img-plat snacks d-none" src="#" alt="">
                 </a>
             </div>
 
             <div class="ancre vert" id="entrées-ancre">
                 <a href="#entrées" id="entrées-link" class="text-white text-decoration-none ancre-link fsp-3">Entrées
-                <!-- <div class="bloc-img entrée"> -->
-                        <img class="img-plat entrées d-none" src="" alt="">
-                    <!-- </div> -->
+                    <img class="img-plat entrées d-none" src="#" alt="">
                 </a>
             </div>
             <div class="ancre vert" id="plats-ancre">
                 <a href="#plats" id="plats-link" class="text-white text-decoration-none ancre-link fsp-3">Plats
-                <!-- <div class="bloc-img plat"> -->
-                        <img class="img-plat plats d-none" src="" alt="">
-                    <!-- </div> -->
+                    <img class="img-plat plats d-none" src="#" alt="">
                 </a>
             </div>
             <div class="ancre vert" id="desserts-ancre">
                 <a href="#desserts" id="desserts-link" class="text-white text-decoration-none ancre-link fsp-3">Desserts
-                <!-- <div class="bloc-img dessert"> -->
-                        <img class="img-plat desserts d-none" src="" alt="">
-                    <!-- </div> -->
+                    <img class="img-plat desserts d-none" src="#" alt="">
                 </a>
             </div>
             <div class="ancre vert" id="boissons-ancre">
                 <a href="#boissons" id="boissons-link" class="text-white text-decoration-none ancre-link fsp-3">Boissons
-                <!-- <div class="bloc-img boisson"> -->
-                    <img class="img-plat boissons d-none" src="" alt="">
-                <!-- </div> -->
+                    <img class="img-plat boissons d-none" src="#" alt="">
                 </a>
             </div>
         </div>
@@ -72,7 +62,7 @@
 
     <?php require('common/footer.php') ?>
 
-    <script defer src="composantJs/menu.js" type="module"></script>
+    <script src="composantJs/menu.js" type="module"></script>
 </body>
 
 </html>

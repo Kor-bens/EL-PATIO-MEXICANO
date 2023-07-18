@@ -1,6 +1,6 @@
 <script src="composantJs/fonctionsGeneriques.js"></script>
 
-<div id="footer" class="vert" role="footer">
+<footer id="footer" class="vert">
     <div class="bloc-footer logo-patron">
         <a href="/public/index.php"><img id="logo-patroñ-footer" src="../../Ressources/logocercle.png" alt="logo-patrón"></a>
     </div>
@@ -26,4 +26,4 @@
             <li class="fsp-4">DIMANCHE ...... FERMÉ</li>
         </ul>        
     </div>
-</div>
+</footer>
