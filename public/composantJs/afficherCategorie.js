@@ -9,7 +9,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
 
   $.ajax({
     type: "GET",
-    url: "../../back/listofFood.json",
+    url: "../../back/listOfFood.json",
     dataType: "json",
     success: function (response) {
       // On récupère la liste des plats de la catégorie
@@ -93,7 +93,6 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         imageSpoilee.title = element.title;
         imageSpoilee.style.display = "none";
         div.appendChild(imageSpoilee);
-        console.log(imageSpoilee);
 
         // ... Et les logos sur les restrictions :
         let typeRestriction = element.restrictions[0];
@@ -202,6 +201,9 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         });
       }
     },
+    error: () => {
+      alert('Il y a eu une erreur lors du chargement de la liste des plats.');
+    }
   });
 }
 
