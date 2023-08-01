@@ -1,23 +1,23 @@
 <?php 
 
 class Plat{
-    private int $id;
-    private string $nom;
-    private string $prix;
-    private string $description;
-    private string $image;
-    private string $ingredient;
-    private string $restriction_alimentaire;
-    private Sous_categorie $id_sc;
+    private int             $id;
+    private string          $nom;
+    private string          $prix;
+    private string          $description;
+    private string          $image;
+    private string          $ingredient;
+    private string          $restriction_alimentaire;
+    private Sous_categorie  $id_sc;
 
     public function __construct($id,$nom,$prix,$description,$image,$ingredient,$restriction_alimentaire){
-        $this->id = $id;
-        $this->nom = $nom;
-        $this->prix = $prix;
-        $this->description = $description;
-        $this->image = $image;
-        $this->ingredient = $ingredient;
-        $this->restriction_alimentaire = $restriction_alimentaire;
+        $this->id                       = $id;
+        $this->nom                      = $nom;
+        $this->prix                     = $prix;
+        $this->description              = $description;
+        $this->image                    = $image;
+        $this->ingredient               = $ingredient;
+        $this->restriction_alimentaire  = $restriction_alimentaire;
     }
 
     
