@@ -1,12 +1,12 @@
 <?php require("common/header.php") ?>
-<link rel="stylesheet" href="../css/menu.css">
+<link rel="stylesheet" href="../../assets/css/menu.css">
 </head>
 
 <body>
     <?php require('common/navbar.php'); ?>
     <div class="bloc-plat d-none d-md-block">
         <a href="index.php" class="link-logo">
-            <img src="../Ressources/logocercle.png" alt="El patio mexicano's logo" class="logo-big">
+            <img src="../../assets/ressources/logocercle.png" alt="El patio mexicano's logo" class="logo-big">
         </a>
 
         <div id="fleche">></div>
@@ -62,7 +62,7 @@
 
     <?php require('common/footer.php') ?>
 
-    <script src="composantJs/menu.js" type="module"></script>
+    <script src="../../assets/composantJs/menu.js" type="module"></script>
 </body>
 
 </html>

@@ -9,14 +9,14 @@
 
 @font-face {
     font-family: Rye;
-    src: url(../Ressources/polices/Rye-Regular.ttf);
+    src: url(../ressources/polices/Rye-Regular.ttf);
 }
 
 
 .bloc-plat {
     width: 100%;
     height: 75vh;
-    background: url(../Ressources/heroimage2.jpg) fixed center no-repeat;
+    background: url(../ressources/heroimage2.jpg) fixed center no-repeat;
     background-size: cover;
     z-index: 0;
 }
