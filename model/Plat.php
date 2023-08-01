@@ -1,14 +1,14 @@
 <?php 
 
 class Plat{
-    private string $id;
+    private int $id;
     private string $nom;
     private string $prix;
     private string $description;
     private string $image;
     private string $ingredient;
     private string $restriction_alimentaire;
-    private int $id_sc;
+    private Sous_categorie $id_sc;
 
     public function __construct($id,$nom,$prix,$description,$image,$ingredient,$restriction_alimentaire){
         $this->id = $id;
@@ -22,10 +22,10 @@ class Plat{
 
     
 
-    public function getId(): string {
+    public function getId(): int {
         return $this->id;
     }
-    public function setId(string $id) {
+    public function setId(int $id) {
         $this->id = $id;
     }
 
