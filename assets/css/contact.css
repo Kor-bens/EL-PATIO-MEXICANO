@@ -20,7 +20,7 @@ body {
 }
 
 .orange {
-    background-image: url('/ressources/tissu-orange-2.jpg');
+    background-image: url('../ressources/tissu-orange-2.jpg');
     text-shadow: 3px 3px 3px black;
 }
 
@@ -40,7 +40,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/ressources/desert3.png');
+    background-image: url('../ressources/desert3.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -85,7 +85,7 @@ select:-webkit-autofill:focus {
     box-shadow: 2px 1px 20px 4px black;
     height: auto;
     width: 100%;
-    background: url("/ressources/perso-contact.png") center/cover no-repeat;
+    background: url("../ressources/perso-contact.png") center/cover no-repeat;
     grid-area: img;
     grid-column: 1/3;
     grid-row: 1;
@@ -215,7 +215,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/ressources/desert3.png');
+    background-image: url('../ressources/desert3.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -446,7 +446,7 @@ textarea {
         box-shadow: 2px 1px 20px 4px black;
         height: auto;
         max-width: 100%;
-        background: url("/ressources/perso-contact.png") center/cover no-repeat;
+        background: url("../ressources/perso-contact.png") center/cover no-repeat;
         grid-area: img;
         grid-column: 1/5;
         grid-row: 1;

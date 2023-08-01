@@ -1,5 +1,5 @@
 <?php require("common/header.php") ?>
-<link rel="stylesheet" href="/css/contact.css">
+<link rel="stylesheet" href="../../assets/css/contact.css">
 </head>
 
 <body>
