@@ -154,13 +154,14 @@ if (window.outerWidth > 1023) {
           // On affiche l'image et on lui attribue la bonne classe pour l'animation
           image.classList.remove('d-none');
           image.classList.add('tombe-image');
+          console.log(image);
 
           // On rajoute un écouteur pour le cas où le curseur quitte le carré
           element.addEventListener('mouseleave', () => {
             image.classList.add('d-none');
           });
         },
-        error : () => {
+        error: () => {
           alert('Il y a eu une erreur lors du chargement de la liste des plats.');
         }
       });
