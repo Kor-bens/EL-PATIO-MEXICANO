@@ -97,7 +97,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // ... Et les logos sur les restrictions :
         let typeRestriction = element.restrictions[0];
         let logoRestriction = document.createElement("img");
-        logoRestriction.src = `../Ressources/logo-${typeRestriction}.png`;
+        logoRestriction.src = `../ressources/logo-${typeRestriction}.png`;
         logoRestriction.alt = `logo alimentation ${typeRestriction}`;
         logoRestriction.title = typeRestriction;
         logoRestriction.classList.add('logo-restriction');
