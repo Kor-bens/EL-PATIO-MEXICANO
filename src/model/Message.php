@@ -7,11 +7,11 @@ class Message{
     private Categorie_msg $id_categorie;
     private Personne $personne;
 
-    public function __construct($id_msg,$date_envoi,$texte,$id_categorie,$id_pers){
+    public function __construct($id_msg,$date_envoi,$texte,$id_categorie,$personne){
         $this->id_msg = $id_msg;
         $this->date_envoi = $date_envoi;
         $this->texte = $texte;
         $this->id_categorie = $id_categorie;
-        $this->id_pers = $id_pers;
+        $this->personne = $personne;
     }
 }
