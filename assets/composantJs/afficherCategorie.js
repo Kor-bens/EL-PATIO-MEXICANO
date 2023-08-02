@@ -1,6 +1,5 @@
 export function afficher(categorie, min, max) { // 3 paramètres : la catégorie qu'on veut afficher, le numéro du premier élément et le numéro du dernier (on peut ne pas vouloir commencer par le premier)
 
-
   const divAffichage = document.getElementById(`affichage-${categorie}`);
   divAffichage.innerHTML = '';
 
@@ -9,19 +8,27 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
 
   $.ajax({
     type: "GET",
-    url: "../../back/listOfFood.json",
+    url: "/requireData",
+    data: {
+      "sous_categorie": categorie,
+      "min": min,
+      "max": max
+    },
     dataType: "json",
     success: function (response) {
-      // On récupère la liste des plats de la catégorie
       let listeCategorie = [];
       let listeComplete = [];
-      response.foodList.forEach((element) => {
-        if (element.categorie === categorie) {
+
+      response.forEach(element => {
+        // Code en cas de succès ici :
+        // On récupère la liste des plats de la catégorie
+
+        if (element.sous_cat_nom === categorie) {
           listeComplete.push(element);
         }
 
         if (min <= max) {
-          if (element.categorie === categorie) {
+          if (element.sous_cat_nom === categorie) {
             listeCategorie.push(element);
 
             min++;
@@ -68,7 +75,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // Une description
         const dsption = document.createElement("p");
         dsption.classList.add("description-plat", "fsp-3");
-        dsption.textContent = element.description;
+        dsption.textContent = element.desc_plat;
         divARemplir.appendChild(dsption);
 
         // Les éléments spoilés...
@@ -77,9 +84,11 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         div.setAttribute("id", `spoiler-content-${categorie}${index}`);
 
         // ...À savoir les ingrédients...
+        // ... Qu'il faut d'abord transformer en array :
+        element.ingrédients = element.ingrédients.split(", ");
         div.innerHTML = "<p>Ingrédients : </p>";
         let listeIngredients = document.createElement('ul');
-        element.ingredients.forEach((ingredient) => {
+        element.ingrédients.forEach((ingredient) => {
           listeIngredients.innerHTML += `<li>${ingredient}</li>`;
         });
         div.appendChild(listeIngredients);
@@ -88,16 +97,16 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         const imageSpoilee = document.createElement('img');
         imageSpoilee.classList.add('image-spoilee');
         imageSpoilee.setAttribute('id', `image-spoilee-${element.id}`);
-        imageSpoilee.src = element.image;
+        imageSpoilee.src = element.img_plat;
         imageSpoilee.alt = element.title;
         imageSpoilee.title = element.title;
         imageSpoilee.style.display = "none";
         div.appendChild(imageSpoilee);
 
         // ... Et les logos sur les restrictions :
-        let typeRestriction = element.restrictions[0];
+        let typeRestriction = element.restrictions_alimentaires;
         let logoRestriction = document.createElement("img");
-        logoRestriction.src = `../ressources/logo-${typeRestriction}.png`;
+        logoRestriction.src = `assets/ressources/logo-${typeRestriction}.png`;
         logoRestriction.alt = `logo alimentation ${typeRestriction}`;
         logoRestriction.title = typeRestriction;
         logoRestriction.classList.add('logo-restriction');
@@ -153,7 +162,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // On remplit la divImage avec l'image, dont on règle les attributs au préalable :
         const imageAremplir = document.createElement('img');
         imageAremplir.setAttribute('id', `#image-${categorie}${index}`);
-        imageAremplir.src = element.image;
+        imageAremplir.src = element.img_plat;
         imageAremplir.alt = element.title;
         imageAremplir.title = element.title;
         imageAremplir.classList.add('image-plat');
@@ -200,8 +209,10 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
           afficher(categorie, 1, nombre);
         });
       }
+
     },
-    error: () => {
+    error: function (err) {
+      console.error(err);
       alert('Il y a eu une erreur lors du chargement de la liste des plats.');
     }
   });

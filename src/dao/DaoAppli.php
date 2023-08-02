@@ -49,4 +49,36 @@ class DaoAppli
         //     array_push($liste, $personne);
         // }
     }
+
+    public function getData($sous_cat, $min, $max) {
+        // TODO: Vérifier la validité de la variable $categorie
+
+        // if(!is_int($min)) {$min = (int) $min;}
+        // if(!is_int($max)) {$max = (int) $max;}
+        $min = (int) $min;
+        $max = (int) $max;
+        $min --;
+
+        $query = "SELECT plats.id, plats.nom AS title, sous_categories.id AS sous_cat_id, sous_categories.nom AS sous_cat_nom,
+        plats.nom, plats.desc_plat, plats.prix, plats.img_plat, plats.ingrédients, plats.restrictions_alimentaires, plats.id_sc, sous_categories.nom 
+FROM plats 
+INNER JOIN sous_categories 
+ON plats.id_sc = sous_categories.id 
+WHERE sous_categories.nom = :sous_cat";
+
+        $statement = $this->db->prepare($query);
+        $statement->bindParam(':sous_cat', $sous_cat, PDO::PARAM_STR);
+        // $statement->bindParam(':limit', $max, PDO::PARAM_INT);
+        // $statement->bindParam(':offset', $min, PDO::PARAM_INT);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $json = json_encode($result);
+
+        return $json;
+
+    }
 }
+<<<<<<< HEAD
+=======
+?>
+>>>>>>> 5241a83 (utilisation sql pour affichage menu)
