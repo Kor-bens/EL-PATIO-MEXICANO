@@ -9,11 +9,9 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 $cntrlAppli = new CntrlAppli();
 
-if      ($method == 'GET' && $route == '/index')     $cntrlAppli -> affAccueil();
-else if ($method == 'GET' && $route == '/')          $cntrlAppli -> affAccueil();
-else if ($method == 'GET' && $route == '/contact')   $cntrlAppli -> affContact();
-else if ($method == 'POST' && $route == '/contact')   $cntrlAppli -> formDemande();
-// else if ($method == 'POST' && $route == '/contact')  $cntrlAppli -> envoyerMsg();
-else if ($method == 'GET' && $route == '/menu')      $cntrlAppli -> affMenu();
+if      ($method == 'GET' && $route == '/menu')     {$cntrlAppli -> affMenu();}
+else if ($method == 'GET' && $route == '/contact')  {$cntrlAppli -> affContact();}
+else if ($method == 'POST' && $route == '/contact') {$cntrlAppli -> envoyerMsg();}
+else if ($method == 'GET')                          {$cntrlAppli -> affAccueil();}
 
 ?>
