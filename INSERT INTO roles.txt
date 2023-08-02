@@ -1,0 +1,15 @@
+//--------------------------//INSERTION DANS LA TABLE ROLES//--------------------------// 
+
+INSERT INTO `roles` (`id`, `nom`) VALUES
+('1', 'Utilisateur'), 
+('2', 'Invité'), 
+('3', 'Admin');
+
+
+//--------------------------//INSERTION DES PERSONNES DANS LA TABLE PERSONNES//--------------------------//
+
+INSERT INTO personnes (id, nom,prenom,mail,mot_de_passe,telephone,avatar,adresse,id_role) VALUES 
+(1,'Spatoulatchi','Marc','marc-13@outlook.fr','marc','0606060606',null,null,1),
+(2,'Piro','Jean','jean-13@outlook.fr','jean','0606060607',null,'11 Rue decazes 13007 Marseille',2),
+(2,'Piro','Lorenzo','lorenzo-13@outlook.fr','lorenzo','0606060627',null,null,3),
+(2,'Piro','Eric','eric-13@outlook.fr','eric','0606060613',null,'83 Rue sauveur tobolem',2)
