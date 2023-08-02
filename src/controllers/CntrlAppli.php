@@ -80,9 +80,6 @@ class CntrlAppli
 
 
     require_once 'src/views/contact.php';
-<<<<<<< HEAD
-  }
-=======
 }
 
   public function getData($route) {
@@ -100,5 +97,4 @@ class CntrlAppli
   }
 
 
->>>>>>> 5241a83 (utilisation sql pour affichage menu)
 }

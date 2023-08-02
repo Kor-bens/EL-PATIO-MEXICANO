@@ -100,8 +100,8 @@
         {
             "id": 7,
             "title": "Tofu fumé au chipotle avec tomates et avocat",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/7.jpg",
             "ingredients": [
                 "Huile d'olive",
@@ -122,8 +122,8 @@
         {
             "id": 8,
             "title": "Chilaquiles avec salsa de tomatilles fraîches",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/8.jpg",
             "ingredients": [
                 "Croustilles de tortilla",
@@ -148,8 +148,8 @@
         {
             "id": 30,
             "title": "Pain de maïs avec salade à la mexicaine",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/30.jpg",
             "ingredients": [
                 "Beurre fondu",
@@ -173,8 +173,8 @@
         {
             "id": 37,
             "title": "Riz aux crevettes à la mexicaine avec salsa d'avocat",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/37.jpg",
             "ingredients": [
                 "Huile d'olive",
@@ -199,8 +199,8 @@
         {
             "id": 52,
             "title": "Salade mexicaine de tacos au poulet",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/52.jpg",
             "ingredients": [
                 "poulet",
@@ -307,8 +307,8 @@
         {
             "id": 2,
             "title": "Soupe aux haricots noirs et aux boulettes de maïs",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/2.jpg",
             "ingredients": [
                 "Haricots secs noirs(pinto ou rouge)",
@@ -330,8 +330,8 @@
         {
             "id": 64,
             "title": "Soupe mexicaine aux légumes et tortillas",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/64.jpg",
             "ingredients": [
                 "Oignon rouge",
@@ -378,8 +378,8 @@
         {
             "id": 39,
             "title": "Quesadillas aux patates douces, petits pois et fromage",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/39.jpg",
             "ingredients": [
                 "Patates douces",
@@ -403,8 +403,8 @@
         {
             "id": 50,
             "title": "Quesadillas au fromage avec salsa de tomates, poivrons rouges et avocat",
-            "type": "entrées",
-            "categorie": "entrées",
+            "type": "entrees",
+            "categorie": "entrees",
             "image": "https://apipics.s3.amazonaws.com/mexican_api/50.jpg",
             "ingredients": [
                 "Avocats murs",

@@ -3,7 +3,7 @@ import { afficher } from './afficherCategorie.js';
 // ********** FONCTION PRINCIPALE : appel des fonctions pour afficher les plats **********
 async function chargerMenu() {
   afficher('snacks', 1, 3);
-  afficher('entrées', 1, 3);
+  afficher('entrees', 1, 3);
   afficher('tacos', 1, 3);
   afficher('burritos', 1, 3);
   afficher('fajitas', 1, 3);

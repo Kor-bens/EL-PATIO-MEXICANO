@@ -28,9 +28,9 @@
                 </a>
             </div>
 
-            <div class="ancre vert" id="entrées-ancre">
-                <a href="#entrées" id="entrées-link" class="text-white text-decoration-none ancre-link fsp-3">Entrées
-                    <img class="img-plat entrées d-none" src="#" alt="">
+            <div class="ancre vert" id="entrees-ancre">
+                <a href="#entrees" id="entrees-link" class="text-white text-decoration-none ancre-link fsp-3">Entrées
+                    <img class="img-plat entrees d-none" src="#" alt="">
                 </a>
             </div>
             <div class="ancre vert" id="plats-ancre">
@@ -52,7 +52,7 @@
 
 
         <?php include('composantsMenu/snacks.php'); ?>
-        <?php include('composantsMenu/entrées.php'); ?>
+        <?php include('composantsMenu/entrees.php'); ?>
         <?php include('composantsMenu/plats.php'); ?>
         <?php include('composantsMenu/desserts.php'); ?>
         <?php include('composantsMenu/boissons.php'); ?>
