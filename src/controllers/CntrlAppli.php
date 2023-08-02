@@ -80,5 +80,25 @@ class CntrlAppli
 
 
     require_once 'src/views/contact.php';
+<<<<<<< HEAD
   }
+=======
+}
+
+  public function getData($route) {
+    $params = explode("?", $route)[1];
+    $params = explode("&", $params);
+    $sous_cat = explode("=", $params[0])[1];
+    $min = explode("=", $params[1])[1];
+    $max = explode("=", $params[2])[1];
+    
+    $dao = new DaoAppli();
+
+    $json = $dao -> getData($sous_cat, $min, $max);
+
+    print_r($json);
+  }
+
+
+>>>>>>> 5241a83 (utilisation sql pour affichage menu)
 }
