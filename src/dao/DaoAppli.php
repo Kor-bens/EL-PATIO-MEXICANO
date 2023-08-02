@@ -78,7 +78,4 @@ WHERE sous_categories.nom = :sous_cat";
 
     }
 }
-<<<<<<< HEAD
-=======
 ?>
->>>>>>> 5241a83 (utilisation sql pour affichage menu)
