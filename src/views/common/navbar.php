@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active text-white fs-4" id="accueil" aria-current="page" href="index.php">ACCUEIL</a>
+                    <a class="nav-link active text-white fs-4" id="accueil" aria-current="page" href="index">ACCUEIL</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white fs-4" id="menu" href="menu.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">MENU</a>
+                    <a class="nav-link dropdown-toggle text-white fs-4" id="menu" href="menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">MENU</a>
                     <ul class="dropdown-menu orange">
                         <li><a class="dropdown-item text-white fs-5 " href="menu.php#snacks">Snacks</a></li>
                         <li><a class="dropdown-item text-white fs-5" href="menu.php#entrees">Entrées</a></li>
@@ -20,7 +20,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-4" id="contact" href="contact.php">CONTACT</a>
+                    <a class="nav-link text-white fs-4" id="contact" href="contact">CONTACT</a>
                 </li>
             </ul>
         </div>
