@@ -26,19 +26,27 @@ class DaoAppli
         return $liste;
     }
 
-    public function addFormDemande(){
-        
+    // public function addFormDemande($message){
+    //     $requete = $this->db->prepare(Requete::REQ_INS_MESS);
+    //     $value   = $requete->execute(array($message));
+    // }
+
+    public function rolePersonne()
+    {
+        $requete = Requete::REQ_ROLE_USER;
+        $statement = $this->db->query($requete);
+        print_r($statement);
+        // $liste = [];
+        // while ($row = $statement->fetch()) {
+        //     $id        = $row['id'];
+        //     $nom       = $row['nom'];
+        //     $prenom    = $row['prenom'];
+        //     $mail      = $row['mail'];
+        //     $telephone = $row['telephone'];
+        //     $adresse   = $row['adresse'];
+        //     $id_role   = $row['id_role'];
+        //     $personne  = new Personne($id, $nom, $prenom, $mail, $telephone, $adresse, $id_role);
+        //     array_push($liste, $personne);
+        // }
     }
 }
-?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   <?php print_r($liste) ?>;
-</body>
-</html> -->

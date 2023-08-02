@@ -10,7 +10,14 @@
     <div class="contain-img">
         <!-- <img id="plats-table" src="../Ressources/plats-table.jpg" alt="plats-table"> -->
     </div>
+<?php
 
+    if (isset($messageErr)) {
+        foreach ($messageErr as $err) {
+    ?>
+            <div class="alert alert-danger" role="alert"><?= $err ?></div>
+    <?php }
+    } ?>
     <div class="container-img-description">
         <div id="container-bloc" class="mtb-4">
             <div class="bloc-image"></div>
@@ -44,7 +51,7 @@
 
 
                     <label class="fsp-3" for="message">Message :</label>
-                    <textarea id="message" name="message" data-sb-validations="required" class="vert mb-2 fsp-4"></textarea>
+                    <textarea id="message" name="message" placeholder="Entrez un message" data-sb-validations="required" class="vert mb-2 fsp-4"></textarea>
 
 
                     <input id="btn" type="submit" value="Envoyer" class="vert btn mb-1 fsb-3">
@@ -52,14 +59,10 @@
             </div>
         </div>
     </div>
-<?php
-print_r($messageErr);
-    if (isset($messageErr)) {
-        foreach ($messageErr as $err) {
-    ?>
-            <div class="alert alert-danger" role="alert"><?= $err ?></div>
-    <?php }
-    } ?>
+
+
+
+    
 
     <div class="contain-img deux mtb-4">
         <!-- <img id="plats-table" src="../Ressources/plats-table.jpg" alt="plats-table"> -->
