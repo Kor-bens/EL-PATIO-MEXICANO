@@ -4,7 +4,7 @@ require_once "src/dao/Requete.php";
 require_once 'src/model/Demande.php';
 require_once 'src/controllers/Message.php';
 
-$route  = explode("?", $_SERVER['REQUEST_URI'])[0];
+$route = explode("?", $_SERVER['REQUEST_URI'])[0];
 $method = $_SERVER['REQUEST_METHOD'];
 
 $cntrlAppli = new CntrlAppli();
