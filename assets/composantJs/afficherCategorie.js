@@ -69,7 +69,7 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
 
         const prixPlat = document.createElement("p");
         prixPlat.classList.add("prix-plat", "fsp-3");
-        let prix = element.prix / 100;
+        let prix = element.prix /100;
         prixPlat.textContent = `${prix} €`;
         divARemplir.appendChild(prixPlat);
 
