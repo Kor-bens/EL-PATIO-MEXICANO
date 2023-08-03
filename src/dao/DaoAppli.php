@@ -50,6 +50,10 @@ class DaoAppli
         // }
     }
 
+    public function verifMail(){
+        
+    }
+
     public function getData($sous_cat, $min, $max) {
         // TODO: Vérifier la validité de la variable $categorie
 
@@ -78,4 +82,6 @@ WHERE sous_categories.nom = :sous_cat";
 
     }
 }
+
 ?>
+

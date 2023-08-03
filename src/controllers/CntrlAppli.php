@@ -32,6 +32,17 @@ class CntrlAppli
     $dao = new DaoAppli();
     $demandes = $dao->recupDemandes();
 
+
+    // On vérifie si $email est dans la table "personne"
+
+
+    // Si oui, on récupère son id dans la table personne
+
+    // Sinon, on l'insère dans "invités"...
+
+    // ... Et on récupère son nouvel id
+
+    // Puis on ajoute le message dans la table "messages"
     $messageErr = [];
     $demande   = htmlspecialchars($_POST['demande']);
     $nom       = htmlspecialchars($_POST['nom']);
@@ -78,12 +89,17 @@ class CntrlAppli
       require_once 'src/views/index.php';
     }
 
+  
+
 
 
     require_once 'src/views/contact.php';
+
 }
 
-  public function getData($route) {
+
+
+ public function getData($route) {
     $params = explode("?", $route)[1];
     $params = explode("&", $params);
     $sous_cat = explode("=", $params[0])[1];
@@ -96,4 +112,7 @@ class CntrlAppli
 
     print_r($json);
   }
+
+
 }
+

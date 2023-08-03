@@ -10,6 +10,19 @@ INSERT INTO `roles` (`id`, `nom`) VALUES
 
 INSERT INTO personnes (id, nom,prenom,mail,mot_de_passe,telephone,avatar,adresse,id_role) VALUES 
 (1,'Spatoulatchi','Marc','marc-13@outlook.fr','marc','0606060606',null,null,1),
-(2,'Piro','Jean','jean-13@outlook.fr','jean','0606060607',null,'11 Rue decazes 13007 Marseille',2),
-(2,'Piro','Lorenzo','lorenzo-13@outlook.fr','lorenzo','0606060627',null,null,3),
-(2,'Piro','Eric','eric-13@outlook.fr','eric','0606060613',null,'83 Rue sauveur tobolem',2)
+(2,'Camoin','Jean','jean-13@outlook.fr','jean','0606060607',null,'11 Rue decazes 13007 Marseille',2),
+(3,'Pardini','Lorenzo','lorenzo-13@outlook.fr','lorenzo','0606060627',null,null,3),
+(4,'Duval','Eric','eric-13@outlook.fr','eric','0606060613',null,'83 Rue sauveur tobolem',2)
+(5,'Pirez','Oliver','oliver-13@outlook.fr','oliver','0606060606',null,20 rue chateaubriand 13007,1);
+
+//--------------------------//INSERTION DES DEMANDE DANS LA TABLE MESSAGE//--------------------------//
+
+
+
+
+//--------------------------//INSERTION DES PERSONNES DANS LA TABLE CATEGORIE_MSG//--------------------------//
+
+INSERT INTO categorie_msg(`id`, `nom_categorie`) VALUES 
+(1, 'Avis'),
+(2, 'Suggestion'),
+(3, 'Je reserve une table');
