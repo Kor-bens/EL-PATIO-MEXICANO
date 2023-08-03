@@ -60,7 +60,7 @@ class DaoAppli
         $min --;
 
         $query = "SELECT plats.id, plats.nom AS title, sous_categories.id AS sous_cat_id, sous_categories.nom AS sous_cat_nom,
-        plats.nom, plats.desc_plat, plats.prix, plats.img_plat, plats.ingrédients, plats.restrictions_alimentaires, plats.id_sc, sous_categories.nom 
+        plats.nom, plats.desc_plat, plats.prix, plats.img_plat, plats.ingredients, plats.restrictions_alimentaires, plats.id_sc, sous_categories.nom 
 FROM plats 
 INNER JOIN sous_categories 
 ON plats.id_sc = sous_categories.id 

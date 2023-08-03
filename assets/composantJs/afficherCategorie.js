@@ -1,6 +1,6 @@
-export function afficher(categorie, min, max) { // 3 paramètres : la catégorie qu'on veut afficher, le numéro du premier élément et le numéro du dernier (on peut ne pas vouloir commencer par le premier)
+export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie qu'on veut afficher, le numéro du premier élément et le numéro du dernier (on peut ne pas vouloir commencer par le premier)
 
-  const divAffichage = document.getElementById(`affichage-${categorie}`);
+  const divAffichage = document.getElementById(`affichage-${sous_cat}`);
   divAffichage.innerHTML = '';
 
   // On crée un nombre de lignes égal au nombre d'éléments qu'on veut afficher
@@ -10,7 +10,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
     type: "GET",
     url: "/requireData",
     data: {
-      "sous_categorie": categorie,
+      "sous_categorie": sous_cat,
       "min": min,
       "max": max
     },
@@ -23,12 +23,12 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // Code en cas de succès ici :
         // On récupère la liste des plats de la catégorie
 
-        if (element.sous_cat_nom === categorie) {
+        if (element.sous_cat_nom === sous_cat) {
           listeComplete.push(element);
         }
 
         if (min <= max) {
-          if (element.sous_cat_nom === categorie) {
+          if (element.sous_cat_nom === sous_cat) {
             listeCategorie.push(element);
 
             min++;
@@ -45,7 +45,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         const element = listeCategorie[index];
 
         let divARemplir = document.createElement("div");
-        divARemplir.setAttribute("id", `${categorie}${index}`);
+        divARemplir.setAttribute("id", `${sous_cat}${index}`);
         divARemplir.classList.add('bloc-texte-plat', 'orange', 'text-white');
 
         if (toggleVar == 0) {
@@ -69,7 +69,8 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
 
         const prixPlat = document.createElement("p");
         prixPlat.classList.add("prix-plat", "fsp-3");
-        prixPlat.textContent = `${element.prix} €`;
+        let prix = element.prix / 100;
+        prixPlat.textContent = `${prix} €`;
         divARemplir.appendChild(prixPlat);
 
         // Une description
@@ -81,14 +82,14 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // Les éléments spoilés...
         const div = document.createElement("div");
         div.classList.add("d-none", "infos-div", "fsp-4");
-        div.setAttribute("id", `spoiler-content-${categorie}${index}`);
+        div.setAttribute("id", `spoiler-content-${sous_cat}${index}`);
 
         // ...À savoir les ingrédients...
         // ... Qu'il faut d'abord transformer en array :
-        element.ingrédients = element.ingrédients.split(", ");
+        element.ingredients = element.ingredients.split(", ");
         div.innerHTML = "<p>Ingrédients : </p>";
         let listeIngredients = document.createElement('ul');
-        element.ingrédients.forEach((ingredient) => {
+        element.ingredients.forEach((ingredient) => {
           listeIngredients.innerHTML += `<li>${ingredient}</li>`;
         });
         div.appendChild(listeIngredients);
@@ -117,13 +118,13 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // Un bouton "plus d'infos" pour les afficher
         const bouton = document.createElement("button");
         bouton.classList.add("btn", "vert", "text-white", "spoiler-btn", "fsb-3");
-        bouton.setAttribute("target", `#spoiler-content-${categorie}${index}`);
+        bouton.setAttribute("target", `#spoiler-content-${sous_cat}${index}`);
         bouton.textContent = "Plus d'infos";
         divARemplir.appendChild(bouton);
 
         // Et on remplit l'image :
         const divImage = document.createElement('div');
-        divImage.setAttribute('id', `image-${categorie}${index}`);
+        divImage.setAttribute('id', `image-${sous_cat}${index}`);
         divImage.classList.add('bloc-image-plat');
 
         // On adapte la hauteur du bloc image en fonction du bloc texte
@@ -161,7 +162,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
 
         // On remplit la divImage avec l'image, dont on règle les attributs au préalable :
         const imageAremplir = document.createElement('img');
-        imageAremplir.setAttribute('id', `#image-${categorie}${index}`);
+        imageAremplir.setAttribute('id', `#image-${sous_cat}${index}`);
         imageAremplir.src = element.img_plat;
         imageAremplir.alt = element.title;
         imageAremplir.title = element.title;
@@ -195,7 +196,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
         // Attention à ne pas lui mettre "spoiler-btn", ou il aura le même comportement que les autres.
         let nouveauBouton = document.createElement('button');
         nouveauBouton.classList.add("vert", "text-white", `afficher-${moinsOuTous}`, "btn-menu", "mtb-24", "fsb-3");
-        nouveauBouton.setAttribute('id', `afficher${moinsOuTous}${categorie}`);
+        nouveauBouton.setAttribute('id', `afficher${moinsOuTous}${sous_cat}`);
         nouveauBouton.innerText = `Afficher ${moinsOuTous}`;
 
         // On rajoute ligne au tableau des plats
@@ -206,7 +207,7 @@ export function afficher(categorie, min, max) { // 3 paramètres : la catégorie
 
         // On crée un écouteur d'évènements, on appelle la fonction afficher avec les paramètres
         nouveauBouton.addEventListener('click', () => {
-          afficher(categorie, 1, nombre);
+          afficher(sous_cat, 1, nombre);
         });
       }
 

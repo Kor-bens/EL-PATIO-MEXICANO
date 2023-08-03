@@ -4,6 +4,7 @@ require_once 'src/dao/DaoAppli.php';
 require_once 'src/dao/Requete.php';
 require_once 'src/model/Demande.php';
 class CntrlAppli
+
 {
   public function affAccueil()
   {
@@ -95,5 +96,4 @@ class CntrlAppli
 
     print_r($json);
   }
-
-
+}
