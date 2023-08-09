@@ -112,11 +112,11 @@ formulaire.addEventListener('submit', () => {
 
 
 // Si le formulaire est valide, on affiche un message de succès :
-formulaire.addEventListener('submit', () => {
-    console.log(`htmlInFields : ${htmlInFields}`);
-    console.log(`numberInFields : ${numbersInFields}`);
-    console.log(`invalidPhoneNumber : ${invalidPhoneNumber}`);
-    if (htmlInFields === false && numbersInFields === false && invalidPhoneNumber === false) {
-        alert('Votre message a bien été envoyé');
-    }
-});
+// formulaire.addEventListener('submit', () => {
+//     console.log(`htmlInFields : ${htmlInFields}`);
+//     console.log(`numberInFields : ${numbersInFields}`);
+//     console.log(`invalidPhoneNumber : ${invalidPhoneNumber}`);
+//     if (htmlInFields === false && numbersInFields === false && invalidPhoneNumber === false) {
+//         alert('Votre message a bien été envoyé');
+//     }
+// });
