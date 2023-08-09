@@ -7,7 +7,7 @@
 
     <div class="contain-img">
         <!-- <img id="plats-table" src="../Ressources/plats-table.jpg" alt="plats-table"> -->
-        <a id="consulter-le-menu" class="vert text-white text-decoration-none fsb-3" href="menu.php">CONSULTER LE MENU</a>
+        <a id="consulter-le-menu" class="vert text-white text-decoration-none fsb-3" href="menu">CONSULTER LE MENU</a>
     </div>
 
     <div id="description" class="orange mtb-4">
@@ -31,7 +31,7 @@
             <div class="bloc-description deux orange">
                 <p class="p-description text-white fsp-3">EN PLUS NOS PLATS SONT TROP BONS !!!</p>
                 <div class="vert btn">
-                    <a class="bloc-description-lien  text-white text-decoration-none fsb-3" href="menu.php">CONSULTEZ LE MENU</a>
+                    <a class="bloc-description-lien  text-white text-decoration-none fsb-3" href="menu">CONSULTEZ LE MENU</a>
                 </div>
             </div>
 

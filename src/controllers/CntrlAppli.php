@@ -24,34 +24,21 @@ class CntrlAppli
     require_once 'src/views/contact.php';
   }
 
+
   public function formDemande()
   {
-
-
-
-    $dao = new DaoAppli();
-    $demandes = $dao->recupDemandes();
-
-
-    // On vérifie si $email est dans la table "personne"
-
-
-    // Si oui, on récupère son id dans la table personne
-
-    // Sinon, on l'insère dans "invités"...
-
-    // ... Et on récupère son nouvel id
-
-    // Puis on ajoute le message dans la table "messages"
+    require_once 'src/dao/DaoAppli.php';
     $messageErr = [];
-    $demande   = htmlspecialchars($_POST['demande']);
+
+
+    $demande   = $_POST['demande'];
     $nom       = htmlspecialchars($_POST['nom']);
     $prenom    = htmlspecialchars($_POST['prenom']);
     $email     = htmlspecialchars($_POST['email']);
     $telephone = htmlspecialchars($_POST['telephone']);
     $message   = htmlspecialchars($_POST['message']);
 
-    
+
 
     $i = -1;
 
@@ -74,45 +61,47 @@ class CntrlAppli
       $messageErr[$i++] = Message::INP_ERR_MESSAGE;
     }
 
-    
-    //  function tailleMessage($message){
-    //     if(strlen($message) < 10){
-    //          $messageErr[$i++] =  Message::INP_ERR_MESSAGE_CHAR;
-    //     };
-    //  }
 
-    
+
+
+
 
     if (count($messageErr) === 0) {
       // $dao = new DaoAppli();
       // $dao->addFormDemande($message);
+      $dao = new DaoAppli();
+      $demandes = $dao->recupDemandes();
+
+      $id_pers = $dao->verifMail($email);
+
+
+      if (!$id_pers) {
+        require_once 'src/dao/DaoAppli.php';
+        $dao = new DaoAppli();
+        $id_pers = $dao->insertPersonne($nom, $prenom, $email, $telephone);
+        $dao->insertInvite();
+       
+      }
+
+      $dao->insertMessage($id_pers, $message);
       require_once 'src/views/index.php';
     }
-
-  
-
-
-
-    require_once 'src/views/contact.php';
-
-}
+  }
 
 
 
- public function getData($route) {
+  public function getData($route)
+  {
     $params = explode("?", $route)[1];
     $params = explode("&", $params);
     $sous_cat = explode("=", $params[0])[1];
     $min = explode("=", $params[1])[1];
     $max = explode("=", $params[2])[1];
-    
+
     $dao = new DaoAppli();
 
-    $json = $dao -> getData($sous_cat, $min, $max);
+    $json = $dao->getData($sous_cat, $min, $max);
 
     print_r($json);
   }
-
-
 }
-
