@@ -25,6 +25,13 @@
                 <li class="nav-item">
                     <a class="nav-link text-white fs-4" id="contact" href="/inscription">CONNEXION</a>
                 </li>
+                <li class="nav-item">
+                <a href="/public/panier.php"><img id="panier" src="../../../assets/ressources/panier.png" alt="panier"></a>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+                </li>
+               
             </ul>
         </div>
     </div>

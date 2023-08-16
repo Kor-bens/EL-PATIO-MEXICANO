@@ -289,8 +289,8 @@ h2 {
         "titre titre titre"
         "prix prix prix"
         "desc desc desc"
-        "desc desc desc"
-        "btn btn btn";
+        "btn btn btn"
+        "panier panier panier";
     box-shadow: 2px 1px 20px 4px black;
 }
 
@@ -325,6 +325,13 @@ h2 {
 
 .bloc-texte-plat button {
     grid-area: btn;
+    margin-top: 5%;
+    border-radius: 20px;
+    box-shadow: 1px 3px 20px 2px #00000082;
+}
+
+.bloc-texte-plat .panier {
+    grid-area: panier;
     margin-top: 5%;
     border-radius: 20px;
     box-shadow: 1px 3px 20px 2px #00000082;
