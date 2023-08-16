@@ -122,6 +122,13 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         bouton.textContent = "Plus d'infos";
         divARemplir.appendChild(bouton);
 
+        // Un bouton "Ajouter au panier" pour ajouter le plat dans le panier
+        const boutonPanier = document.createElement("button");
+        boutonPanier.classList.add("btn","vert", "panier", "text-white","fsb-3");
+  
+        boutonPanier.textContent = "Ajouter au panier";
+        divARemplir.appendChild(boutonPanier);
+
         // Et on remplit l'image :
         const divImage = document.createElement('div');
         divImage.setAttribute('id', `image-${sous_cat}${index}`);

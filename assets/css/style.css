@@ -28,6 +28,12 @@ body {
     src: url('../ressources/polices/Rye-Regular.ttf');
 }
 
+#panier{
+    width: 10%;
+    /* margin: 0; */
+   
+}
+
 /*NAVBAR HAUT DE PAGE COMMUNE A TOUTE PAGE */
 #navbar {
     display: flex;
