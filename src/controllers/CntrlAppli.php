@@ -104,4 +104,10 @@ class CntrlAppli
 
     print_r($json);
   }
+
+  public function affInscription() {
+    require_once 'src/views/inscription.php';
+  }
+
+
 }
