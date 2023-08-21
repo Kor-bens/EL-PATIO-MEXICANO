@@ -62,7 +62,9 @@
 
     <?php require('common/footer.php') ?>
 
-    <script src="../../assets/composantJs/menu.js" type="module"></script>
+
+    <script type="module" src="../../assets/composantJs/panier.js" ></script>
+    <script type="module" src="../../assets/composantJs/menu.js" ></script>
 </body>
 
 </html>

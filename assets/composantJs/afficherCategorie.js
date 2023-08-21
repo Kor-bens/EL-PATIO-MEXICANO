@@ -1,8 +1,10 @@
+import { panier, affichagePanier } from './panier.js';
 export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie qu'on veut afficher, le numéro du premier élément et le numéro du dernier (on peut ne pas vouloir commencer par le premier)
-
+  
   const divAffichage = document.getElementById(`affichage-${sous_cat}`);
   divAffichage.innerHTML = '';
 
+  
   // On crée un nombre de lignes égal au nombre d'éléments qu'on veut afficher
   divAffichage.style.setProperty('grid-template-rows', `repeat(${max - min + 1}, auto)`);
 
@@ -64,6 +66,7 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         nomPlat.classList.add("nom-plat", "fst-3");
         nomPlat.textContent = element.title;
         divARemplir.appendChild(nomPlat);
+        
 
         // Un prix
 
@@ -122,13 +125,32 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         bouton.textContent = "Plus d'infos";
         divARemplir.appendChild(bouton);
 
+        function ajouterAuPanier() {
+          const produitNom = nomPlat.textContent;
+          const produitPrix = prixPlat.textContent;
+          
+        
+          // Créez un objet représentant le plat
+          const produit = {
+            nom: produitNom,
+            prix: produitPrix
+          };
+        
+          // Ajoutez le plat au tableau panier
+          panier.push(produit);
+        
+          // Appelez une fonction pour mettre à jour l'interface utilisateur du panier
+          affichagePanier();
+        }
+
         // Un bouton "Ajouter au panier" pour ajouter le plat dans le panier
         const boutonPanier = document.createElement("button");
         boutonPanier.classList.add("btn","vert", "panier", "text-white","fsb-3");
-  
         boutonPanier.textContent = "Ajouter au panier";
         divARemplir.appendChild(boutonPanier);
-
+       
+        boutonPanier.addEventListener("click", ajouterAuPanier);
+      
         // Et on remplit l'image :
         const divImage = document.createElement('div');
         divImage.setAttribute('id', `image-${sous_cat}${index}`);

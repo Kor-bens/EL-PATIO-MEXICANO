@@ -5,6 +5,7 @@ const server = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const port = 5003;
+const mysql = require('mysql2');
 
 server.use(cors());
 
@@ -94,6 +95,25 @@ server.get("/list-food/n/:id", (req, res) => {
 
     // Envoi de l'élément alimentaire trouvé en tant que réponse
     res.send(platById);
+  });
+});
+
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'elpatio',
+  password: 'mexicano1234*',
+  database: 'elpatiomexicano'
+});
+
+server.get('/api/data/plats', (req, res) => {
+  const sql = 'SELECT * FROM plats';
+  connection.query(sql, (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Database error' });
+      return;
+    }
+    res.json(results);
   });
 });
 server.listen(port, () =>
