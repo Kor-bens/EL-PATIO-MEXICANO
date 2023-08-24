@@ -23,7 +23,7 @@
                     <a class="nav-link text-white fs-4" id="contact" href="/contact">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-4" id="contact" href="/inscription">CONNEXION</a>
+                    <a class="nav-link text-white fs-4" id="contact" href="/connexion-inscription">CONNEXION</a>
                 </li>
                 <li class="nav-item">
                 <a href="/public/panier.php"><img id="panier" src="../../../assets/ressources/panier.png" alt="panier"></a>

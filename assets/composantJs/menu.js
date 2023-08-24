@@ -111,21 +111,20 @@ chargerMenu();
 
 // ********** ANIMATION LORS DU SURVOL DES ANCRES SUR LA PAGE MENU **********
 // Note : cette fonctionnalité peut être chargée avant celles ci-dessus car elle dépend
-// directement du contenu de la page 'menu.php'
+// directement du contenu de la page 'menu.php';
 
 // Valable uniquement sur les grands écrans :
 if (window.outerWidth > 1023) {
 
   // On récupère toutes les ancres grâce à leur classe :
   var toutesAncres = document.querySelectorAll('.ancre-link');
-
   toutesAncres.forEach(element => {
 
     // On génère l'animation sur survol du bloc
     element.addEventListener('mouseenter', () => {
       let image = element.querySelector('img');
       // La variable suivante contiendra le type de plat concerné ('snacks' si c'est les snacks) :
-      let typeDImage = element.textContent.toLowerCase().trim();
+      let typeDImage = element.id.split('-')[0].toLowerCase().trim();
 
       // On va boucler sur le contenu du fichier JSON :
       $.ajax({

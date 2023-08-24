@@ -165,8 +165,12 @@ select {
 #nom,
 #prenom,
 #email,
+#email-confirm,
+#mdp,
+#mdp-confirm,
 #telephone,
-#message {
+#message,
+#adresse {
     border-radius: 20px;
     color: rgb(255, 255, 255);
 
