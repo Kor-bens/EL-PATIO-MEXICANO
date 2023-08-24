@@ -12,11 +12,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white fs-4" id="menu" href="/menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">MENU</a>
                     <ul class="dropdown-menu orange">
-                        <li><a class="dropdown-item text-white fs-5 " href="menu#snacks">Snacks</a></li>
-                        <li><a class="dropdown-item text-white fs-5" href="menu#entrees">Entrées</a></li>
-                        <li><a class="dropdown-item text-white fs-5" href="menu#plats">Plats</a></li>
-                        <li><a class="dropdown-item text-white fs-5" href="menu#boissons">Boissons</a></li>
-                        <li><a class="dropdown-item text-white fs-5" href="menu#desserts">Desserts</a></li>
+                        <li><a class="dropdown-item text-white fs-5 " href="/menu#snacks">Snacks</a></li>
+                        <li><a class="dropdown-item text-white fs-5" href="/menu#entrees">Entrées</a></li>
+                        <li><a class="dropdown-item text-white fs-5" href="/menu#plats">Plats</a></li>
+                        <li><a class="dropdown-item text-white fs-5" href="/menu#boissons">Boissons</a></li>
+                        <li><a class="dropdown-item text-white fs-5" href="/menu#desserts">Desserts</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
