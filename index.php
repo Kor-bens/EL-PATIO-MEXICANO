@@ -18,3 +18,5 @@ else if ($method == 'POST'  && $route == '/contact')    $cntrlAppli -> formDeman
 else if ($method == 'GET'   && $route == '/menu')       $cntrlAppli -> affMenu();
 else if ($method == 'GET'   && $route == '/requireData')$cntrlAppli -> getData($_SERVER['REQUEST_URI']);
 else if ($method == 'GET'   && $route == '/inscription')$cntrlAppli -> affInscription();
+else if ($method == 'GET'   && $route == '/index.php')  $cntrlAppli -> affAccueil();
+else                                                    $cntrlAppli -> affAccueil();
