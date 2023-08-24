@@ -1,13 +1,13 @@
 <?php 
 
 class Contenir{
-    private int             $id_plat;
-    private int             $id_commande;
+    private Plat            $plat;
+    private Commande        $commande;
     private int             $nombre_plats;
 
-    public function __construct($id_plat,$id_commande,$nombre_plats){
-        $this->id_plat      = $id_plat;
-        $this->id_commande  = $id_commande;
+    public function __construct($plat,$commande,$nombre_plats){
+        $this->plat         = $plat;
+        $this->commande     = $commande;
         $this->nombre_plats = $nombre_plats;
     }
 }

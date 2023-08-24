@@ -1,38 +1,38 @@
 <?php
 
-class Sous_categorie {
-    private int     $id;
-    private string  $nom;
-    private string  $categorie;
+class Sous_cat_plat {
+    private int     $id_sous_cat;
+    private string  $lib_sous_cat;
+    private string  $cat_plat;
 
-    public function __construct($id, $nom, $categorie) {
-        $this -> id         = $id;
-        $this -> nom        = $nom;
-        $this -> categorie  = $categorie;
+    public function __construct($id_sous_cat, $lib_sous_cat, $cat_plat) {
+        $this -> id_sous_cat         = $id_sous_cat;
+        $this -> lib_sous_cat        = $lib_sous_cat;
+        $this -> cat_plat  = $cat_plat;
     }
 
-    public function getId(): int {
+    public function getIdSousCat(): int {
 
-        return $this->id;
+        return $this->id_sous_cat;
     }
-    public function setId(int $id) {
-        $this->id = $id;
-    }
-
-    public function getNom(): string {
-
-        return $this->nom;
-    }
-    public function setNom(string $nom) {
-        $this->nom = $nom;
+    public function setIdSousCat(int $id_sous_cat) {
+        $this->id_sous_cat = $id_sous_cat;
     }
 
-    public function getCategorie(): string {
+    public function getLibSousCat(): string {
 
-        return $this->categorie;
+        return $this->lib_sous_cat;
     }
-    public function setCategorie(string $categorie) {
-        $this->categorie = $categorie;
+    public function setLibSousCat(string $lib_sous_cat) {
+        $this->lib_sous_cat = $lib_sous_cat;
+    }
+
+    public function getCatPlat(): string {
+
+        return $this->cat_plat;
+    }
+    public function setCatPlat(string $cat_plat) {
+        $this->cat_plat = $cat_plat;
     }
 }
 

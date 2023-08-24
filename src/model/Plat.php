@@ -1,41 +1,42 @@
 <?php 
 
 class Plat{
-    private int             $id;
-    private string          $nom;
+    private int             $id_plat;
+    private string          $nom_plat;
     private string          $prix;
     private string          $description;
-    private string          $image;
+    private string          $img_plat;
     private string          $ingredient;
-    private string          $restriction_alimentaire;
-    private Sous_categorie  $id_sc;
+    private string          $regime;
+    private Sous_categorie  $sous_cat_plat;
 
-    public function __construct($id,$nom,$prix,$description,$image,$ingredient,$restriction_alimentaire){
-        $this->id                       = $id;
-        $this->nom                      = $nom;
-        $this->prix                     = $prix;
-        $this->description              = $description;
-        $this->image                    = $image;
-        $this->ingredient               = $ingredient;
-        $this->restriction_alimentaire  = $restriction_alimentaire;
+    public function __construct($id_plat,$nom_plat,$prix,$description,$img_plat,$ingredient,$regime, $sous_cat_plat){
+        $this->id_plat      = $id_plat;
+        $this->nom_plat     = $nom_plat;
+        $this->prix         = $prix;
+        $this->description  = $description;
+        $this->img_plat     = $img_plat;
+        $this->ingredient   = $ingredient;
+        $this->regime       = $regime;
+        $this->sous_cat_plat= $sous_cat_plat;
     }
 
     
 
-    public function getId(): int {
-        return $this->id;
+    public function getId_plat(): int {
+        return $this->id_plat;
     }
-    public function setId(int $id) {
-        $this->id = $id;
+    public function setId_plat(int $id_plat) {
+        $this->id_plat = $id_plat;
     }
 
     
 
-    public function getNom(): string {
-        return $this->nom;
+    public function getNom_plat(): string {
+        return $this->nom_plat;
     }
-    public function setNom(string $nom) {
-        $this->nom = $nom;
+    public function setNom_plat(string $nom_plat) {
+        $this->nom_plat = $nom_plat;
     }
 
     public function getPrix(): string {
@@ -52,11 +53,11 @@ class Plat{
         $this->description = $description;
     }
 
-    public function getImage(): string {
-        return $this->image;
+    public function getImg_plat(): string {
+        return $this->img_plat;
     }
-    public function setImage(string $image) {
-        $this->image = $image;
+    public function setImg_plat(string $img_plat) {
+        $this->img_plat = $img_plat;
     }
 
     public function getIngredient(): string {
@@ -66,10 +67,18 @@ class Plat{
         $this->ingredient = $ingredient;
     }
 
-    public function getRestrictionAlimentaire(): string {
-        return $this->restriction_alimentaire;
+    public function getRegime(): string {
+        return $this->regime;
     }
-    public function setRestrictionAlimentaire(string $restriction_alimentaire) {
-        $this->restriction_alimentaire = $restriction_alimentaire;
+    public function setRegime(string $regime) {
+        $this->regime = $regime;
+    }
+
+    public function getSousCatPlat(): Sous_categorie {
+
+        return $this->sous_cat_plat;
+    }
+    public function setSousCatPlat(Sous_categorie $sous_cat_plat) {
+        $this->sous_cat_plat = $sous_cat_plat;
     }
 }

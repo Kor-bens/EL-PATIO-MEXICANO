@@ -1,5 +1,7 @@
 <?php 
 
+// TODO: Vérifier si l'existence de cette classe est pertinente
+
 class Demande 
 {
     public int $id;
