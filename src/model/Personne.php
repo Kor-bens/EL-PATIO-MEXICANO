@@ -1,22 +1,24 @@
 <?php
 
 class Personne {
-    protected int       $id;
+    protected int       $id_pers;
     protected string    $nom;
     protected string    $prenom;
     protected string    $email;
-    protected string    $password;
+    protected string    $mdp;
     protected ?string   $phone;
     protected ?string   $avatar;
+    protected date      $date_crea_pers;
 
-    public function __construct($id, $nom, $prenom, $email, $password, $phone = NULL, $avatar = NULL) {
-        $this -> id         = $id;
-        $this -> nom        = $nom;
-        $this -> prenom     = $prenom;
-        $this -> email      = $email;
-        $this -> password   = $password;
-        $this -> phone      = $phone;
-        $this -> avatar     = $avatar;
+    public function __construct($id, $nom, $prenom, $email, $mdp, $phone = NULL, $avatar = NULL, $date) {
+        $this -> id             = $id;
+        $this -> nom            = $nom;
+        $this -> prenom         = $prenom;
+        $this -> email          = $email;
+        $this -> mdp            = $mdp;
+        $this -> phone          = $phone;
+        $this -> avatar         = $avatar;
+        $this -> date_crea_pers = $date;
     }
 
 
@@ -56,13 +58,13 @@ class Personne {
         $this->email = $email;
     }
 
-    public function getPassword(): string {
+    public function getMdp(): string {
 
-        return $this->password;
+        return $this->mdp;
     }
 
-    public function setPassword(string $password) {
-        $this->password = $password;
+    public function setMdp(string $mdp) {
+        $this->mdp = $mdp;
     }
 
     public function getPhone(): string {
@@ -80,6 +82,17 @@ class Personne {
     }
     public function setAvatar(?string $avatar) {
         $this->avatar = $avatar;
+    }
+
+    public function getDateCreaPers(): date {
+
+        return $this->date_crea_pers;
+    }
+
+    public function setDateCreaPers(date $date_crea_pers) {
+
+        $this->date_crea_pers = $date_crea_pers;
+        
     }
 }
 

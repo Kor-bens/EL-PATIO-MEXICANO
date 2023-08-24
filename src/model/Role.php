@@ -1,30 +1,30 @@
 <?php
 
 class Role {
-    private int     $id;
-    private string  $nom;
+    private int     $id_role;
+    private string  $lib_role;
 
-    public function __construct($id, $nom) {
-        $this -> id     = $id;
-        $this -> nom    = $nom;
+    public function __construct($id_role, $lib_role) {
+        $this -> id_role     = $id_role;
+        $this -> lib_role    = $lib_role;
     }
 
-    public function getId(): int {
+    public function getIdRole(): int {
 
-        return $this->id;
+        return $this->id_role;
     }
 
-    public function setId(int $id) {
-        $this->id = $id;
+    public function setIdRole(int $id_role) {
+        $this->id_role = $id_role;
     }
 
-    public function getNom(): string {
+    public function getLibRole(): string {
 
-        return $this->nom;
+        return $this->lib_role;
     }
     
-    public function setNom(string $nom) {
-        $this->nom = $nom;
+    public function setLibRole(string $lib_role) {
+        $this->lib_role = $lib_role;
     }
 }
 

@@ -1,14 +1,14 @@
 <?php
 
 class Commande {
-    private int         $id;
+    private int         $id_cmde;
     private DateTime    $date_cmde;
     private int         $id_statut;
     private int         $id_pers;
     private int         $prix_total;
 
-    public function __construct($id, $date_cmde, $id_statut, $id_pers, $prix_total) {
-        $this -> id         = $id;
+    public function __construct($id_cmde, $date_cmde, $id_statut, $id_pers, $prix_total) {
+        $this -> id_cmde         = $id_cmde;
         $this -> date_cmde  = $date_cmde;
         $this -> id_statut  = $id_statut;
         $this -> id_pers    = $id_pers;
@@ -19,8 +19,8 @@ class Commande {
 
         return $this->id;
     }
-    public function setId(int $id) {
-        $this->id = $id;
+    public function setId(int $id_cmde) {
+        $this->id = $id_cmde;
     }
 
     public function getDateCmde(): DateTime {
