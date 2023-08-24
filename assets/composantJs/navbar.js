@@ -84,7 +84,7 @@ function getPosition(e) {
 
 // -- Fonction pour que le bouton "menu" amène vers la page "menu.php"
 function handleMenuClick() {
-  window.location.href = 'menu.php';
+  window.location.href = 'menu';
 }
 
 // Fonction principale - ajout et enlèvement des écouteurs d'évènements en fonction de la screenWidth

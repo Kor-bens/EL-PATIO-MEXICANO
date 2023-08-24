@@ -4,9 +4,41 @@ let navPanier = document.querySelector("#panier");
 let dropdownPanier = document.querySelector(".dropdown-panier");
 let dropdownItemPanierLi = document.createElement('li');
 let dropdownItemPanierA = document.createElement('a');
+let textPanier = document.createElement('p');
+textPanier.classList.add('p-panier');
 let btnCommander = document.createElement("button");
 
+
 let panier = [];
+
+
+
+
+function PanierVide(){
+   
+    
+    if(panier.length === 0){
+              navPanier.addEventListener("mouseenter", () => {
+            dropdownPanier.classList.add("shown");
+            textPanier.textContent = "Vide, faut commander !! money money!!!!";
+           dropdownPanier.appendChild(textPanier);
+         })
+         navPanier.addEventListener("mouseleave", () => {
+            // textPanier.style.display="none";
+             textPanier.textContent ="a";
+             dropdownPanier.classList.add("hidden");
+             
+           
+          }) 
+    }else {
+        navPanier.addEventListener("mouseleave", () => {
+            textPanier.textContent = "bbbbb";
+           dropdownPanier.classList.add("hidden");
+          
+         }) 
+    }
+    
+}
 export { panier, affichagePanier };
 
 function affichagePanier() {
@@ -45,6 +77,7 @@ dropdownItemPanierLi.style.display = "block";
 dropdownItemPanierA.style.display = "block";
 btnCommander.style.display="block";    
     // alert("aaaaaaa");
+    PanierVide();
 })
 
 navPanier.addEventListener("mouseleave", () =>{
@@ -53,13 +86,15 @@ dropdownItemPanierLi.style.display = "none";
 dropdownItemPanierA.style.display = "none";
 btnCommander.style.display="none";  
     // alert("bbbbbb");
+    PanierVide(); 
 })
 
 dropdownPanier.addEventListener("mouseenter", () => {
     dropdownPanier.classList.add("shown");
 dropdownItemPanierLi.style.display = "block";
 dropdownItemPanierA.style.display = "block";
-btnCommander.style.display="block";  
+btnCommander.style.display="block";
+ 
 })
 
 dropdownPanier.addEventListener("mouseleave", () => {
@@ -72,6 +107,10 @@ btnCommander.style.display="none";
   }
   
   }
+
+  PanierVide();
+
+ 
 
 
 
