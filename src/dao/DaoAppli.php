@@ -124,4 +124,64 @@ WHERE sous_categories.nom = :sous_cat";
 
         return $json;
     }
+
+    public function postInscription() {
+        if (isset($_POST['nom']) 
+            && isset($_POST['prenom']) 
+            && isset($_POST['email']) 
+            && isset($_POST['email-confirm']) 
+            && isset($_POST['mdp']) 
+            && isset($_POST['mdp-confirm']) 
+            && isset($_POST['telephone'])
+             && isset($_POST['adresse'])) {
+
+                $nom = htmlspecialchars($_POST['nom']);
+                $prenom = htmlspecialchars($_POST['prenom']);
+                $email = htmlspecialchars($_POST['email']);
+                $email_confirm = htmlspecialchars($_POST['email-confirm']);
+                $mdp = password_hash(htmlspecialchars($_POST['mdp']), PASSWORD_ARGON2ID);
+                $mdp_confirm = password_hash(htmlspecialchars($_POST['mdp-confirm']), PASSWORD_ARGON2ID);
+                $telephone = htmlspecialchars($_POST['telephone']);
+                $adresse = htmlspecialchars($_POST['adresse']);
+                
+
+                // Vérifier que la personne n'est pas déjà en base
+
+
+
+            echo 'Nom : ';
+            echo $nom;
+            echo '<br>';
+
+            echo 'Prénom : ';
+            echo $prenom;
+            echo '<br>';
+
+            echo 'Mail : ';
+            echo $email;
+            echo '<br>';
+
+            echo 'Email-confirm : ';
+            echo $email_confirm;
+            echo '<br>';
+
+            echo 'Mot de passe : ';
+            echo $mdp;
+            echo '<br>';
+
+            echo 'Mot de passe-confirm : ';
+            echo $mdp_confirm;
+            echo '<br>';
+
+            echo 'Téléphone : ';
+            echo $telephone;
+            echo '<br>';
+
+            echo 'Adresse : ';
+            echo $adresse;
+            echo '<br>';
+
+
+        } else header("Location : /connexion-inscription?error=missing-values");
+    }
 }

@@ -109,5 +109,11 @@ class CntrlAppli
     require_once 'src/views/inscription.php';
   }
 
+  public function postInscription() {
+    require_once 'src/dao/DaoAppli.php';
+        $dao = new DaoAppli();
+        $dao-> postInscription();
+  }
+
 
 }
