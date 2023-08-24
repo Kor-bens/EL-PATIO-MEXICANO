@@ -29,11 +29,8 @@
                 <a href="/public/panier.php"><img id="panier" src="../../../assets/ressources/panier.png" alt="panier"></a>
                 <ul class="dropdown-panier orange">
                         
-                        <!-- <li><a class="dropdown-item-panier text-white fs-5" href="menu#desserts">Desserts</a></li> -->
+                       
                     </ul>
-        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
                 </li>
                
             </ul>

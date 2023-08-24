@@ -19,8 +19,8 @@ class DaoAppli
         $statement = $this->db->query($requete);
         $liste = [];
         while ($row = $statement->fetch()) {
-            $id = $row['id'];
-            $nom = $row['nom_categorie'];
+            $id = $row['id_cat_msg'];
+            $nom = $row['lib_cat_msg'];
             $demande = new Demande($id, $nom);
             array_push($liste, $demande);
         }

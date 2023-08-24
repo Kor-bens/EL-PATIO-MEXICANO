@@ -2,7 +2,7 @@
 
 class Requete
 {
-    public Const LISTE_DEMANDES = 'SELECT id_car_msg, lib_cat_msg FROM categorie_msg order by lib_cat_msg';
+    public Const LISTE_DEMANDES = 'SELECT id_cat_msg, lib_cat_msg FROM categorie_msg order by lib_cat_msg';
     public Const REQ_INS_MESS   = 'INSERT INTO message(date_envoi, texte, id_cat_msg, id_pers) VALUE (:date_envoi, :texte, :id_categorie, :id_role, :id_pers)';
     public const REQ_EXIST_EMAIL= "SELECT id_pers FROM personne WHERE mail =:mail";
     public const REQ_ROLE_PERS        = "SELECT id_role FROM personne WHERE id = :id_pers";

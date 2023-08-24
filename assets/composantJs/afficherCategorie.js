@@ -141,6 +141,7 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         
           // Appelez une fonction pour mettre à jour l'interface utilisateur du panier
           affichagePanier();
+          
         }
 
         // Un bouton "Ajouter au panier" pour ajouter le plat dans le panier
