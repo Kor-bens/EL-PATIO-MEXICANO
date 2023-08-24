@@ -25,18 +25,11 @@
                 <h2 id="titre-formulaire" class="fst-2">Connexion</h2>
                 <form id="formulaire" action="/inscription" method="post">
 
-                    <div class="row">
-                        <!-- TODO: Vérifier s'il y a un "order" avec Bootstrap, si on peut l'associer à une taille d'écran, pour réorganiser les champs dans un autre format -->
-                        <div class="row col-12 m-0 p-0">
-                            <label class="fsp-3 text-center col-5 text-center" for="nom">Nom :</label>
-                            <label class="fsp-3 col-5 text-center" for="prenom">Prénom :</label>
-                        </div>
-                        <div class="row col-12 m-0 p-0">
-                            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" data-sb-validations="required" class="vert mb-2 fsp-3 text-center col-5">
-                            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" data-sb-validations="required" class="vert mb-2 fsp-3 col-5">
-                        </div>
-                    
-                    </div>
+                    <label class="fsp-3 text-center text-center" for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" data-sb-validations="required" class="vert mb-2 fsp-3">
+
+                    <label class="fsp-3 text-center" for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" data-sb-validations="required" class="vert mb-2 fsp-3">                    
 
                     <label class="fsp-3" for="email">Email :</label>
                     <input type="email" id="email" name="email" placeholder="Entrez votre email" data-sb-validations="required" class="vert mb-2 fsp-3">
