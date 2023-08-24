@@ -25,13 +25,13 @@
             <div id="signup" class="col-6 p-3 inactive">Inscription</div>
         </div>
 
-        <form id="signup-form" action="/inscription" method="post" class="d-none">
+        <form id="signup-form" action="/post-inscription" method="post" class="d-none">
 
             <label class="fsp-3 text-center text-center" for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" data-sb-validations="required" class="vert mb-2 fsp-3 text-center">
+            <input type="text" id="last-name" name="nom" placeholder="Entrez votre nom" data-sb-validations="required" class="vert mb-2 fsp-3">
 
             <label class="fsp-3 text-center" for="prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" data-sb-validations="required" class="vert mb-2 fsp-3">
+            <input type="text" id="first-name" name="prenom" placeholder="Entrez votre prénom" data-sb-validations="required" class="vert mb-2 fsp-3">
             
 
             <label class="fsp-3" for="email">Email :</label>
