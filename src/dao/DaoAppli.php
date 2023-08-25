@@ -34,8 +34,8 @@ class DaoAppli
         $requete = Requete::REQ_INS_PERS;
         $stmt = $this->db->prepare($requete);
         $id_role = 2;
-        $date = 23;
-        $stmt->execute(['id_role' => $id_role, 'nom' => $nom, 'prenom' => $prenom, 'mail' => $mail, 'telephone' => $telephone]);
+        $date = date('d-m-Y');
+        $stmt->execute(['id_role' => $id_role, 'nom' => $nom, 'prenom' => $prenom, 'mail' => $mail, 'telephone' => $telephone, 'date_crea_pers' => $date]);
         // print_r($stmt);
         return $this->db->lastInsertId();
     }
@@ -55,7 +55,6 @@ class DaoAppli
         $requete = Requete::REQ_INS_INV;
         $stmt = $this->db->prepare($requete);
         $stmt->bindValue(':id_pers', $id_personne, PDO::PARAM_INT);
-        $stmt->bindValue(':id_role', 2, PDO::PARAM_INT);
         $stmt->execute();
     }
   

@@ -73,8 +73,8 @@ a {
     font-size: 18px;
 }
 
-.p-panier{
-    /* width: 30%; */
+#panier{
+    position: relative;
 }
 
 
