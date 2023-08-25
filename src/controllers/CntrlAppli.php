@@ -92,11 +92,19 @@ class CntrlAppli
 
   public function getData($route)
   {
+    echo '$route : ';
+    echo $route;
+
     $params = explode("?", $route)[1];
     $params = explode("&", $params);
     $sous_cat = explode("=", $params[0])[1];
     $min = explode("=", $params[1])[1];
     $max = explode("=", $params[2])[1];
+
+    // echo '$sous_cat : ', $sous_cat, '<br>';
+    // echo '$min : ', $min, '<br>';
+    // echo '$max : ', $max, '<br>';
+    
 
     $dao = new DaoAppli();
 

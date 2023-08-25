@@ -107,12 +107,20 @@ class DaoAppli
         $max = (int) $max;
         $min--;
 
-        $query = "SELECT plats.id, plats.nom AS title, sous_categories.id AS sous_cat_id, sous_categories.nom AS sous_cat_nom,
-        plats.nom, plats.desc_plat, plats.prix, plats.img_plat, plats.ingredients, plats.restrictions_alimentaires, plats.id_sc, sous_categories.nom 
-FROM plats 
-INNER JOIN sous_categories 
-ON plats.id_sc = sous_categories.id 
-WHERE sous_categories.nom = :sous_cat";
+        $query = "SELECT p.id_plat, 
+            p.nom_plat AS title, 
+            sc.id_sous_cat AS sous_cat_id, 
+            sc.lib_sous_cat AS sous_cat_nom,
+            p.desc_plat, 
+            p.prix, 
+            p.img_plat, 
+            p.ingredients, 
+            p.regime, 
+            p.id_sc,
+FROM plat p
+INNER JOIN sous_cat_plat sc 
+ON plat.id_sc = sous_cat_plat.id_sous_cat
+WHERE sous_cat_plat.lib_sous_cat = :sous_cat";
 
         $statement = $this->db->prepare($query);
         $statement->bindParam(':sous_cat', $sous_cat, PDO::PARAM_STR);
