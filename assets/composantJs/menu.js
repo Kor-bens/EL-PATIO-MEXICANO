@@ -161,7 +161,7 @@ if (window.outerWidth > 1023) {
           });
         },
         error: () => {
-          alert('Il y a eu une erreur lors du chargement de la liste des plats.');
+          alert('Il y a eu une erreur lors du chargement de la liste des plats (menu.js).');
         }
       });
     });
