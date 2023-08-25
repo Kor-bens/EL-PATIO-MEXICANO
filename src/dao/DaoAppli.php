@@ -111,16 +111,16 @@ class DaoAppli
             p.nom_plat AS title, 
             sc.id_sous_cat AS sous_cat_id, 
             sc.lib_sous_cat AS sous_cat_nom,
-            p.desc_plat, 
+            p.description AS desc_plat, 
             p.prix, 
             p.img_plat, 
             p.ingredients, 
             p.regime, 
-            p.id_sc,
+            p.id_sc
 FROM plat p
 INNER JOIN sous_cat_plat sc 
-ON plat.id_sc = sous_cat_plat.id_sous_cat
-WHERE sous_cat_plat.lib_sous_cat = :sous_cat";
+    ON p.id_sc = sc.id_sous_cat
+WHERE sc.lib_sous_cat = :sous_cat";
 
         $statement = $this->db->prepare($query);
         $statement->bindParam(':sous_cat', $sous_cat, PDO::PARAM_STR);
@@ -130,7 +130,9 @@ WHERE sous_cat_plat.lib_sous_cat = :sous_cat";
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         $json = json_encode($result);
 
-        return $json;
+        header('Content-Type: application/json');
+        print_r($json);
+        exit();
     }
 
     public function postInscription() {

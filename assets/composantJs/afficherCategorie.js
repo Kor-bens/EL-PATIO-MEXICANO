@@ -108,7 +108,7 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         div.appendChild(imageSpoilee);
 
         // ... Et les logos sur les restrictions :
-        let typeRestriction = element.restrictions_alimentaires;
+        let typeRestriction = element.regime;
         let logoRestriction = document.createElement("img");
         logoRestriction.src = `assets/ressources/logo-${typeRestriction}.png`;
         logoRestriction.alt = `logo alimentation ${typeRestriction}`;
@@ -125,21 +125,22 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         bouton.textContent = "Plus d'infos";
         divARemplir.appendChild(bouton);
 
+        // Un bouton pour ajouter au panier :
         function ajouterAuPanier() {
           const produitNom = nomPlat.textContent;
           const produitPrix = prixPlat.textContent;
 
 
-          // Créez un objet représentant le plat
+          // Création d'un objet représentant le plat
           const produit = {
             nom: produitNom,
             prix: produitPrix
           };
 
-          // Ajoutez le plat au tableau panier
+          // Fonction pour ajouter le plat au tableau panier
           panier.push(produit);
 
-          // Appelez une fonction pour mettre à jour l'interface utilisateur du panier
+          // Appel d'une fonction pour mettre à jour l'interface utilisateur du panier
           affichagePanier();
 
         }

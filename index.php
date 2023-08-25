@@ -9,6 +9,18 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 $cntrlAppli = new CntrlAppli();
 
+// $db = new PDO('mysql:host=localhost;dbname=elpatiomexicano;charset=utf8','elpatio', 'mexicano1234*');
+
+// $query = "SELECT * FROM sous_cat_plat";
+// $statement = $db->prepare($query);
+// $result = $statement->execute();
+
+// while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+//     echo $row['lib_sous_cat'];
+//     echo '<br>';
+// }
+
+
 if ($method == 'GET'   && $route == '/index')                       $cntrlAppli->affAccueil();
 else if ($method == 'GET'   && $route == '/')                       $cntrlAppli->affAccueil();
 else if ($method == 'GET'   && $route == '/contact')                $cntrlAppli->affContact();

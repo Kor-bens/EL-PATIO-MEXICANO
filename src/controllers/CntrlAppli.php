@@ -92,8 +92,8 @@ class CntrlAppli
 
   public function getData($route)
   {
-    echo '$route : ';
-    echo $route;
+    // echo '$route : ';
+    // echo $route;
 
     $params = explode("?", $route)[1];
     $params = explode("&", $params);
@@ -110,7 +110,7 @@ class CntrlAppli
 
     $json = $dao->getData($sous_cat, $min, $max);
 
-    print_r($json);
+     return $json;
   }
 
   public function affInscription() {
