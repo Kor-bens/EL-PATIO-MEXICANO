@@ -1,6 +1,7 @@
 <?php
 require_once 'src/dao/Db.php';
 require_once 'src/dao/Requete.php';
+require_once 'src/model/Personne.php';
 // require_once 'src/model/Demande.php';
 class DaoAppli
 {
@@ -107,20 +108,7 @@ class DaoAppli
         $max = (int) $max;
         $min--;
 
-        $query = "SELECT p.id_plat, 
-            p.nom_plat AS title, 
-            sc.id_sous_cat AS sous_cat_id, 
-            sc.lib_sous_cat AS sous_cat_nom,
-            p.description AS desc_plat, 
-            p.prix, 
-            p.img_plat, 
-            p.ingredients, 
-            p.regime, 
-            p.id_sc
-FROM plat p
-INNER JOIN sous_cat_plat sc 
-    ON p.id_sc = sc.id_sous_cat
-WHERE sc.lib_sous_cat = :sous_cat";
+        $query = Requete::REQ_PLATS;
 
         $statement = $this->db->prepare($query);
         $statement->bindParam(':sous_cat', $sous_cat, PDO::PARAM_STR);
@@ -143,32 +131,75 @@ WHERE sc.lib_sous_cat = :sous_cat";
             && isset($_POST['mdp']) 
             && isset($_POST['mdp-confirm']) 
             && isset($_POST['telephone'])
-             && isset($_POST['adresse'])) {
+            && isset($_POST['adresse'])) {
 
-                $nom = htmlspecialchars($_POST['nom']);
-                $prenom = htmlspecialchars($_POST['prenom']);
-                $email = htmlspecialchars($_POST['email']);
-                $email_confirm = htmlspecialchars($_POST['email-confirm']);
-                $mdp = password_hash(htmlspecialchars($_POST['mdp']), PASSWORD_ARGON2ID);
-                $mdp_confirm = password_hash(htmlspecialchars($_POST['mdp-confirm']), PASSWORD_ARGON2ID);
-                $telephone = htmlspecialchars($_POST['telephone']);
-                $adresse = htmlspecialchars($_POST['adresse']);
+                $nom            = htmlspecialchars($_POST['nom']);
+                $prenom         = htmlspecialchars($_POST['prenom']);
+                $email          = htmlspecialchars($_POST['email']);
+                $email_confirm  = htmlspecialchars($_POST['email-confirm']);
+                $mdp            = htmlspecialchars($_POST['mdp']);
+                $mdp_confirm    = htmlspecialchars($_POST['mdp-confirm']);
+                $telephone      = htmlspecialchars($_POST['telephone']);
+                $adresse        = htmlspecialchars($_POST['adresse']);
                 
 
                 // Vérifier que la personne n'est pas déjà en base
+                $query = Requete::CHECK_IF_EXIST;
+                $check = $this -> db->prepare($query);
+                $check->execute(array($email));
+                $row = $check->rowCount();
 
+                if($row === 0) {
+                    if(strlen($nom) < 100) {
 
+                        if(strlen($prenom) < 100) {
 
-            echo 'Nom : ';
-            echo $nom;
+                            if(strlen($email) < 100) {
+
+                                if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+                                    if($email == $email_confirm) {
+
+                                        if($mdp == $mdp_confirm) {
+
+                                            $mdp = password_hash($mdp, PASSWORD_ARGON2ID);
+
+                                            $personne = new Personne($nom, $prenom, $email, $mdp, $telephone);
+                                            
+            
+                                            
+                                            $query = Requete::INSERT_PERS;
+
+                                            // TODO: Corriger l'insertion de la personne
+                                            // $statement = $this->db->prepare($query);
+
+                                            // $statement->execute([
+                                            //     'nom'       => $personne->getNom(),
+                                            //     'prenom'    => $personne->getPrenom(),
+                                            //     'email'     => $personne->getEmail(),
+                                            //     'mdp'       => $personne->getMdp(),
+                                            //     'telephone' => $personne->getPhone()
+                                            // ]);
+
+                                        } else header ('Location : /connexion-inscription?error=password-retype');
+                                    }else header('Location : /connexion-inscription?error=email-retype');
+                                }else header('Location: /connexion-inscription?error=email-format');
+                            } else header('Location : /connexion-inscription?error=email-lgth');
+                        }else header('Location : /connexion-inscription?error=first-name-lgth');
+                    } else header('Location: /connexion-inscription?error=name-lgth');
+                } else header('Location: /connexion-inscription?error=already');
+            } else header("Location : /connexion-inscription?error=missing-values");
+
+        echo 'Nom : ';
+            echo $personne->getNom();
             echo '<br>';
 
             echo 'Prénom : ';
-            echo $prenom;
+            echo $personne->getPrenom();
             echo '<br>';
 
             echo 'Mail : ';
-            echo $email;
+            echo $personne->getEmail();
             echo '<br>';
 
             echo 'Email-confirm : ';
@@ -176,7 +207,7 @@ WHERE sc.lib_sous_cat = :sous_cat";
             echo '<br>';
 
             echo 'Mot de passe : ';
-            echo $mdp;
+            echo $personne->getMdp();
             echo '<br>';
 
             echo 'Mot de passe-confirm : ';
@@ -184,14 +215,11 @@ WHERE sc.lib_sous_cat = :sous_cat";
             echo '<br>';
 
             echo 'Téléphone : ';
-            echo $telephone;
+            echo $personne->getPhone();
             echo '<br>';
 
             echo 'Adresse : ';
             echo $adresse;
             echo '<br>';
-
-
-        } else header("Location : /connexion-inscription?error=missing-values");
     }
 }

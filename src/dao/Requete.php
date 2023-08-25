@@ -10,7 +10,35 @@ class Requete
     public const REQ_LAST_PERS  = "SELECT MAX(id_pers) FROM personne WHERE id_role = 2";
     // public const REQ_INS_INV     = "INSERT INTO invite(id_pers) SELECT DISTINCT id_pers FROM personne";
     public const REQ_INS_INV    = "INSERT INTO invite(id_pers) VALUES (:id_pers)";
-    public const CHECK_IF_EXIST = "SELECT";
+    public const CHECK_IF_EXIST = "SELECT mail FROM personne WHERE mail = ?";
+    public const REQ_PLATS = "SELECT p.id_plat, 
+                                p.nom_plat AS title, 
+                                sc.id_sous_cat AS sous_cat_id, 
+                                sc.lib_sous_cat AS sous_cat_nom,
+                                p.description AS desc_plat, 
+                                p.prix, 
+                                p.img_plat, 
+                                p.ingredients, 
+                                p.regime, 
+                                p.id_sc
+                            FROM plat p
+                            INNER JOIN sous_cat_plat sc 
+                            ON p.id_sc = sc.id_sous_cat
+                            WHERE sc.lib_sous_cat = :sous_cat";
+    public const INSERT_PERS = "INSERT INTO personne (id_role, 
+                                                        nom, 
+                                                        prenom, 
+                                                        mail, 
+                                                        mdp,
+                                                        telephone, 
+                                                        date_crea_pers)
+                                VALUES(SELECT id_role FROM role WHERE lib_role = 'Inscrit', 
+                                        :nom, 
+                                        :prenom, 
+                                        :mail, 
+                                        :mdp
+                                        :telephone, 
+                                        CURDATE())";
     // TODO: Ajouter la date de création de la personne
 
     
