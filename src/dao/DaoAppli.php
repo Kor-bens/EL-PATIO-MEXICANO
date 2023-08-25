@@ -34,6 +34,7 @@ class DaoAppli
         $requete = Requete::REQ_INS_PERS;
         $stmt = $this->db->prepare($requete);
         $id_role = 2;
+        $date = 23;
         $stmt->execute(['id_role' => $id_role, 'nom' => $nom, 'prenom' => $prenom, 'mail' => $mail, 'telephone' => $telephone]);
         // print_r($stmt);
         return $this->db->lastInsertId();
@@ -67,7 +68,7 @@ class DaoAppli
         $row = $preparation->fetch(PDO::FETCH_ASSOC);
         print_r($row);
         if ($row) {
-            return $row["id"];
+            return $row["id_pers"];
         } else {
             // echo 'personne';
         }
@@ -91,10 +92,10 @@ class DaoAppli
 
         $date_envoi = date('Y-m-d');
         $texte = $message;
-        $id_role = $this->recupRolePers($id_pers); 
+    
         $id_categorie = $_POST['demande'];
 
-        $stmt->execute(['date_envoi' => $date_envoi, 'texte' => $texte, 'id_categorie' => $id_categorie, 'id_role' => $id_role, 'id_pers' => $id_pers]);
+        $stmt->execute(['date_envoi' => $date_envoi, 'texte' => $texte, 'id_categorie' => $id_categorie, 'id_pers' => $id_pers]);
     }
 
 
