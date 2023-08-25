@@ -26,8 +26,8 @@
                     <a class="nav-link text-white fs-4" id="contact" href="/connexion-inscription">CONNEXION</a>
                 </li>
                 <li class="nav-item">
-                <a href="/public/panier.php"><img id="panier" src="../../../assets/ressources/panier.png" alt="panier"></a>
-                <ul class="dropdown-panier orange">
+                <a><img id="panier" src="../../../assets/ressources/panier.png" alt="panier"></a>
+                <ul class="orange" id="dropdown-panier">
                         
                        
                     </ul>
