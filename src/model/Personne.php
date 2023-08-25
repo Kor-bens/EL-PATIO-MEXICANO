@@ -8,27 +8,14 @@ class Personne {
     protected string    $mdp;
     protected ?string   $phone;
     protected ?string   $avatar;
-    protected date      $date_crea_pers;
 
-    public function __construct($id, $nom, $prenom, $email, $mdp, $phone = NULL, $avatar = NULL, $date) {
-        $this -> id             = $id;
+    public function __construct($nom, $prenom, $email, $mdp, $phone = NULL, $avatar = NULL) {
         $this -> nom            = $nom;
         $this -> prenom         = $prenom;
         $this -> email          = $email;
         $this -> mdp            = $mdp;
         $this -> phone          = $phone;
         $this -> avatar         = $avatar;
-        $this -> date_crea_pers = $date;
-    }
-
-
-    public function getId(): int {
-
-        return $this->id;
-    }
-    
-    public function setId(int $id) {
-        $this->id = $id;
     }
 
     public function getNom(): string {
