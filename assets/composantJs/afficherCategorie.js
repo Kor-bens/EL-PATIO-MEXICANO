@@ -129,21 +129,35 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         function ajouterAuPanier() {
           const produitNom = nomPlat.textContent;
           const produitPrix = prixPlat.textContent;
-
-
+          
+         
           // Création d'un objet représentant le plat
           const produit = {
             nom: produitNom,
-            prix: produitPrix
+            prix: produitPrix,
+            quantite: 1,
+            
           };
 
-          // Fonction pour ajouter le plat au tableau panier
-          panier.push(produit);
+          // Vérification si le plat est déjà dans le panier
+          const platExistant = panier.find(plat => plat.nom === produit.nom);
 
+          if (platExistant) {
+            // Le plat est déjà dans le panier, augmenter la quantité par exemple
+            if (platExistant.quantite < 20) { // Vérification de la quantité maximale
+              platExistant.quantite++; // Augmentation de la quantité existante
+            } else {
+              // Vous pouvez afficher un message d'alerte ou une notification indiquant la limite atteinte
+            }
+          } else {
+            // Le plat n'est pas dans le panier, ajouter avec une quantité de 1
+            panier.push(produit);
+          }
           // Appel d'une fonction pour mettre à jour l'interface utilisateur du panier
           affichagePanier();
 
         }
+       
 
         // Un bouton "Ajouter au panier" pour ajouter le plat dans le panier
         const boutonPanier = document.createElement("button");
