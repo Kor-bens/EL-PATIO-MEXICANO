@@ -123,5 +123,11 @@ class CntrlAppli
         $dao-> postInscription();
   }
 
+  public function postConnexion() {
+    require_once 'src/dao/DaoAppli.php';
+        $dao = new DaoAppli();
+        $dao -> postConnexion();
+  }
+
 
 }

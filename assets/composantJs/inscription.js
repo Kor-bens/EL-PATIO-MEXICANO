@@ -4,7 +4,9 @@ let signUpEl = document.querySelector('#signup');
 let signUpForm = document.querySelector('#signup-form');
 let loginForm = document.querySelector('#login-form');
 
-// document.cookie = "nomCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+// document.cookie = "nomCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // Suppression du cookie
+
+// TODO: À l'aide d'un cookie, garder en mémoire la préférence d'affichage entre "inscription" et "connexion"
 
 function createCookie(value) {
     const expirationDate = new Date();
@@ -70,7 +72,6 @@ function displayLogin() {
         createCookie("login");
     }
 }
-
 // Réaction lors du clic sur le switch 'Connexion'
 loginEl.addEventListener('click', () => {
     displayLogin();

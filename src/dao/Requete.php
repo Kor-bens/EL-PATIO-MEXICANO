@@ -10,7 +10,7 @@ class Requete
     public const REQ_LAST_PERS  = "SELECT MAX(id_pers) FROM personne WHERE id_role = 2";
     // public const REQ_INS_INV     = "INSERT INTO invite(id_pers) SELECT DISTINCT id_pers FROM personne";
     public const REQ_INS_INV    = "INSERT INTO invite(id_pers) VALUES (:id_pers)";
-    public const CHECK_IF_EXIST = "SELECT mail FROM personne WHERE mail = ?";
+    public const CHECK_IF_EXIST = "SELECT mail, nom, prenom, id_role, telephone FROM personne WHERE mail = ?";
     public const REQ_PLATS = "SELECT p.id_plat, 
                                 p.nom_plat AS title, 
                                 sc.id_sous_cat AS sous_cat_id, 
@@ -44,7 +44,13 @@ class Requete
                                                 VALUES ((SELECT id_pers FROM personne WHERE mail = :mail),
                                                         :mdp,
                                                         :adresse)";
-    // TODO: Ajouter la date de création de la personne
+
+    
+    public const FETCH_ID_ROLE = "SELECT id_role FROM role WHERE lib_role = ?";
+    public const FETCH_INSCRIT = "SELECT p.nom, p.prenom, p.mail, p.telephone, p.date_crea_pers, i.mdp, i.adresse, i.avatar
+                                    FROM personne p
+                                    INNER JOIN inscrit i on p.id_pers = i.id
+                                    WHERE p.mail = ?";
 
     
 }

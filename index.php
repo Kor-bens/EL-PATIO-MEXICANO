@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'src/controllers/CntrlAppli.php';
 require_once "src/dao/Requete.php";
 require_once 'src/model/Demande.php';
@@ -31,6 +33,7 @@ else if ($method == 'GET'   && $route == '/menu')                   $cntrlAppli 
 else if ($method == 'GET'   && $route == '/requireData')            $cntrlAppli -> getData($_SERVER['REQUEST_URI']);
 else if ($method == 'GET'   && $route == '/connexion-inscription')  $cntrlAppli -> affInscription();
 else if ($method == 'POST'  && $route == '/post-inscription')       $cntrlAppli -> postInscription();
+else if ($method == 'POST'  && $route == '/post-connexion')          $cntrlAppli -> postConnexion();
 else                                                                {
                                                                         header("Location: /index");
                                                                         exit;

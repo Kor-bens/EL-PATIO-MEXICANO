@@ -61,12 +61,12 @@
             <input id="btn" type="submit" value="Envoyer" class="vert btn mb-1 fsb-3">
         </form>
 
-        <form id="login-form">
+        <form id="login-form" action="/post-connexion" method="POST">
             <label class="fsp-3" for="email">Email :</label>
             <input type="email" id="login-email" name="email" placeholder="Entrez votre email" data-sb-validations="required" class="vert mb-2 fsp-3">
 
             <label class="fsp-3" for="mdp">Mot de passe :</label>
-            <input type="password" id="login-mdp" name="mdp" data-sb-validations="required" class="vert mb-2 fsp-3">
+            <input type="password" id="mdp-login" name="mdp" data-sb-validations="required" class="vert mb-2 fsp-3">
 
             <input id="login-btn" type="submit" value="Envoyer" class="vert btn mb-1 fsb-3">
         </form>
