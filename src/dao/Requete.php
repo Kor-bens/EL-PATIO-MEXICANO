@@ -44,6 +44,7 @@ class Requete
                                                 VALUES ((SELECT id_pers FROM personne WHERE mail = :mail),
                                                         :mdp,
                                                         :adresse)";
+
     
     public const FETCH_ID_ROLE = "SELECT id_role FROM role WHERE lib_role = ?";
     public const FETCH_INSCRIT = "SELECT p.nom, p.prenom, p.mail, p.telephone, p.date_crea_pers, i.mdp, i.adresse, i.avatar

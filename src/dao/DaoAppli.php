@@ -160,7 +160,6 @@ class DaoAppli
                             if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
                                 if($email == $email_confirm) {
-
                                     if($mdp == $mdp_confirm) {
 
                                         // $mdp = password_hash($mdp, PASSWORD_ARGON2ID);
@@ -178,8 +177,6 @@ class DaoAppli
                                             'mail'      => $personne->getEmail(),
                                             'telephone' => $personne->getPhone()
                                         ]);
-
-
                                         $inscrit = new Inscrit($personne, $mdp, $adresse, NULL);
 
                                         $query = Requete::INSERT_INSCRIT;

@@ -72,7 +72,6 @@ function displayLogin() {
         createCookie("login");
     }
 }
-
 // Réaction lors du clic sur le switch 'Connexion'
 loginEl.addEventListener('click', () => {
     displayLogin();
