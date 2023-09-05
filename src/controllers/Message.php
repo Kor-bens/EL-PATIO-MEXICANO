@@ -20,6 +20,8 @@ class Message{
     public const INSCR_ERR_ALREADY = "Cette adresse mail existe déjà.";
     public const INSCR_ERR_NAME_MISSING_VALUES = "Veuillez remplir le formulaire en entier.";
     public const INSCR_ERR_NONE = "L'inscription a été effectuée avec succès.";
+    public const CONNEXION_ERR_UNKNOWN_ROLE = "Votre rôle n'existe pas. Veuillez réessayer.";
+    public const INSCR_ERR_BAD_PASSWORD = "Le mot de passe n'est pas correct.";
 
     
 
