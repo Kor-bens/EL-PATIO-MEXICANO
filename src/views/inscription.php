@@ -17,7 +17,13 @@
     ?>
             <div class="alert alert-danger" role="alert"><?= $err ?></div>
     <?php }
-    } ?>
+    } 
+    
+    require_once 'src/views/err_inscription.php';
+    ?>
+
+
+
     <div class="bloc-formulaire un orange w-50 mt-5" id="connexion-inscription">
         
         <div id="switch" class="row fsp-3 w-100 m-0 p-0">

@@ -29,16 +29,21 @@ class Requete
                                                         nom, 
                                                         prenom, 
                                                         mail, 
-                                                        mdp,
                                                         telephone, 
                                                         date_crea_pers)
-                                VALUES(SELECT id_role FROM role WHERE lib_role = 'Inscrit', 
+                                VALUES((SELECT id_role FROM role WHERE lib_role = 'Inscrit'), 
                                         :nom, 
                                         :prenom, 
                                         :mail, 
-                                        :mdp
                                         :telephone, 
                                         CURDATE())";
+
+    public const INSERT_INSCRIT = "INSERT INTO inscrit (id, 
+                                                        mdp,
+                                                        adresse)
+                                                VALUES ((SELECT id_pers FROM personne WHERE mail = :mail),
+                                                        :mdp,
+                                                        :adresse)";
     // TODO: Ajouter la date de création de la personne
 
     

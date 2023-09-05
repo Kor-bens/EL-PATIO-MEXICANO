@@ -13,6 +13,7 @@
     <div id="description" class="orange mtb-4">
         <p id="p-description" class="fsp-3">Bienvenue dans notre restaurant mexicain, une véritable expérience culinaire au cœur des quartiers sud de Marseille. Dégustez des tacos savoureux, des enchiladas délicieuses, des burritos généreusement garnis, des fajitas succulentes et bien plus encore. Notre menu propose également des soupes authentiques, des salades fraîches et une sélection de cocktails exotiques. Plongez dans les saveurs enivrantes du Mexique dans une ambiance conviviale chez El Patio Mexicano.</p>
     </div>
+    
 
     <div class="container-img-description">
         <h1 class="titre-description fst-1 mtb-24 trait-1">El-Patio-Mexicano</h1>

@@ -2,6 +2,7 @@
 require_once 'src/dao/Db.php';
 require_once 'src/dao/Requete.php';
 require_once 'src/model/Personne.php';
+require_once 'src/model/Inscrit.php';
 // require_once 'src/model/Demande.php';
 class DaoAppli
 {
@@ -150,76 +151,111 @@ class DaoAppli
                 $row = $check->rowCount();
 
                 if($row === 0) {
+
                     if(strlen($nom) < 100) {
 
-                        if(strlen($prenom) < 100) {
+                        if(strlen($prenom) < 100) { //TODO: vérifier pourquoi ce filtre ne fonctionne pas
 
-                            if(strlen($email) < 100) {
+                            if(strlen($email) < 100) { //TODO: vérifier pourquoi ce filtre ne fonctionne pas
 
                                 if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-                                    if($email == $email_confirm) {
+                                    if($email == $email_confirm) {  //TODO: vérifier pourquoi ce filtre ne fonctionne pas
 
-                                        if($mdp == $mdp_confirm) {
+                                        if($mdp == $mdp_confirm) {  //TODO: vérifier pourquoi ce filtre ne fonctionne pas
 
                                             $mdp = password_hash($mdp, PASSWORD_ARGON2ID);
 
-                                            $personne = new Personne($nom, $prenom, $email, $mdp, $telephone);
-                                            
-            
+                                            $personne = new Personne($nom, $prenom, $email, $telephone);
                                             
                                             $query = Requete::INSERT_PERS;
 
-                                            // TODO: Corriger l'insertion de la personne
-                                            // $statement = $this->db->prepare($query);
+                                            $statement = $this->db->prepare($query);
 
-                                            // $statement->execute([
-                                            //     'nom'       => $personne->getNom(),
-                                            //     'prenom'    => $personne->getPrenom(),
-                                            //     'email'     => $personne->getEmail(),
-                                            //     'mdp'       => $personne->getMdp(),
-                                            //     'telephone' => $personne->getPhone()
-                                            // ]);
+                                            $statement->execute([
+                                                'nom'       => $personne->getNom(),
+                                                'prenom'    => $personne->getPrenom(),
+                                                'mail'      => $personne->getEmail(),
+                                                'telephone' => $personne->getPhone()
+                                            ]);
 
-                                        } else header ('Location : /connexion-inscription?error=password-retype');
-                                    }else header('Location : /connexion-inscription?error=email-retype');
-                                }else header('Location: /connexion-inscription?error=email-format');
-                            } else header('Location : /connexion-inscription?error=email-lgth');
-                        }else header('Location : /connexion-inscription?error=first-name-lgth');
+
+                                            $inscrit = new Inscrit($personne, $mdp, $adresse, NULL);
+
+                                            $query = Requete::INSERT_INSCRIT;
+                                            
+                                            $statement = $this->db->prepare($query);
+
+                                            $statement->execute([
+                                                'mail'      => $inscrit->getEmail(),
+                                                'mdp'       => $inscrit->getMdp(),
+                                                'adresse'   => $inscrit->getAdresse()
+                                            ]);
+
+                                            header('Location: /connexion-inscription?error=none');
+
+                                        } else header('Location: /connexion-inscription?error=password-retype');
+                                    } else header('Location: /connexion-inscription?error=email-retype');
+                                } else header('Location: /connexion-inscription?error=email-format');
+                            } else header('Location: /connexion-inscription?error=email-lgth');
+                        } else header('Location: /connexion-inscription?error=first-name-lgth');
                     } else header('Location: /connexion-inscription?error=name-lgth');
                 } else header('Location: /connexion-inscription?error=already');
             } else header("Location : /connexion-inscription?error=missing-values");
 
-        echo 'Nom : ';
-            echo $personne->getNom();
+
+            
+
+            echo 'Nom : ';
+            echo $nom;
             echo '<br>';
 
             echo 'Prénom : ';
-            echo $personne->getPrenom();
+            echo $prenom;
             echo '<br>';
 
             echo 'Mail : ';
-            echo $personne->getEmail();
+            echo $email;
             echo '<br>';
 
             echo 'Email-confirm : ';
             echo $email_confirm;
             echo '<br>';
 
+            if($email == $email_confirm) {
+                echo "mails identiques.";
+            } else {
+                header('Location : /connexion-inscription?error=email-retype');
+            }
+            echo '<br>';
+
             echo 'Mot de passe : ';
-            echo $personne->getMdp();
+            echo $mdp;
             echo '<br>';
 
             echo 'Mot de passe-confirm : ';
             echo $mdp_confirm;
             echo '<br>';
+            
+            if($mdp == $mdp_confirm) {
+                echo "mots de passe identiques.";
+            } else {
+                // header('Location: /connexion-inscription?error=already');
+            }
+            echo '<br>';
 
             echo 'Téléphone : ';
-            echo $personne->getPhone();
+            echo $telephone;
             echo '<br>';
 
             echo 'Adresse : ';
             echo $adresse;
             echo '<br>';
+
+            // echo 'Avatar : ';
+            // echo $inscrit->getAvatar();
+            // echo '<br>';
+
+
     }
 }

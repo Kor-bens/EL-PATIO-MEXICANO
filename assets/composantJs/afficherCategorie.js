@@ -58,6 +58,7 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         }
 
         divAffichage.appendChild(divARemplir);
+        console.log('fonction chargée');
 
         // Dans chaque div, on va créer :
         // Un titre
@@ -129,14 +130,14 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         function ajouterAuPanier() {
           const produitNom = nomPlat.textContent;
           const produitPrix = prixPlat.textContent;
-          
-         
+
+
           // Création d'un objet représentant le plat
           const produit = {
             nom: produitNom,
             prix: produitPrix,
             quantite: 1,
-            
+
           };
 
           // Vérification si le plat est déjà dans le panier
@@ -157,7 +158,7 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
           affichagePanier();
 
         }
-       
+
 
         // Un bouton "Ajouter au panier" pour ajouter le plat dans le panier
         const boutonPanier = document.createElement("button");

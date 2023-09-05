@@ -5,17 +5,13 @@ class Personne {
     protected string    $nom;
     protected string    $prenom;
     protected string    $email;
-    protected string    $mdp;
     protected ?string   $phone;
-    protected ?string   $avatar;
 
-    public function __construct($nom, $prenom, $email, $mdp, $phone = NULL, $avatar = NULL) {
+    public function __construct($nom, $prenom, $email, $phone = NULL) {
         $this -> nom            = $nom;
         $this -> prenom         = $prenom;
         $this -> email          = $email;
-        $this -> mdp            = $mdp;
         $this -> phone          = $phone;
-        $this -> avatar         = $avatar;
     }
 
     public function getNom(): string {
@@ -45,14 +41,6 @@ class Personne {
         $this->email = $email;
     }
 
-    public function getMdp(): string {
-
-        return $this->mdp;
-    }
-
-    public function setMdp(string $mdp) {
-        $this->mdp = $mdp;
-    }
 
     public function getPhone(): string {
 
@@ -61,25 +49,6 @@ class Personne {
 
     public function setPhone(string $phone) {
         $this->phone = $phone;
-    }
-
-    public function getAvatar(): ?string {
-
-        return $this->avatar;
-    }
-    public function setAvatar(?string $avatar) {
-        $this->avatar = $avatar;
-    }
-
-    public function getDateCreaPers(): date {
-
-        return $this->date_crea_pers;
-    }
-
-    public function setDateCreaPers(date $date_crea_pers) {
-
-        $this->date_crea_pers = $date_crea_pers;
-        
     }
 }
 
