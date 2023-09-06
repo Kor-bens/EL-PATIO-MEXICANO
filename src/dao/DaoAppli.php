@@ -133,6 +133,7 @@ class DaoAppli
             && isset($_POST['telephone'])
             && isset($_POST['adresse'])) {
 
+                // Récupérer les éléments venant du formulaire
             $nom            = htmlspecialchars($_POST['nom']);
             $prenom         = htmlspecialchars($_POST['prenom']);
             $email          = htmlspecialchars($_POST['email']);
@@ -149,6 +150,13 @@ class DaoAppli
             $check->execute(array($email));
             $row = $check->rowCount();
 
+            // On fait toute une série de vérifications, dans un ordre de priorité
+            // décidé arbitrairement :
+            // - La personne n'est pas en base
+            // - le nom, le prénom, le mail ne sont pas trop longs
+            // - Le mail a un bon format de mail
+            // - Le mail et le mot de passe correspondent à leurs confirmations
+
             if($row === 0) {
 
                 if(strlen($nom) < 100) {
@@ -160,27 +168,30 @@ class DaoAppli
                             if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
                                 if($email == $email_confirm) {
+
                                     if($mdp == $mdp_confirm) {
 
+                                        // Suite à des problèmes d'incompatibilité, on repasse sur un sha256
                                         // $mdp = password_hash($mdp, PASSWORD_ARGON2ID);
                                         $mdp = hash('sha256', $mdp);
 
+                                        // On crée une instance de Personne qu'on enverra en base
                                         $personne = new Personne($nom, $prenom, $email, $telephone);
                                         
+                                        // On insère une personne en base
                                         $query = Requete::INSERT_PERS;
-
                                         $statement = $this->db->prepare($query);
-
                                         $statement->execute([
                                             'nom'       => $personne->getNom(),
                                             'prenom'    => $personne->getPrenom(),
                                             'mail'      => $personne->getEmail(),
                                             'telephone' => $personne->getPhone()
                                         ]);
-                                        $inscrit = new Inscrit($personne, $mdp, $adresse, NULL);
 
-                                        $query = Requete::INSERT_INSCRIT;
-                                        
+                                        // On crée
+                                        $inscrit = new Inscrit($nom, $prenom, $email, $mdp, $adresse, $telephone, NULL);
+
+                                        $query = Requete::INSERT_INSCRIT;                                        
                                         $statement = $this->db->prepare($query);
 
                                         $statement->execute([
@@ -285,6 +296,8 @@ class DaoAppli
     }
 
     public function connectInscrit($personne, $mdp) {
+        require_once 'src/model/Inscrit.php';
+
         $prenom = $personne->getPrenom();
         $nom    = $personne->getNom();
         $email  = $personne->getEmail();
@@ -298,10 +311,12 @@ class DaoAppli
         $statement->execute(array($email));
         $data = $statement->fetch();
         
+        $adresse = $data['adresse'];
+
         if($mdp === $data['mdp']) {
             
             $adresse = $data['adresse'];
-            $inscrit = new Inscrit($personne, $mdp, $adresse);
+            $inscrit = new Inscrit($nom, $prenom, $email, $mdp, $adresse);
             
             $_SESSION['status'] = 'logged';
             $_SESSION['role'] = 'admin';

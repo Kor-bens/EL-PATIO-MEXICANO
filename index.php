@@ -1,33 +1,25 @@
 <?php
-session_start();
 
-if(isset($_SESSION['user'])) {
-    echo 'Utilisateur : ';
-    print_r($_SESSION['user']);
-    echo '<br>';
-}
+// On fait en sorte que toutes les erreurs soient affichées
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+// On appelle les fichiers de classe avant l'ouverture de la session pour être sûr
+// de l'affichage correct des éléments et méthodes des instances.
+require_once 'src/model/Personne.php';
+require_once 'src/model/Inscrit.php';
 require_once 'src/controllers/CntrlAppli.php';
 require_once "src/dao/Requete.php";
 require_once 'src/model/Demande.php';
 require_once 'src/controllers/Message.php';
 
+session_start();
+
 $route = htmlspecialchars(explode("?", $_SERVER['REQUEST_URI'])[0]);
 $method = $_SERVER['REQUEST_METHOD'];
 
 $cntrlAppli = new CntrlAppli();
-
-// $db = new PDO('mysql:host=localhost;dbname=elpatiomexicano;charset=utf8','elpatio', 'mexicano1234*');
-
-// $query = "SELECT * FROM sous_cat_plat";
-// $statement = $db->prepare($query);
-// $result = $statement->execute();
-
-// while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-//     echo $row['lib_sous_cat'];
-//     echo '<br>';
-// }
-
 
 if ($method == 'GET'   && $route == '/index')                       $cntrlAppli->affAccueil();
 else if ($method == 'GET'   && $route == '/')                       $cntrlAppli->affAccueil();

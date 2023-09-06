@@ -1,40 +1,63 @@
 <?php
 
+#[AllowDynamicProperties]
 class Inscrit extends Personne {
-    protected Personne  $personne;
+    
     protected string    $mdp;
     protected string    $adresse;
     protected ?string   $avatar;
 
-    public function __construct($personne, $mdp, $adresse, $avatar = NULL) {
-        $this -> personne       = $personne;
+    public function __construct($nom, $prenom, $email, $mdp, $adresse, $phone = NULL, $avatar = NULL) {
+        parent::__construct($nom, $prenom, $email, $phone);
         $this -> mdp            = $mdp;
         $this -> adresse        = $adresse;
-        $this -> avatar         = $avatar;
+        $this -> avatar         = $avatar;        
 
         
+    }    
+
+    public function getNom(): string {
+
+        return $this->nom;
+    }
+
+    public function setNom(string $nom) {
+        $this->nom = $nom;
     }
 
     public function getPrenom(): string {
-        return $this->Prenom;
+
+        return $this->prenom;
+    }
+    
+    public function setPrenom(string $prenom) {
+        $this->prenom = $prenom;
     }
 
     public function getEmail(): string {
-        return $this->personne->getEmail();
+
+        return $this->email;
     }
 
-    public function getPersonne(): Personne {
-
-        return $this->personne;
+    public function setEmail(string $email) {
+        $this->email = $email;
     }
-    public function setPersonne(Personne $personne) {
-        $this->personne = $personne;
+
+
+    public function getPhone(): string {
+
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone) {
+        $this->phone = $phone;
     }
 
     public function getMdp(): string {
-
+        
         return $this->mdp;
     }
+    
     public function setMdp(string $mdp) {
         $this->mdp = $mdp;
     }    
@@ -47,7 +70,7 @@ class Inscrit extends Personne {
     public function setAdresse(string $adresse) {
         $this->adresse = $adresse;
     }
-
+    
     public function getAvatar(): ?string {
 
         return $this->avatar;
@@ -56,6 +79,9 @@ class Inscrit extends Personne {
     public function setAvatar(?string $avatar) {
         $this->avatar = $avatar;
     }
+
+
+
 }
 
 ?>

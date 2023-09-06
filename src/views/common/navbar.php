@@ -43,7 +43,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white fs-4" id="compte" href="/compte" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon compte</a>
                                 <ul class="dropdown-menu orange">
-                                    <li><p class="dropdown-item text-white fs-5 ">Bienvenue <?php //echo ($_SESSION['user']->getEmail()); ?></p></li>
+                                    <li><p class="dropdown-item text-white fs-5 ">Bienvenue <?=$_SESSION['user']->getPrenom();?></p></li>
                                     <li><a class="dropdown-item text-white fs-5 " href="/compte/modifier">Paramètres</a></li>
                                     <li><a class="dropdown-item text-white fs-5" href="/compte/commandes">Mes commandes</a></li>
                                     <li><a class="dropdown-item text-white fs-5" href="/compte/panier">Panier</a></li>
