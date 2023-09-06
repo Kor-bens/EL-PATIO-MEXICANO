@@ -1,5 +1,5 @@
 <?php
-
+  #[AllowDynamicProperties]
 class Personne {
     protected int       $id_pers;
     protected string    $nom;
