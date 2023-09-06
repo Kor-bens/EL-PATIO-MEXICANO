@@ -15,6 +15,10 @@ class Inscrit extends Personne {
         
     }
 
+    public function getPrenom(): string {
+        return $this->Prenom;
+    }
+
     public function getEmail(): string {
         return $this->personne->getEmail();
     }

@@ -23,14 +23,34 @@
                     <a class="nav-link text-white fs-4" id="contact" href="/contact">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-4" id="contact" href="/connexion-inscription">CONNEXION</a>
-                </li>
-                <li class="nav-item">
-                <a><img id="panier" src="../../../assets/ressources/panier.png" alt="panier"></a>
-                <ul class="orange" id="dropdown-panier">
+                    <a><img id="panier" src="../../../assets/ressources/panier.png" alt="panier"></a>
+                    <ul class="orange" id="dropdown-panier">
                         
-                       
-                    </ul>
+                        
+                        </ul>
+                    </li>                    
+                        <?php if(!isset($_SESSION['user'])) {
+                            ?>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fs-4" 
+                                    id="connexion" 
+                                    href="/connexion-inscription" >
+                                    CONNEXION
+                                </a>
+                            </li><?php
+                        } else {
+                            ?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white fs-4" id="compte" href="/compte" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon compte</a>
+                                <ul class="dropdown-menu orange">
+                                    <li><p class="dropdown-item text-white fs-5 ">Bienvenue <?php //echo ($_SESSION['user']->getEmail()); ?></p></li>
+                                    <li><a class="dropdown-item text-white fs-5 " href="/compte/modifier">Paramètres</a></li>
+                                    <li><a class="dropdown-item text-white fs-5" href="/compte/commandes">Mes commandes</a></li>
+                                    <li><a class="dropdown-item text-white fs-5" href="/compte/panier">Panier</a></li>
+                                    <li><a class="dropdown-item text-white fs-5" href="/deconnexion">Déconnexion</a></li>
+                                </ul>
+                            </li><?php 
+                        } ?>
                 </li>
                
             </ul>

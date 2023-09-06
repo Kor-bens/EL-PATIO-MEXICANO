@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if(isset($_SESSION['user'])) {
+    echo 'Utilisateur : ';
+    print_r($_SESSION['user']);
+    echo '<br>';
+}
+
 require_once 'src/controllers/CntrlAppli.php';
 require_once "src/dao/Requete.php";
 require_once 'src/model/Demande.php';
@@ -33,7 +39,8 @@ else if ($method == 'GET'   && $route == '/menu')                   $cntrlAppli 
 else if ($method == 'GET'   && $route == '/requireData')            $cntrlAppli -> getData($_SERVER['REQUEST_URI']);
 else if ($method == 'GET'   && $route == '/connexion-inscription')  $cntrlAppli -> affInscription();
 else if ($method == 'POST'  && $route == '/post-inscription')       $cntrlAppli -> postInscription();
-else if ($method == 'POST'  && $route == '/post-connexion')          $cntrlAppli -> postConnexion();
+else if ($method == 'POST'  && $route == '/post-connexion')         $cntrlAppli -> postConnexion();
+else if ($method == 'GET'   && $route == '/deconnexion')            $cntrlAppli -> deconnexion();
 else                                                                {
                                                                         header("Location: /index");
                                                                         exit;
