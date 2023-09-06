@@ -309,7 +309,6 @@ class DaoAppli
             
             header ('Location: /index');
             // TODO: Gérer les exceptions de connexion
-            // TODO: Rajouter un bouton de déconnexion (navbar contextuelle)
 
         } else header('Location: inscription-connexion?error=bad-password');
     }

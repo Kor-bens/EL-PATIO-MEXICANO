@@ -4,7 +4,7 @@ let navLinks = document.querySelectorAll('.nav-link');
 let dropdown = document.querySelector('.dropdown-menu');
 
 navLinks.forEach(navLink => {
-  if (navLink.id != "menu") {
+  if (navLink.id != "menu" && navLink.id != "compte") {
     navLink.addEventListener('mouseover', () => {
       navLink.classList.add('underline');
 
@@ -50,6 +50,8 @@ window.onscroll = function () {
 
 
 // ----- GÉRER L'ANIMATION D'APPARITION DU MENU DÉROULANT LORS DU SURVOL
+
+//TODO: Faire en sorte que cette animation concerne aussi l'item "mon compte"
 
 // -- Variable qui va s'alterner afin de ne faire qu'un seul addEventListener
 let isDone = false;
