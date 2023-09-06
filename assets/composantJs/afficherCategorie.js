@@ -1,4 +1,5 @@
 import { panier, affichagePanier } from './panier.js';
+
 export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie qu'on veut afficher, le numéro du premier élément et le numéro du dernier (on peut ne pas vouloir commencer par le premier)
 
   const divAffichage = document.getElementById(`affichage-${sous_cat}`);
@@ -58,7 +59,6 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         }
 
         divAffichage.appendChild(divARemplir);
-        console.log('fonction chargée');
 
         // Dans chaque div, on va créer :
         // Un titre
@@ -129,16 +129,22 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
         // Un bouton pour ajouter au panier :
         function ajouterAuPanier() {
           const produitNom = nomPlat.textContent;
-          const produitPrix = prixPlat.textContent;
-
-
+          const produitPrix = parseFloat(prixPlat.textContent);
+          
+                // Enregistrez le panier dans localStorage
+            localStorage.setItem('panier', JSON.stringify(panier));
+            console.log(localStorage)
           // Création d'un objet représentant le plat
           const produit = {
             nom: produitNom,
             prix: produitPrix,
             quantite: 1,
 
+      
           };
+          
+          
+       
 
           // Vérification si le plat est déjà dans le panier
           const platExistant = panier.find(plat => plat.nom === produit.nom);
@@ -154,11 +160,13 @@ export function afficher(sous_cat, min, max) { // 3 paramètres : la catégorie 
             // Le plat n'est pas dans le panier, ajouter avec une quantité de 1
             panier.push(produit);
           }
+
           // Appel d'une fonction pour mettre à jour l'interface utilisateur du panier
+          
           affichagePanier();
 
         }
-
+       
 
         // Un bouton "Ajouter au panier" pour ajouter le plat dans le panier
         const boutonPanier = document.createElement("button");

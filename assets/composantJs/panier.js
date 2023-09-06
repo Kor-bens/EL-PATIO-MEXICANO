@@ -2,6 +2,7 @@
 let navPanier = document.querySelector("#panier");
 navPanier.style.borderRadius = "50%";
 navPanier.style.backgroundImage = "url(../../../assets/ressources/tissu-orange-2.jpg)";
+
 // navPanier.style.position = "relative";
 let dropdownPanier = document.querySelector("#dropdown-panier");
 dropdownPanier.style.position = "absolute";
@@ -17,13 +18,15 @@ let panierTotal = document.createElement("p");
 
 
 // TODO AJOUT DES ARTICLES DANS LA DB DEPUIS LE PANIER
-// TODOMODIFIER LA WIDTH DROPDOWN 
+
 // TODORELIER LA CORBEILLE A LA DB QUAND ON SUPPRIME UN ARTICLE
 
-// TODOCREATION SELECTION NBRE ARTICLE 
+
 
 
 let panier = [];
+
+
 
 
 dropdownPanier.style.top = "80%"; // ajustez la valeur si nécessaire
@@ -53,7 +56,12 @@ dropdownPanier.style.top = "80%"; // ajustez la valeur si nécessaire
 //     }
 // }
 
-export { panier, affichagePanier };
+
+
+
+  
+
+export { panier, affichagePanier};
 
 function affichagePanier() {
 
@@ -66,6 +74,7 @@ function affichagePanier() {
 
         let item = document.createElement("div");
         item.classList.add("item-panier");
+        item.style.display="none";
         dropdownPanier.appendChild(item);
         
       // Créez un nouvel élément de liste pour chaque plat
@@ -104,7 +113,31 @@ function affichagePanier() {
         const productIndex = parseInt(dropdownItemPanierA.getAttribute("data-index")); 
         // Mettre à jour la valeur de dropdownItemQuantite avec la quantité du produit      
         dropdownItemQuantite.value = panier[productIndex].quantite;
+        console.log(`index:${productIndex}`);
+        console.log(`quantité:${dropdownItemQuantite.value}`);
         dropdownItemPanierA.appendChild(dropdownItemQuantite);
+
+        dropdownItemQuantite.addEventListener("input", function () {
+            const newQuantity = parseInt(this.value); // Obtenez la nouvelle quantité à partir de l'input
+            const productIndex = parseInt(dropdownItemPanierA.getAttribute("data-index"));
+          console.log(productIndex);
+            //  la nouvelle quantité est valide (entre 1 et 20, par exemple)
+            if ( newQuantity <= 20) {
+              // Mettez à jour la quantité du produit dans le panier
+              panier[productIndex].quantite = newQuantity;
+          
+              // Recalculez le total du panier
+              const totalPanier = calculerTotal();
+          
+              // Mettez à jour l'affichage du total
+              panierTotal.textContent = `Total: ${totalPanier}€`;
+            } else {
+              // Affichez un message d'erreur ou faites quelque chose pour gérer les quantités invalides
+              alert("La quantité doit être comprise entre 1 et 20.");
+              // Réinitialisez la valeur de l'input pour la ramener à une valeur valide (par exemple, 1)
+              this.value = panier[productIndex].quantite;
+            }
+          });
 
 
 
@@ -120,7 +153,7 @@ function affichagePanier() {
         panierTotal.style.display = "none";
         item.appendChild(panierTotal);
         const totalPanier = calculerTotal();
-        panierTotal.textContent = `Total: ${totalPanier}`;
+        panierTotal.textContent = `Total: ${totalPanier}€`;
         
         //creation bouton commander
             btnCommander.style.display="none";
@@ -136,6 +169,7 @@ function affichagePanier() {
 
         navPanier.addEventListener("mouseenter", () => {
         dropdownPanier.classList.add("shown");
+        item.style.display ="block";
         dropdownItemPanierLi.style.display = "block";
         dropdownItemPanierA.style.display = "block";
         panierTotal.style.display = "block";
@@ -146,10 +180,10 @@ function affichagePanier() {
 
         navPanier.addEventListener("mouseleave", () =>{
         dropdownPanier.classList.add("hidden");
-        dropdownItemPanierLi.style.display = "block";
-        dropdownItemPanierA.style.display = "block";
-        panierTotal.style.display = "block";
-        btnCommander.style.display="block";  
+        dropdownItemPanierLi.style.display = "none";
+        dropdownItemPanierA.style.display = "none";
+        panierTotal.style.display = "none";
+        btnCommander.style.display="none";  
             // alert("bbbbbb");
             // PanierVide(); 
         })
@@ -176,11 +210,12 @@ function affichagePanier() {
     
     
 }
+
 function calculerTotal() {
         let total = 0;
       
         for (const produit of panier) {
-            total += produit.prix * parseInt(produit.quantite);
+            total += produit.prix * produit.quantite;
         }
       
         return total;
