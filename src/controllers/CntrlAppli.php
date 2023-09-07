@@ -139,4 +139,10 @@ class CntrlAppli
   public function modifierCompte() {
     require_once 'src/views/modifier_compte.php';
   }
+
+  public function postModifier() {
+    require_once 'src/dao/daoAppli.php';
+    $dao = new DaoAppli();
+    $dao->postModifier();
+  }
 }

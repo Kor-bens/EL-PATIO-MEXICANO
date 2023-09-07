@@ -34,6 +34,8 @@ else if ($method == 'POST'  && $route == '/post-inscription')       $cntrlAppli 
 else if ($method == 'POST'  && $route == '/post-connexion')         $cntrlAppli -> postConnexion();
 else if ($method == 'GET'   && $route == '/deconnexion')            $cntrlAppli -> deconnexion();
 else if ($method == 'GET'   && $route == '/compte/modifier')        $cntrlAppli -> modifierCompte();
+else if ($method == 'POST'  && $route == '/post-modifier')          $cntrlAppli -> postModifier();
+
 else                                                                {
                                                                         header("Location: /index");
                                                                         exit;

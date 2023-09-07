@@ -58,17 +58,17 @@
             <label class="fsp-3" for="email">Email :</label>
             <input value ="<?=$email?>" type="email" id="email" name="email" placeholder="Entrez votre email" data-sb-validations="required" class="vert mb-2 fsp-3">
 
-            <label class="fsp-3" for="email-confirm">Nouvel email :</label>
-            <input type="email" id="email-confirm" name="email-confirm" placeholder="Entrez votre email" data-sb-validations="required" class="vert mb-2 fsp-3">
+            <label class="fsp-3" for="new-email">Nouvel email :</label>
+            <input type="email" id="new-email" name="new-email" placeholder="Entrez votre email" data-sb-validations="required" class="vert mb-2 fsp-3">
 
             <label class="fsp-3" for="last-mdp">Ancien mot de passe : </label>
             <input type="password" id="last-mdp" name="last-mdp" data-sb-validations="required" class="vert mb-2 fsp-3">
 
-            <label class="fsp-3 text-center" for="mdp">Nouveau mot de passe : </label>
-            <input type="password" id="mdp" name="mdp" data-sb-validations="required" class="vert mb-2 fsp-3">
+            <label class="fsp-3 text-center" for="new-mdp">Nouveau mot de passe : </label>
+            <input type="password" id="new-mdp" name="new-mdp" data-sb-validations="required" class="vert mb-2 fsp-3">
             
-            <label class="fsp-3 text-center" for="mdp-confirm">Confirmez votre mot de passe :</label>
-            <input type="password" id="mdp-confirm" name="mdp-confirm" data-sb-validations="required" class="vert mb-2 fsp-3">
+            <label class="fsp-3 text-center" for="new-mdp-confirm">Confirmez votre mot de passe :</label>
+            <input type="password" id="new-mdp-confirm" name="new-mdp-confirm" data-sb-validations="required" class="vert mb-2 fsp-3">
 
             <label class="fsp-3" for="telephone">Numéro de téléphone :</label>
             <input value ="<?=$telephone?>" type="tel" id="telephone" name="telephone" placeholder="Entrez votre numéro de téléphone" data-sb-validations="required" class="vert mb-2 fsp-3">
