@@ -327,4 +327,79 @@ class DaoAppli
 
         } else header('Location: inscription-connexion?error=bad-password');
     }
+
+    public function postModifier() {
+        if (isset($_POST['nom']) 
+            && isset($_POST['prenom']) 
+            && isset($_POST['email']) 
+            && isset($_POST['new-email']) 
+            && isset($_POST['last-mdp']) 
+            && isset($_POST['new-mdp']) 
+            && isset($_POST['new-mdp-confirm']) 
+            && isset($_POST['telephone'])
+            && isset($_POST['adresse'])) {
+
+                // Récupérer les éléments venant du formulaire
+                $form_nom            = htmlspecialchars($_POST['nom']);
+                $form_prenom         = htmlspecialchars($_POST['prenom']);
+                $form_last_email     = htmlspecialchars($_POST['email']);
+                $form_new_email      = htmlspecialchars($_POST['new-email']);
+                $form_last_mdp       = htmlspecialchars($_POST['last-mdp']);
+                $form_new_mdp        = htmlspecialchars($_POST['new-mdp']);
+                $form_new_mdp_confirm= htmlspecialchars($_POST['new-mdp-confirm']);
+                $form_telephone      = htmlspecialchars($_POST['telephone']);
+                $form_adresse        = htmlspecialchars($_POST['adresse']);
+
+                // Vérifier que la personne est déjà en base
+                $query = Requete::CHECK_IF_EXIST;
+                $check = $this -> db->prepare($query);
+                $check->execute(array($form_last_email));
+                $data = $check->fetch();
+                $row = $check->rowCount();
+
+                $last_nom       = $data['nom'];
+                $last_prenom    = $data['prenom'];
+                $last_mdp       = $data['mdp'];
+                $last_email     = $data['mail'];
+                $last_adresse   = $data['adresse'];
+                $last_telephone = $data['telephone'];
+
+                $inscrit = new Inscrit($last_nom, $last_prenom, $last_email, $last_mdp, $last_adresse, $last_telephone);
+
+                print_r ($inscrit);
+
+                
+
+                // On va faire toute une série de vérifications :
+                    // - L'utilisateur existe déjà en base
+                    // - L'ancien mot de passe rentré est correct
+                    // - Le nouveau mdp et sa confirmation correspondent
+
+                if($row === 1) {
+                    if(!empty($new_mdp)) {
+                        if($form_last_mdp === $inscrit->getMdp() && $form_new_mdp != $last_mdp) {
+                            if($form_new_mdp === $form_new_mdp_confirm) {
+                                $this->changeMdp($inscrit, $form_new_mdp);
+                            }
+                        
+                    } if(!empty($form_new_email) && $form_new_email != $inscrit->getEmail()) {
+                        $this -> changeEmail($data, $form_new_email);
+
+                    } if (!empty($form_nom) && $form_nom != $inscrit->getNom()) {
+                        $this->changeNom($data, $form_nom);
+
+                    } if(!empty($form_prenom) && $form_prenom != $inscrit -> getPrenom()) {
+                        $this->changePrenom($data, $form_prenom);
+
+                    } if(!empty($form_adresse) && $form_adresse != $inscrit -> getAdresse()) {
+                        $this->changePrenom($data, $form_adresse);
+                    }           
+                }
+            }
+        }
+    }
+
+    public function changeEmail($inscrit, $email) {
+        $query = Requete::CHANGE_EMAIL;
+    }
 }
