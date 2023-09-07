@@ -135,4 +135,8 @@ class CntrlAppli
       header('Location: /index');
     }
   }
+
+  public function modifierCompte() {
+    require_once 'src/views/modifier_compte.php';
+  }
 }

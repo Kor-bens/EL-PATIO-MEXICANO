@@ -33,6 +33,7 @@ else if ($method == 'GET'   && $route == '/connexion-inscription')  $cntrlAppli 
 else if ($method == 'POST'  && $route == '/post-inscription')       $cntrlAppli -> postInscription();
 else if ($method == 'POST'  && $route == '/post-connexion')         $cntrlAppli -> postConnexion();
 else if ($method == 'GET'   && $route == '/deconnexion')            $cntrlAppli -> deconnexion();
+else if ($method == 'GET'   && $route == '/compte/modifier')        $cntrlAppli -> modifierCompte();
 else                                                                {
                                                                         header("Location: /index");
                                                                         exit;
