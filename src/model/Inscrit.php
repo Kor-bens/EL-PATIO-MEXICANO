@@ -44,12 +44,12 @@ class Inscrit extends Personne {
     }
 
 
-    public function getPhone(): string {
+    public function getPhone() {
 
         return $this->phone;
     }
 
-    public function setPhone(string $phone) {
+    public function setPhone($phone) {
         $this->phone = $phone;
     }
 
