@@ -3,7 +3,9 @@ require_once 'src/dao/Db.php';
 require_once 'src/dao/Requete.php';
 require_once 'src/model/Personne.php';
 require_once 'src/model/Inscrit.php';
-// require_once 'src/model/Demande.php';
+require_once 'src/model/Demande.php';
+require_once 'src/model/Categorie_msg.php';
+require_once 'src/model/Message_contact.php';
 class DaoAppli
 {
     private PDO $db;
@@ -500,21 +502,27 @@ class DaoAppli
         
     }
 
-    public function afficheMessagePersonne(){
-      $requete = Requete::REQ_MSG_PERS;
-      $stmt = $this->db->query($requete);
-      $liste = [];
-      while ($row = $stmt->fetch()){
-        $texte = $row['texte'];
-        $categorie_msg = $row['id_cat_msg'];
-        $date_envoi   = $row['date_envoi'];
-        $personne = $row['id_pers'];
-        $id_msg  = $row['id_msg'];
-        $message = new Message($id_msg,$date_envoi,$texte,$categorie_msg,$personne);
-        array_push($liste, $message);
-      }
-      return $liste;
-      
+    public function afficheMessagePersonne() {
+        $requete = Requete::REQ_MSG_PERS;
+        $stmt = $this->db->query($requete);
+        $liste = [];
+        while ($row = $stmt->fetch()) {
+            $texte = $row['texte'];
+            $categorie_msg = new Categorie_msg($row['id_cat_msg'], $row['lib_cat_msg']);
+            $date_envoi = $row['date_envoi'];
+            
+            // Gestion des données potentiellement nulles
+            $nom = $row['nom']; // Valeur par défaut vide si le nom est nul
+            $prenom = $row['prenom']; // Valeur par défaut vide si le prénom est nul
+            $email = $row['mail']; // Valeur par défaut vide si l'email est nul
+            $phone = $row['telephone'] ?? ''; // Valeur par défaut vide si le téléphone est nul
+            
+            $personne = new Personne($row['id_pers'], $nom, $prenom, $email, $phone);
+            $id_msg  = $row['id_msg'];
+            $message = new Message_contact($id_msg, $date_envoi, $texte, $categorie_msg, $personne);
+            array_push($liste, $message);
+        }
+        return $liste;
     }
 
     // public function recupDemandes()

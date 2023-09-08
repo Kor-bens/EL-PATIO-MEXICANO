@@ -13,6 +13,7 @@ require_once 'src/controllers/CntrlAppli.php';
 require_once "src/dao/Requete.php";
 require_once 'src/model/Demande.php';
 require_once 'src/controllers/Message.php';
+require_once 'src/model/Categorie_msg.php';
 
 session_start();
 

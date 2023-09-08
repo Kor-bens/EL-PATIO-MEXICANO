@@ -1,13 +1,13 @@
 <?php 
 
-class Message{
+class Message_contact {
     private int             $id_msg;
     private string          $date_envoi;
     private string          $texte;
     private Categorie_msg   $categorie_msg;
-    private Personne        $personne;
+    private Personne        $personne; // Ajout de la propriété personne
 
-    public function __construct($id_msg,$date_envoi,$texte,$categorie_msg,$personne){
+    public function __construct($id_msg, $date_envoi, $texte, $categorie_msg, $personne) {
         $this->id_msg = $id_msg;
         $this->date_envoi = $date_envoi;
         $this->texte = $texte;
@@ -15,8 +15,8 @@ class Message{
         $this->personne = $personne;
     }
 
+    // Ajout de la méthode pour obtenir l'objet Personne
     public function getPersonne(): Personne {
-
         return $this->personne;
     }
     public function setPersonne(Personne $personne) {

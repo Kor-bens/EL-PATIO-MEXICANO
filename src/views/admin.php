@@ -1,20 +1,25 @@
 <?php 
- require_once 'src/controllers/CntrlAppli.php';
+require_once 'src/model/Message_contact.php';
+ 
 
 ?>
- <table>
- <tr>
-     <th>ID Personne</th>
-     <th>Date</th>
-     <th>Message</th>
-     <th>Catégorie Message</th>
- </tr>
- <?php foreach ($messages as $message) { ?>
- <tr>
-     <td><?php echo $message->getPersonne()->getIdPers(); ?></td>
-     <td><?php echo $message->getDateEnvoi(); ?></td>
-     <td><?php echo $message->getTexte(); ?></td>
-     <td><?php echo $message->getCategorieMsg()->getNom(); ?></td> <!-- Supposons que vous ayez une méthode getNom() dans la classe Categorie_msg pour obtenir le nom de la catégorie -->
- </tr>
- <?php } ?>
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>E-mail</th>
+        <th>Message</th>
+        <th>Catégorie Message</th>
+        <th>Date</th>
+    </tr>
+    <?php foreach ($messages as $message) { ?>
+        <tr>
+            <td><?php echo $message->getPersonne()->getNom(); ?></td>
+            <td><?php echo $message->getPersonne()->getPrenom(); ?></td>
+            <td><?php echo $message->getPersonne()->getEmail(); ?></td>
+            <td><?php echo $message->getTexte(); ?></td>
+            <td><?php echo $message->getCategorieMsg()->getNomCategorie(); ?></td>
+            <td><?php echo $message->getDateEnvoi(); ?></td>
+        </tr>
+    <?php } ?>
 </table>
