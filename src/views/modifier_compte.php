@@ -34,6 +34,7 @@
                 if(isset($_SESSION['user'])) {
                     $inscrit = $_SESSION['user'];
 
+                    $id_pers    = $inscrit->getIdPers();
                     $nom        = $inscrit->getNom();
                     $prenom     = $inscrit->getPrenom();
                     $email      = $inscrit->getEmail();

@@ -7,7 +7,8 @@ class Personne {
     protected string    $email;
     protected ?string   $phone;
 
-    public function __construct($nom, $prenom, $email, $phone = NULL) {
+    public function __construct($id_pers, $nom, $prenom, $email, $phone = NULL) {
+        $this -> id_pers        = $id_pers;
         $this -> nom            = $nom;
         $this -> prenom         = $prenom;
         $this -> email          = $email;
@@ -49,6 +50,15 @@ class Personne {
 
     public function setPhone($phone) {
         $this->phone = $phone;
+    }
+
+    public function getIdPers(): int {
+
+        return $this->id_pers;
+    }
+
+    public function setIdPers(int $id_pers) {
+        $this->id_pers = $id_pers;
     }
 }
 

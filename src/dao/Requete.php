@@ -10,7 +10,7 @@ class Requete
     public const REQ_LAST_PERS  = "SELECT MAX(id_pers) FROM personne WHERE id_role = 2";
     // public const REQ_INS_INV     = "INSERT INTO invite(id_pers) SELECT DISTINCT id_pers FROM personne";
     public const REQ_INS_INV    = "INSERT INTO invite(id_pers) VALUES (:id_pers)";
-    public const CHECK_IF_EXIST = "SELECT p.mail, p.nom, p.prenom, p.id_role, p.telephone, i.mdp, i.adresse FROM personne p INNER JOIN inscrit i on i.id = p.id_pers WHERE mail = ?";
+    public const CHECK_IF_EXIST = "SELECT p.id_pers, p.mail, p.nom, p.prenom, p.id_role, p.telephone, i.mdp, i.adresse FROM personne p INNER JOIN inscrit i on i.id = p.id_pers WHERE mail = ?";
     public const REQ_PLATS = "SELECT p.id_plat, 
                                 p.nom_plat AS title, 
                                 sc.id_sous_cat AS sous_cat_id, 
@@ -47,15 +47,26 @@ class Requete
 
     
     public const FETCH_ID_ROLE = "SELECT id_role FROM role WHERE lib_role = ?";
-    public const FETCH_INSCRIT = "SELECT p.nom, p.prenom, p.mail, p.telephone, p.date_crea_pers, i.mdp, i.adresse, i.avatar
+    public const FETCH_INSCRIT = "SELECT p.id_pers, p.nom, p.prenom, p.mail, p.telephone, p.date_crea_pers, i.mdp, i.adresse, i.avatar
                                     FROM personne p
                                     INNER JOIN inscrit i on p.id_pers = i.id
                                     WHERE p.mail = ?";
 
         // TODO: Rajouter toutes les requêtes pour modification de la personne
-        public const CHANGE_EMAIL = "UPDATE `elpatiomexicano`.`personne` SET `email` = :new_email WHERE (`id_pers` = '45');
-        "
+        public const CHANGE_EMAIL = "UPDATE `elpatiomexicano`.`personne` SET `email` = :new_email WHERE (`mail` = :email);
+        ";
 
+        public const CHANGE_NOM = "UPDATE `elpatiomexicano`.`personne` SET `nom` = :form_nom WHERE (`mail` = :email);
+        ";
+
+        public const CHANGE_PRENOM = "UPDATE `elpatiomexicano`.`personne` SET `prenom` = :form_prenom WHERE (`mail` = :email);
+        ";
+
+        public const CHANGE_MDP = "UPDATE `elpatiomexicano`.`personne`
+                                        INNER JOIN inscrit i on i.id = personne.id_pers
+                                        SET `mdp` = :mdp 
+                                        WHERE (`mail` = :email);
+        ";
     
 }
 

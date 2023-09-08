@@ -249,11 +249,12 @@ class DaoAppli
                     $id_incsrit = $role_data['id_role'];
 
                     // On crée une instance de Personne avec les données de l'utilisateur
+                    $id_pers    = $data['id_pers'];
                     $nom        = $data['nom'];
                     $prenom     = $data['prenom'];
                     $email      = $data['mail'];
                     $telephone  = $data['telephone'];
-                    $personne   = new Personne($nom, $prenom, $email, $telephone);
+                    $personne   = new Personne($id_pers, $nom, $prenom, $email, $telephone);
 
                     // On regarde si l'utilisateur est admin ou inscrit
 
@@ -297,15 +298,13 @@ class DaoAppli
 
     public function connectInscrit($personne, $mdp) {
         require_once 'src/model/Inscrit.php';
-
+        
+        $id_pers= $personne->getIdPers();
         $prenom = $personne->getPrenom();
         $nom    = $personne->getNom();
         $email  = $personne->getEmail();
         
-        $query = "SELECT p.nom, p.prenom, p.mail, p.telephone, p.date_crea_pers, i.mdp, i.adresse, i.avatar
-        FROM personne p
-        INNER JOIN inscrit i on p.id_pers = i.id
-        WHERE p.mail = ?";
+        $query = Requete::FETCH_INSCRIT;
 
         $statement = $this->db->prepare($query);
         $statement->execute(array($email));
@@ -316,7 +315,7 @@ class DaoAppli
         if($mdp === $data['mdp']) {
             
             $adresse = $data['adresse'];
-            $inscrit = new Inscrit($nom, $prenom, $email, $mdp, $adresse);
+            $inscrit = new Inscrit($id_pers, $nom, $prenom, $email, $mdp, $adresse);
             
             $_SESSION['status'] = 'logged';
             $_SESSION['role'] = 'admin';
@@ -366,7 +365,6 @@ class DaoAppli
 
                 $inscrit = new Inscrit($last_nom, $last_prenom, $last_email, $last_mdp, $last_adresse, $last_telephone);
 
-                print_r ($inscrit);
 
                 
 
@@ -376,30 +374,102 @@ class DaoAppli
                     // - Le nouveau mdp et sa confirmation correspondent
 
                 if($row === 1) {
-                    if(!empty($new_mdp)) {
+                    if(!empty($form_new_mdp)) {
+                        $form_new_mdp = hash('sha256', $form_new_mdp);
+
                         if($form_last_mdp === $inscrit->getMdp() && $form_new_mdp != $last_mdp) {
                             if($form_new_mdp === $form_new_mdp_confirm) {
                                 $this->changeMdp($inscrit, $form_new_mdp);
                             }
+                        }
                         
                     } if(!empty($form_new_email) && $form_new_email != $inscrit->getEmail()) {
-                        $this -> changeEmail($data, $form_new_email);
+                        $this -> changeEmail($inscrit, $form_new_email);
 
                     } if (!empty($form_nom) && $form_nom != $inscrit->getNom()) {
-                        $this->changeNom($data, $form_nom);
+                        $this->changeNom($inscrit, $form_nom);
 
                     } if(!empty($form_prenom) && $form_prenom != $inscrit -> getPrenom()) {
-                        $this->changePrenom($data, $form_prenom);
+                        $this->changePrenom($inscrit, $form_prenom);
 
                     } if(!empty($form_adresse) && $form_adresse != $inscrit -> getAdresse()) {
-                        $this->changePrenom($data, $form_adresse);
+                        $this->changePrenom($inscrit, $form_adresse);
                     }           
-                }
+                
             }
         }
     }
 
-    public function changeEmail($inscrit, $email) {
-        $query = Requete::CHANGE_EMAIL;
+    public function changeMdp(Inscrit $inscrit, $form_new_mdp) {
+        require_once 'src/model/Inscrit.php';
+        try {
+            $query = Requete::CHANGE_MDP;
+            $statement = $this->db->prepare($query);
+            $statement->execute([
+                'form_new_mdp'  => $form_new_mdp,
+                'email'     => $inscrit->getEmail()
+            ]);
+        } catch (Exception $e) {
+            echo "Il y a eu une erreur : ", $e->getMessage();
+        }
+        
+    }
+
+    public function changeEmail($inscrit, $new_email) {
+        try {
+            $query = Requete::CHANGE_EMAIL;
+            $statement = $this->db->prepare($query);
+            $statement->execute([
+                'new_email' => $new_email,
+                'email'     => $inscrit->getEmail()
+            ]);
+        } catch (Exception $e) {
+            echo 'Il y a eu une erreur', $e->getMessage();
+        }
+    }
+
+    public function changeNom(Inscrit $inscrit, $form_nom) {
+        require_once 'src/model/Inscrit.php';
+        try {
+            $query = Requete::CHANGE_NOM;
+            $statement = $this->db->prepare($query);
+            $statement->execute([
+                'form_nom'  => $form_nom,
+                'email'     => $inscrit->getEmail()
+            ]);
+        } catch (Exception $e) {
+            echo "Il y a eu une erreur : ", $e->getMessage();
+        }
+        
+    }
+
+    public function changePrenom(Inscrit $inscrit, $form_prenom) {
+        require_once 'src/model/Inscrit.php';
+        try {
+            $query = Requete::CHANGE_PRENOM;
+            $statement = $this->db->prepare($query);
+            $statement->execute([
+                'form_prenom'  => $form_prenom,
+                'email'     => $inscrit->getEmail()
+            ]);
+        } catch (Exception $e) {
+            echo "Il y a eu une erreur : ", $e->getMessage();
+        }
+        
+    }
+
+    public function changeAdresse(Inscrit $inscrit, $form_adresse) {
+        require_once 'src/model/Inscrit.php';
+        try {
+            $query = Requete::CHANGE_ADRESSE;
+            $statement = $this->db->prepare($query);
+            $statement->execute([
+                'form_prenom'  => $form_adresse,
+                'email'     => $inscrit->getEmail()
+            ]);
+        } catch (Exception $e) {
+            echo "Il y a eu une erreur : ", $e->getMessage();
+        }
+        
     }
 }

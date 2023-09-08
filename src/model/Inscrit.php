@@ -7,13 +7,11 @@ class Inscrit extends Personne {
     protected string    $adresse;
     protected ?string   $avatar;
 
-    public function __construct($nom, $prenom, $email, $mdp, $adresse, $phone = NULL, $avatar = NULL) {
-        parent::__construct($nom, $prenom, $email, $phone);
+    public function __construct($id_pers, $nom, $prenom, $email, $mdp, $adresse, $phone = NULL, $avatar = NULL) {
+        parent::__construct($id_pers, $nom, $prenom, $email, $phone);
         $this -> mdp            = $mdp;
         $this -> adresse        = $adresse;
-        $this -> avatar         = $avatar;        
-
-        
+        $this -> avatar         = $avatar;
     }    
 
     public function getNom(): string {
@@ -80,7 +78,14 @@ class Inscrit extends Personne {
         $this->avatar = $avatar;
     }
 
+    public function getIdPers(): int {
 
+        return $this->id_pers;
+    }
+    
+    public function setIdPers(int $id_pers) {
+        $this->id_pers = $id_pers;
+    }
 
 }
 
