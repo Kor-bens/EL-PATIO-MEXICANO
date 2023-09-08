@@ -24,19 +24,20 @@ $cntrlAppli = new CntrlAppli();
 if ($method == 'GET'   && $route == '/index')                       $cntrlAppli->affAccueil();
 else if ($method == 'GET'   && $route == '/')                       $cntrlAppli->affAccueil();
 else if ($method == 'GET'   && $route == '/contact')                $cntrlAppli->affContact();
-else if ($method == 'POST'  && $route == '/contact')                $cntrlAppli -> formDemande();
+else if ($method == 'POST'  && $route == '/contact')                $cntrlAppli->formDemande();
 // else if ($method == 'POST'  && $route == '/contact')    $cntrlAppli->addInvite();
 // else if ($method == 'POST' && $route == '/contact')     $cntrlAppli -> envoyerMsg();
-else if ($method == 'GET'   && $route == '/menu')                   $cntrlAppli -> affMenu();
-else if ($method == 'GET'   && $route == '/requireData')            $cntrlAppli -> getData($_SERVER['REQUEST_URI']);
-else if ($method == 'GET'   && $route == '/connexion-inscription')  $cntrlAppli -> affInscription();
-else if ($method == 'POST'  && $route == '/post-inscription')       $cntrlAppli -> postInscription();
-else if ($method == 'POST'  && $route == '/post-connexion')         $cntrlAppli -> postConnexion();
-else if ($method == 'GET'   && $route == '/deconnexion')            $cntrlAppli -> deconnexion();
-else if ($method == 'GET'   && $route == '/compte/modifier')        $cntrlAppli -> modifierCompte();
-else if ($method == 'POST'  && $route == '/post-modifier')          $cntrlAppli -> postModifier();
+else if ($method == 'GET'   && $route == '/menu')                   $cntrlAppli->affMenu();
+else if ($method == 'GET'   && $route == '/requireData')            $cntrlAppli->getData($_SERVER['REQUEST_URI']);
+else if ($method == 'GET'   && $route == '/connexion-inscription')  $cntrlAppli->affInscription();
+else if ($method == 'POST'  && $route == '/post-inscription')       $cntrlAppli->postInscription();
+else if ($method == 'POST'  && $route == '/post-connexion')         $cntrlAppli->postConnexion();
+else if ($method == 'GET'   && $route == '/deconnexion')            $cntrlAppli->deconnexion();
+else if ($method == 'GET'   && $route == '/compte/modifier')        $cntrlAppli->modifierCompte();
+else if ($method == 'POST'  && $route == '/post-modifier')          $cntrlAppli->postModifier();
+else if ($method == 'GET'  && $route == '/admin')                   $cntrlAppli->affAdmin();
 
-else                                                                {
-                                                                        header("Location: /index");
-                                                                        exit;
-                                                                    }
+else {
+    header("Location: /index");
+    exit;
+}
