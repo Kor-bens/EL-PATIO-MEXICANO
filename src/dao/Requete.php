@@ -68,7 +68,7 @@ class Requete
                                         SET `mdp` = :mdp 
                                         WHERE (`mail` = :email);
         ";
-    
+    public const REQ_MSG_PERS = "SELECT id_msg, date_envoi,texte,id_cat_msg,id_pers FROM message ";
 }
 
 

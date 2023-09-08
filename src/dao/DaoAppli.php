@@ -499,4 +499,35 @@ class DaoAppli
         }
         
     }
+
+    public function afficheMessagePersonne(){
+      $requete = Requete::REQ_MSG_PERS;
+      $stmt = $this->db->query($requete);
+      $liste = [];
+      while ($row = $stmt->fetch()){
+        $texte = $row['texte'];
+        $categorie_msg = $row['id_cat_msg'];
+        $date_envoi   = $row['date_envoi'];
+        $personne = $row['id_pers'];
+        $id_msg  = $row['id_msg'];
+        $message = new Message($id_msg,$date_envoi,$texte,$categorie_msg,$personne);
+        array_push($liste, $message);
+      }
+      return $liste;
+      
+    }
+
+    // public function recupDemandes()
+    // {
+    //     $requete = Requete::LISTE_DEMANDES;
+    //     $statement = $this->db->query($requete);
+    //     $liste = [];
+    //     while ($row = $statement->fetch()) {
+    //         $id = $row['id_cat_msg'];
+    //         $nom = $row['lib_cat_msg'];
+    //         $demande = new Demande($id, $nom);
+    //         array_push($liste, $demande);
+    //     }
+    //     return $liste;
+    // }
 }

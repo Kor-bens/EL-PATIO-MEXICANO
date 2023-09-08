@@ -145,4 +145,12 @@ class CntrlAppli
     $dao = new DaoAppli();
     $dao->postModifier();
   }
+
+  public function affAdmin(){
+    require_once 'src/dao/daoAppli.php';
+    $dao = new DaoAppli();
+    global $messages;
+    $messages = $dao->afficheMessagePersonne(); 
+    require_once 'src/views/admin.php';
+}
 }
