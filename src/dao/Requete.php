@@ -47,13 +47,14 @@ class Requete
 
     
     public const FETCH_ID_ROLE = "SELECT id_role FROM role WHERE lib_role = ?";
+    public const FETCH_ID_PERS = "SELECT id_pers FROM personne WHERE mail = :email";
     public const FETCH_INSCRIT = "SELECT p.id_pers, p.nom, p.prenom, p.mail, p.telephone, p.date_crea_pers, i.mdp, i.adresse, i.avatar
                                     FROM personne p
                                     INNER JOIN inscrit i on p.id_pers = i.id
                                     WHERE p.mail = ?";
 
         // TODO: Rajouter toutes les requêtes pour modification de la personne
-        public const CHANGE_EMAIL = "UPDATE `elpatiomexicano`.`personne` SET `email` = :new_email WHERE (`mail` = :email);
+        public const CHANGE_EMAIL = "UPDATE `elpatiomexicano`.`personne` SET `mail` = :new_email WHERE (`mail` = :email);
         ";
 
         public const CHANGE_NOM = "UPDATE `elpatiomexicano`.`personne` SET `nom` = :form_nom WHERE (`mail` = :email);

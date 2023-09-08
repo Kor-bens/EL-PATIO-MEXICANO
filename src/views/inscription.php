@@ -31,7 +31,9 @@
             <div id="signup" class="col-6 p-3 inactive">Inscription</div>
         </div>
 
-        <form id="signup-form" action="/post-inscription" method="post" class="d-none">
+        <form autofill="off" id="signup-form" action="/post-inscription" method="post" class="d-none">
+
+            <input autofill="false" name="hidden" type="text" class="d-none">
 
             <label class="fsp-3 text-center text-center" for="nom">Nom :</label>
             <input type="text" id="last-name" name="nom" placeholder="Entrez votre nom" data-sb-validations="required" class="vert mb-2 fsp-3">
@@ -61,7 +63,10 @@
             <input id="btn" type="submit" value="Envoyer" class="vert btn mb-1 fsb-3">
         </form>
 
-        <form id="login-form" action="/post-connexion" method="POST">
+        <form autofill="off" id="login-form" action="/post-connexion" method="POST">
+        
+            <input autofill="false" name="hidden" type="text" class="d-none">
+
             <label class="fsp-3" for="email">Email :</label>
             <input type="email" id="login-email" name="email" placeholder="Entrez votre email" data-sb-validations="required" class="vert mb-2 fsp-3">
 

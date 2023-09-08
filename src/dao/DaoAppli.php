@@ -176,7 +176,7 @@ class DaoAppli
                                         $mdp = hash('sha256', $mdp);
 
                                         // On crée une instance de Personne qu'on enverra en base
-                                        $personne = new Personne($nom, $prenom, $email, $telephone);
+                                        $personne = new Personne(0, $nom, $prenom, $email, $telephone);
                                         
                                         // On insère une personne en base
                                         $query = Requete::INSERT_PERS;
@@ -189,7 +189,7 @@ class DaoAppli
                                         ]);
 
                                         // On crée
-                                        $inscrit = new Inscrit($nom, $prenom, $email, $mdp, $adresse, $telephone, NULL);
+                                        $inscrit = new Inscrit(0, $nom, $prenom, $email, $mdp, $adresse, $telephone, NULL);
 
                                         $query = Requete::INSERT_INSCRIT;                                        
                                         $statement = $this->db->prepare($query);
@@ -199,6 +199,17 @@ class DaoAppli
                                             'mdp'       => $inscrit->getMdp(),
                                             'adresse'   => $inscrit->getAdresse()
                                         ]);
+
+                                        $query = Requete::FETCH_ID_PERS;
+                                        $statement = $this->db->prepare($query);
+                                        $statement->execute([
+                                            'email' => $email
+                                        ]);
+                                        $data = $statement->fetch();
+                                        $id_pers = $data['id_pers'];
+
+                                        $personne->setIdPers($id_pers);
+                                        $inscrit->setIdPers($id_pers);
 
                                         header('Location: /connexion-inscription?error=none');
 
@@ -353,9 +364,10 @@ class DaoAppli
                 $query = Requete::CHECK_IF_EXIST;
                 $check = $this -> db->prepare($query);
                 $check->execute(array($form_last_email));
-                $data = $check->fetch();
                 $row = $check->rowCount();
-
+                $data = $check->fetch();
+                
+                $id_pers        = $_SESSION['user']->getIdPers();
                 $last_nom       = $data['nom'];
                 $last_prenom    = $data['prenom'];
                 $last_mdp       = $data['mdp'];
@@ -363,10 +375,9 @@ class DaoAppli
                 $last_adresse   = $data['adresse'];
                 $last_telephone = $data['telephone'];
 
-                $inscrit = new Inscrit($last_nom, $last_prenom, $last_email, $last_mdp, $last_adresse, $last_telephone);
-
-
+                $inscrit = new Inscrit($id_pers, $last_nom, $last_prenom, $last_email, $last_mdp, $last_adresse, $last_telephone);
                 
+                var_dump($inscrit);
 
                 // On va faire toute une série de vérifications :
                     // - L'utilisateur existe déjà en base
@@ -385,6 +396,7 @@ class DaoAppli
                         
                     } if(!empty($form_new_email) && $form_new_email != $inscrit->getEmail()) {
                         $this -> changeEmail($inscrit, $form_new_email);
+                        // $inscrit->setEmail($form_new_email);
 
                     } if (!empty($form_nom) && $form_nom != $inscrit->getNom()) {
                         $this->changeNom($inscrit, $form_nom);
@@ -409,6 +421,9 @@ class DaoAppli
                 'form_new_mdp'  => $form_new_mdp,
                 'email'     => $inscrit->getEmail()
             ]);
+
+            $inscrit->setMdp($form_new_mdp);
+            $_SESSION['user'] = $inscrit;
         } catch (Exception $e) {
             echo "Il y a eu une erreur : ", $e->getMessage();
         }
@@ -423,6 +438,9 @@ class DaoAppli
                 'new_email' => $new_email,
                 'email'     => $inscrit->getEmail()
             ]);
+
+            $inscrit->setEmail($new_email);
+            $_SESSION['user'] = $inscrit;
         } catch (Exception $e) {
             echo 'Il y a eu une erreur', $e->getMessage();
         }
@@ -437,6 +455,9 @@ class DaoAppli
                 'form_nom'  => $form_nom,
                 'email'     => $inscrit->getEmail()
             ]);
+
+            $inscrit->setNom($form_nom);
+            $_SESSION['user'] = $inscrit;
         } catch (Exception $e) {
             echo "Il y a eu une erreur : ", $e->getMessage();
         }
@@ -452,6 +473,9 @@ class DaoAppli
                 'form_prenom'  => $form_prenom,
                 'email'     => $inscrit->getEmail()
             ]);
+
+            $inscrit->setPrenom($form_prenom);
+            $_SESSION['user'] = $inscrit;
         } catch (Exception $e) {
             echo "Il y a eu une erreur : ", $e->getMessage();
         }
@@ -467,6 +491,9 @@ class DaoAppli
                 'form_prenom'  => $form_adresse,
                 'email'     => $inscrit->getEmail()
             ]);
+
+            $inscrit->setAdresse($form_adresse);
+            $_SESSION['user'] = $inscrit;
         } catch (Exception $e) {
             echo "Il y a eu une erreur : ", $e->getMessage();
         }
