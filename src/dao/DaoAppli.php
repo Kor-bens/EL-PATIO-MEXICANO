@@ -304,7 +304,7 @@ class DaoAppli
             $_SESSION['role'] = 'admin';
             $_SESSION['user']   = $inscrit;
             
-            header ('Location: /index');
+            header ('Location: /admin');
 
         } else header('Location: inscription-connexion?error=bad-password');
     }
@@ -525,17 +525,34 @@ class DaoAppli
         return $liste;
     }
 
-    // public function recupDemandes()
-    // {
-    //     $requete = Requete::LISTE_DEMANDES;
-    //     $statement = $this->db->query($requete);
-    //     $liste = [];
-    //     while ($row = $statement->fetch()) {
-    //         $id = $row['id_cat_msg'];
-    //         $nom = $row['lib_cat_msg'];
-    //         $demande = new Demande($id, $nom);
-    //         array_push($liste, $demande);
-    //     }
-    //     return $liste;
-    // }
+    public function supprimerMessageContact($id){
+        $requete= Requete::REQ_DELETE_MSG_CONTACT;
+        $stmt = $this->db->prepare($requete);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    
+        // Exécutez la requête de suppression
+        if ($stmt->execute()) {
+            // Succès
+            echo "Message supprimé avec succès.";
+        } else {
+            // Erreur SQL
+            echo "Erreur SQL lors de la suppression du message : " . implode(", ", $stmt->errorInfo());
+        }
+    }
+
+    public function messageStatut($id){
+        $requete = Requete::REQ_STATUT_MSG_CONTACT;
+        $stmt = $this->db->prepare($requete);
+         // Liez la valeur de l'ID au paramètre :id
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        // Exécutez la requête SQL pour mettre à jour le statut du message
+        if ($stmt->execute()) {
+            // Mise à jour réussie
+            echo "Le message a été marqué comme lu.";
+        } else {
+            // Erreur SQL
+            echo "Erreur SQL lors de la mise à jour du statut du message : " . implode(", ", $stmt->errorInfo());
+        }
+    }
+
 }
