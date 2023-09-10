@@ -26,8 +26,6 @@ if ($method == 'GET'   && $route == '/index')                       $cntrlAppli-
 else if ($method == 'GET'   && $route == '/')                       $cntrlAppli->affAccueil();
 else if ($method == 'GET'   && $route == '/contact')                $cntrlAppli->affContact();
 else if ($method == 'POST'  && $route == '/contact')                $cntrlAppli->formDemande();
-// else if ($method == 'POST'  && $route == '/contact')    $cntrlAppli->addInvite();
-// else if ($method == 'POST' && $route == '/contact')     $cntrlAppli -> envoyerMsg();
 else if ($method == 'GET'   && $route == '/menu')                   $cntrlAppli->affMenu();
 else if ($method == 'GET'   && $route == '/requireData')            $cntrlAppli->getData($_SERVER['REQUEST_URI']);
 else if ($method == 'GET'   && $route == '/connexion-inscription')  $cntrlAppli->affInscription();
@@ -36,7 +34,10 @@ else if ($method == 'POST'  && $route == '/post-connexion')         $cntrlAppli-
 else if ($method == 'GET'   && $route == '/deconnexion')            $cntrlAppli->deconnexion();
 else if ($method == 'GET'   && $route == '/compte/modifier')        $cntrlAppli->modifierCompte();
 else if ($method == 'POST'  && $route == '/post-modifier')          $cntrlAppli->postModifier();
-else if ($method == 'GET'  && $route == '/admin')                   $cntrlAppli->affAdmin();
+else if ($method == "GET"   && $route == '/admin')                  $cntrlAppli->pageAdmin();
+else if ($method == 'GET'   && $route == '/admin/messagerie')        $cntrlAppli->affmessagePersonne();
+else if ($method == 'DELETE'   && $route == '/admin/messagerie')     $cntrlAppli->supprimerMessage();
+else if ($method == 'PATCH'    && $route == '/statut_message')       $cntrlAppli->modifStatutMessage(); 
 
 else {
     header("Location: /index");
