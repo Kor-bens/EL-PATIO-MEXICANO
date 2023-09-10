@@ -72,6 +72,13 @@ class Requete
     FROM message m
     LEFT JOIN categorie_msg c ON m.id_cat_msg = c.id_cat_msg
     LEFT JOIN personne p ON m.id_pers = p.id_pers";
+
+    public const REQ_DELETE_MSG_CONTACT = "DELETE FROM message 
+    WHERE id_msg = :id";
+
+    public const REQ_STATUT_MSG_CONTACT = "UPDATE message
+    SET isRead = true
+    WHERE id_msg =  :id";
 }
 
 

@@ -146,11 +146,41 @@ class CntrlAppli
     $dao->postModifier();
   }
 
-  public function affAdmin(){
+  public function pageAdmin(){
+    require_once 'src/views/admin.php';
+  }
+
+  public function affmessagePersonne(){
     require_once 'src/dao/daoAppli.php';
     $dao = new DaoAppli();
     global $messages;
     $messages = $dao->afficheMessagePersonne(); 
-    require_once 'src/views/admin.php';
+    require_once 'src/views/message_admin.php';
+}
+
+public function supprimerMessage(){
+  require_once 'src/dao/DaoAppli.php';
+  $dao = new DaoAppli();
+  $messageId= $_GET['id'];
+  echo "message $messageId";
+
+  $dao->supprimerMessageContact($messageId); 
+  require_once 'src/views/message_admin.php';
+}
+
+public function modifStatutMessage(){
+  require_once 'src/dao/DaoAppli.php';
+  $dao = new DaoAppli();
+  // Récupérez l'ID du message que vous souhaitez marquer comme lu depuis la requête
+  $messageId = $_GET['id'];
+    
+  // Appelez la méthode du DAO pour mettre à jour le statut du message
+  $dao->messageStatut($messageId);
+  
+  // Redirigez l'utilisateur vers la page précédente ou une autre page appropriée
+  // Vous pouvez utiliser header() pour cela
+  require_once 'src/views/message_admin.php';
+  
 }
 }
+
